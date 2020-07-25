@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Subject, Observable} from 'rxjs';
+import { IEvent } from './IEvent';
 
 /**
  The grid is primarily controlled by MenuService Events. You can change the behavior by
