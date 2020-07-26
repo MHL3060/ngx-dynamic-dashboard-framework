@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MatButtonModule, MatIconModule} from '@angular/material';
-import {DndModule} from 'ng2-dnd';
 import {GadgetModule} from '../gadgets/gadget.module';
 import {ConfigurationModule} from '../configuration/configuration.module';
 import {LayoutModule} from '../layout/layout.module';
@@ -15,7 +14,7 @@ import {ObservableWebSocketService} from '../services/websocket-service';
 import {TypeAheadInputModule} from '../typeahead-input/typeahead-input.module';
 import {MenuComponent} from './menu.component';
 import {MenuEventService} from './menu-service';
-import {AboutModule} from "../about/about.module";
+import {AboutModule} from '../about/about.module';
 
 @NgModule({
     imports: [
@@ -27,7 +26,6 @@ import {AboutModule} from "../about/about.module";
         ConfigurationModule,
         TypeAheadInputModule,
         GadgetModule,
-        DndModule.forRoot(),
         MatButtonModule, MatIconModule,
     ],
     providers: [EndPointService,

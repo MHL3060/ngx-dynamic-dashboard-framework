@@ -4,7 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {RuntimeService} from "../services/runtime.service";
 import {catchError} from "rxjs/operators";
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class AboutService {
 
     env: any;

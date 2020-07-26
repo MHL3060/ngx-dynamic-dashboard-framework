@@ -20,7 +20,7 @@ declare var jQuery: any;
 
 export class PieChartGadgetComponent extends GadgetBase {
 
-    @ViewChild('chartOptionsSideBar_tag') chartOptionsSideBarRef: ElementRef;
+    @ViewChild('chartOptionsSideBar_tag', {static: true}) chartOptionsSideBarRef: ElementRef;
     chartOptionsSideBar:any;
 
     // chart options
@@ -29,11 +29,11 @@ export class PieChartGadgetComponent extends GadgetBase {
     gradient: boolean;
     showLegend: boolean;
     showLabels: boolean;
-    legendTitle = "Title";
+    legendTitle = 'Title';
 
     view: any[];
     colorScheme: any = {
-        domain: ['#0d5481', '#0AFF16', '#4894FF','#F54B7D'] //todo - control color from property page
+        domain: ['#0d5481', '#0AFF16', '#4894FF','#F54B7D'] // todo - control color from property page
     };
     //////////////////
 

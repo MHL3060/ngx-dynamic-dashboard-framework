@@ -7,7 +7,6 @@ import {CellComponent} from './cell.component';
 import {GadgetInstanceService} from './grid.service';
 import {ConfigurationService} from '../services/configuration.service';
 import {AddGadgetService} from '../add-gadget/service';
-import {DndModule} from 'ng2-dnd';
 import {NewsService} from '../gadgets/news/service';
 import {JobAnalysisService} from '../gadgets/job-analysis/service';
 import {TrendService} from '../gadgets/trend/service';
@@ -19,9 +18,10 @@ import {DonutService} from '../gadgets/donut/service';
 import {TodoService} from '../gadgets/todo/service';
 import {ToastModule} from '../toast/toast.module';
 import {ConnectionService} from '../gadgets/port-connection/service';
-import {BubbleService} from "../gadgets/bubble/service";
-import {BarChartService} from "../gadgets/barchart/service";
-import {PieChartService} from "../gadgets/piechart/service";
+import {BubbleService} from '../gadgets/bubble/service';
+import {BarChartService} from '../gadgets/barchart/service';
+import {PieChartService} from '../gadgets/piechart/service';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -29,7 +29,8 @@ import {PieChartService} from "../gadgets/piechart/service";
         CommonModule,
         FormsModule,
         ToastModule,
-        HttpClientModule, DndModule.forRoot()
+        HttpClientModule,
+        DragDropModule
     ],
     declarations: [
         GridComponent,

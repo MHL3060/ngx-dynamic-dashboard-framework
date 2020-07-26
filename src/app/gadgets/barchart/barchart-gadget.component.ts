@@ -6,10 +6,10 @@ import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service
 import {GadgetBase} from '../_common/gadget-base';
 import {BarChartService} from './service';
 import {Router} from '@angular/router';
-import {OptionsService} from "../../configuration/tab-options/service";
-import {startWith, switchMap} from "rxjs/operators";
-import {interval} from "rxjs";
-import {ConfigurationService} from "../../services/configuration.service";
+import {OptionsService} from '../../configuration/tab-options/service';
+import {startWith, switchMap} from 'rxjs/operators';
+import {interval} from 'rxjs';
+import {ConfigurationService} from '../../services/configuration.service';
 
 declare var jQuery: any;
 
@@ -22,7 +22,7 @@ declare var jQuery: any;
 
 export class BarChartGadgetComponent extends GadgetBase {
 
-    @ViewChild('chartOptionsSideBar_tag') chartOptionsSideBarRef: ElementRef;
+    @ViewChild('chartOptionsSideBar_tag', {static: true}) chartOptionsSideBarRef: ElementRef;
     chartOptionsSideBar: any;
 
     // chart options
@@ -38,7 +38,7 @@ export class BarChartGadgetComponent extends GadgetBase {
     xAxisLabel: string;
     view: any[];
     colorScheme: any = {
-        domain: ['#0AFF16', '#B2303B'] //todo - control color from property page
+        domain: ['#0AFF16', '#B2303B'] // todo - control color from property page
     };
     //////////////////
 
@@ -78,7 +78,7 @@ export class BarChartGadgetComponent extends GadgetBase {
          */
         this.initializeTheRemainderOfTheProperties();
 
-        if (this.getPropFromPropertyPages('state') == this.RUN_STATE) {
+        if (this.getPropFromPropertyPages('state') === this.RUN_STATE) {
             this.run();
         }
     }
@@ -168,7 +168,7 @@ export class BarChartGadgetComponent extends GadgetBase {
         this._route.navigate(['/detail'], {
             queryParams:
                 {
-                    chartType:"bar",
+                    chartType: 'bar',
                     chartSeries: data.series,
                     chartMetric: data.name,
                     endPointName: this.endpointObject.name
@@ -181,7 +181,7 @@ export class BarChartGadgetComponent extends GadgetBase {
 
         this.state = updatedPropsObject.state;
 
-        if (updatedPropsObject.title != undefined) {
+        if (updatedPropsObject.title !== undefined) {
 
             this.title = updatedPropsObject.title;
             this.showXAxis = updatedPropsObject.showXAxis;
@@ -250,7 +250,7 @@ export class BarChartGadgetComponent extends GadgetBase {
      * todo - need to improve how internal state is saved to persistant store
      */
     private persistTheChangeInInternalState() {
-        let payLoad =
+        const payLoad =
             "{\"instanceId\":" + this.instanceId
             + ",\"title\":\"" + this.title
             + "\",\"state\":\"" + this.state
@@ -274,7 +274,7 @@ export class BarChartGadgetComponent extends GadgetBase {
 
     toggleChartProperties() {
 
-        if (this.globalOptions.displayGadgetOptionsInSideBar == false) {
+        if (this.globalOptions.displayGadgetOptionsInSideBar === false) {
             this.toggleConfigMode();
             return;
         }

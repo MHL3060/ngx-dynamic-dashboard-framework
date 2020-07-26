@@ -7,7 +7,7 @@ import {GadgetBase} from '../_common/gadget-base';
 import {JobAnalysisService} from './service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
-import {OptionsService} from "../../configuration/tab-options/service";
+import {OptionsService} from '../../configuration/tab-options/service';
 
 declare var d3: any;
 

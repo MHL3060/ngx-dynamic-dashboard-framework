@@ -164,6 +164,10 @@ export class GridComponent {
      */
 
     updateGadgetPositionInBoard($event, columnNumber, rowNumber, type) {
+
+        console.log($event['item']['data']);
+        console.log(columnNumber + " " + rowNumber);
+
         let moveComplete = false;
 
         this.getModel().rows.forEach(row => {
@@ -178,7 +182,7 @@ export class GridComponent {
 
                     column.gadgets.forEach(_gadget => {
 
-                        if (_gadget.instanceId === $event.dragData && !moveComplete) {
+                        if (_gadget.instanceId ===  $event['item']['data'] && !moveComplete) {
 
                             const gadget = column.gadgets.splice(gadgetpos, 1);
 
@@ -501,5 +505,8 @@ export class GridComponent {
         return this.model;
     }
 
+    public onDrop(data) {
+        console.log(data);
+    }
 
 }

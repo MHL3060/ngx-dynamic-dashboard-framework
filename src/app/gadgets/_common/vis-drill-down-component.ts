@@ -67,7 +67,7 @@ export class VisDrillDownComponent implements AfterViewInit {
     layoutColumnTwoWidth = 'ten';
     facetTags: Array<Facet> = [];
 
-    @ViewChild('vismodal_tag') vismodalaRef: ElementRef;
+    @ViewChild('vismodal_tag', {static: true}) vismodalaRef: ElementRef;
     configModal: any;
 
 

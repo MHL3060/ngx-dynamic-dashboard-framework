@@ -18,7 +18,7 @@ export class DataListComponent {
     @Input() typeAheadIsInMenu: boolean;
     @Input() facetTags: Array<Facet>;
 
-    @ContentChild(TemplateRef) template: TemplateRef<any>;
+    @ContentChild(TemplateRef, {static: true}) template: TemplateRef<any>;
 
 
     color = 'white';

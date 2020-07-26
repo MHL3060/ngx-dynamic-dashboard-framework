@@ -9,7 +9,7 @@ import {ObservableWebSocketService} from '../../services/websocket-service';
 import {ErrorHandler} from '../../error/error-handler';
 import {CPUChartMetric} from './cpu.model';
 import {Series} from '../_common/base-chart-models/series.model';
-import {OptionsService} from "../../configuration/tab-options/service";
+import {OptionsService} from '../../configuration/tab-options/service';
 
 @Component({
     selector: 'app-dynamic-component',

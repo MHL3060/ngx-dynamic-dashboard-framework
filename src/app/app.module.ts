@@ -16,16 +16,16 @@ import {BoardModule} from './board/board.module';
         RoutingModule,
         FormsModule,
         HttpClientModule,
-        BoardModule,
+       /* BoardModule,
         MenuModule,
-        DetailModule,
+        DetailModule,*/
         HttpClientJsonpModule
     ],
     declarations: [
         AppComponent,
-    ],
+    ]/*,
 
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent]*/
 })
 export class AppModule {
 }

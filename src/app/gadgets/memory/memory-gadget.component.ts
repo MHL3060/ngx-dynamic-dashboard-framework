@@ -6,7 +6,7 @@ import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service
 import {GadgetBase} from '../_common/gadget-base';
 import {timer} from 'rxjs';
 import {ObservableWebSocketService} from '../../services/websocket-service';
-import {OptionsService} from "../../configuration/tab-options/service";
+import {OptionsService} from '../../configuration/tab-options/service';
 
 @Component({
     selector: 'app-dynamic-component',

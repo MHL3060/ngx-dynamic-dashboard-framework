@@ -65,7 +65,7 @@ export class AddGadgetComponent implements AfterViewInit {
     modalheader: string;
     modalmessage: string;
 
-    @ViewChild('messagemodal_tag') messagemodalRef: ElementRef;
+    @ViewChild('messagemodal_tag', {static: true}) messagemodalRef: ElementRef;
 
     messageModal: any;
 

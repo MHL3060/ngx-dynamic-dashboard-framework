@@ -1,11 +1,10 @@
-<table class="ui padded table" dnd-sortable-container [sortableData]="dashboardList">
+<table class="ui padded table">
     <thead>
     <th class="index-column">#</th>
     <th>name</th>
     <th></th>
     </thead>
-    <tr class="ui basic segment" *ngFor="let board of dashboardList; let i = index" dnd-sortable
-        [sortableIndex]="i">
+    <tr class="ui basic segment" *ngFor="let board of dashboardList; let i = index">
         <td class="index-column">{{i + 1}}</td>
         <td>{{board}}</td>
         <td style="text-align:right">

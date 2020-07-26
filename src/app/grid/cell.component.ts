@@ -1,4 +1,4 @@
-import {Component, Input, ViewContainerRef, OnInit, ComponentFactoryResolver} from '@angular/core';
+import {Component, Input, ViewContainerRef, OnInit, ComponentFactoryResolver, ViewChild} from '@angular/core';
 import {GadgetInstanceService} from './grid.service';
 import {GadgetFactory} from '../add-gadget/gadget-factory';
 
@@ -8,7 +8,7 @@ import {GadgetFactory} from '../add-gadget/gadget-factory';
 
 @Component({
     selector: 'app-grid-cell',
-    template: ''
+    template: '<ng-template #container></ng-template>'
 })
 export class CellComponent implements OnInit {
     @Input() gadgetType: string;
@@ -16,8 +16,10 @@ export class CellComponent implements OnInit {
     @Input() gadgetInstanceId: number;
     @Input() gadgetTags: Array<any>;
 
+    @ViewChild('container', {static: true, read: ViewContainerRef}) viewContainerRef: ViewContainerRef;
 
-    constructor(private viewContainerRef: ViewContainerRef,
+
+    constructor(
                 private cfr: ComponentFactoryResolver, private gadgetInstanceService: GadgetInstanceService) {
     }
 

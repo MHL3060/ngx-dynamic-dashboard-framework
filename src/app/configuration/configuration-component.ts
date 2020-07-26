@@ -61,7 +61,7 @@ export class ConfigurationComponent implements AfterViewInit {
     modalconfig: string;
     env:any;
 
-    @ViewChild('boardconfigmodal_tag') boardconfigmodalaRef: ElementRef;
+    @ViewChild('boardconfigmodal_tag', {static: true}) boardconfigmodalaRef: ElementRef;
     configModal: any;
     currentTab: string;
     tabsModel: any[];

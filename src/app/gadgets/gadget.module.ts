@@ -19,7 +19,6 @@ import {TrendService} from './trend/service';
 import {PropertyListGadgetComponent} from './property-list/property-list-gadget.component';
 import {DynamicFormModule} from '../dynamic-form/dynamic-form-module';
 import {ServiceListGadgetComponent} from './service-list/service-list-gadget.component';
-import {DndModule} from 'ng2-dnd';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {GadgetSharedModule} from './_common/gadget-shared.module';
 import {ErrorHandlerModule} from '../error/error.module';
@@ -47,7 +46,8 @@ import {SolutionViewComponent} from "./port-connection/solution-view.component";
 import {BarChartGadgetComponent} from "./barchart/barchart-gadget.component";
 import {BarChartService} from "./barchart/service";
 import {PieChartGadgetComponent} from "./piechart/piechart-gadget.component";
-import {PieChartService} from "./piechart/service";  // todo gadget
+import {PieChartService} from "./piechart/service";
+import {DragDropModule} from '@angular/cdk/drag-drop';  // todo gadget
 
 
 
@@ -56,7 +56,7 @@ import {PieChartService} from "./piechart/service";  // todo gadget
     imports: [
         CommonModule,
         GadgetSharedModule,
-        DndModule.forRoot(),
+        DragDropModule,
         DynamicFormModule,
         ErrorHandlerModule,
         NgxChartsModule,

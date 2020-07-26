@@ -6,7 +6,7 @@ import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service
 import {GadgetBase} from '../_common/gadget-base';
 import {BubbleService} from './service';
 import {Router} from '@angular/router';
-import {OptionsService} from "../../configuration/tab-options/service";
+import {OptionsService} from '../../configuration/tab-options/service';
 
 @Component({
     selector: 'app-dynamic-component',

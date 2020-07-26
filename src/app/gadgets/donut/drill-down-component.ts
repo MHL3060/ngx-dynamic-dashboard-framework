@@ -82,7 +82,7 @@ export class DrillDownComponent implements AfterViewInit {
 
 
 
-    @ViewChild('drillmodal_tag') modalaRef: ElementRef;
+    @ViewChild('drillmodal_tag', {static: true}) modalaRef: ElementRef;
     configModal: any;
 
     constructor(private _donutService: DonutService) {

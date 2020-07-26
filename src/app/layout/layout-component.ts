@@ -20,7 +20,7 @@ import {boardLayouts} from './model';
  */
 @Component({
     selector: 'app-board-layout-manager-modal',
-    moduleId: module.id,
+    moduleId: 'layout',
     templateUrl: './view.html',
     styleUrls: ['./styles.css']
 

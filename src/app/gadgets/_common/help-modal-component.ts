@@ -31,7 +31,7 @@ export class HelpModalComponent implements AfterViewInit {
     modalheader: string;
     modalconfig: string;
 
-    @ViewChild('helpmodal_tag') helpmodalaRef: ElementRef;
+    @ViewChild('helpmodal_tag', {static: true}) helpmodalaRef: ElementRef;
     configModal: any;
 
 

@@ -10,7 +10,7 @@ import {GadgetPropertyService} from '../_common/gadget-property.service';
 import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service';
 import {GadgetBase} from '../_common/gadget-base';
 import {EdgeService} from './service';
-import {OptionsService} from "../../configuration/tab-options/service";
+import {OptionsService} from '../../configuration/tab-options/service';
 
 declare var jQuery: any;
 
