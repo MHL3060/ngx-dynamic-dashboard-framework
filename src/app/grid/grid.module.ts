@@ -52,7 +52,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
         DonutService,
         ConnectionService,
         TodoService  // todo gadget
-        ,BubbleService,
+        , BubbleService,
         BarChartService,
         PieChartService
     ]

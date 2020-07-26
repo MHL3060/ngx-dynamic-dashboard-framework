@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MatButtonModule, MatIconModule} from '@angular/material';
 import {GadgetModule} from '../gadgets/gadget.module';
 import {ConfigurationModule} from '../configuration/configuration.module';
 import {LayoutModule} from '../layout/layout.module';
@@ -15,6 +14,8 @@ import {TypeAheadInputModule} from '../typeahead-input/typeahead-input.module';
 import {MenuComponent} from './menu.component';
 import {MenuEventService} from './menu-service';
 import {AboutModule} from '../about/about.module';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import {AboutModule} from '../about/about.module';
         ConfigurationModule,
         TypeAheadInputModule,
         GadgetModule,
-        MatButtonModule, MatIconModule,
+        MatButtonModule,
+        MatIconModule
     ],
     providers: [EndPointService,
         RuntimeService,

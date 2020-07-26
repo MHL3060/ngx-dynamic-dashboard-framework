@@ -24,10 +24,6 @@ import {GadgetSharedModule} from './_common/gadget-shared.module';
 import {ErrorHandlerModule} from '../error/error.module';
 
 import {PortConnectionGadgetComponent} from './port-connection/port-connection-gadget.component';
-import {
-    MatButtonModule, MatCheckboxModule, MatExpansionModule, MatIconModule, MatInputModule, MatOptionModule,
-    MatProgressBarModule, MatSelectModule
-} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {StorageObjectListComponent} from './storage-object-list/storage-object-list.component';
 import {StorageService} from './storage-object-list/service';
@@ -47,7 +43,15 @@ import {BarChartGadgetComponent} from "./barchart/barchart-gadget.component";
 import {BarChartService} from "./barchart/service";
 import {PieChartGadgetComponent} from "./piechart/piechart-gadget.component";
 import {PieChartService} from "./piechart/service";
-import {DragDropModule} from '@angular/cdk/drag-drop';  // todo gadget
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSelectModule} from '@angular/material/select';
+import {MatOptionModule} from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';  // todo gadget
 
 
 

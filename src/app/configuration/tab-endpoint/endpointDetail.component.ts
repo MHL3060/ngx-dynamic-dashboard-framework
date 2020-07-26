@@ -6,7 +6,7 @@ import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 import {credentialScheme, EndPoint, TAG} from './endpoint.model';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatChipInputEvent} from "@angular/material";
+import {MatChipInputEvent} from '@angular/material/chips';
 
 @Component({
     selector: 'app-endpoint-detail',

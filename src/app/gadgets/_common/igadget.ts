@@ -1,7 +1,7 @@
 /**
  * Created by jayhamilton on 2/25/17.
  */
-interface IGadget {
+export interface IGadget {
 
     run();
 

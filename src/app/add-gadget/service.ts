@@ -4,6 +4,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment'
+import {GadgetLibraryResponse} from './gadgetLibraryResponse';
 
 @Injectable({providedIn: 'root'})
 export class AddGadgetService {
@@ -17,7 +18,7 @@ export class AddGadgetService {
     getGadgetLibrary() {
         let gadgetLibraryJson = '';
 
-        if (this.env.production == true) {
+        if (this.env.production === true) {
             gadgetLibraryJson = 'gadget-library-model-prod.json';
 
         } else {

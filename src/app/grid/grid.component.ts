@@ -5,6 +5,7 @@ import {GadgetConfigModel} from '../gadgets/_common/gadget-config-model';
 import {AddGadgetService} from '../add-gadget/service';
 import {ToastService} from '../toast/toast.service';
 import {MenuEventService} from '../menu/menu-service';
+import {IEvent} from '../menu/IEvent';
 
 
 @Component({

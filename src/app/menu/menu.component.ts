@@ -2,6 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ConfigurationService} from '../services/configuration.service';
 import {MenuEventService} from './menu-service';
 import {environment} from '../../environments/environment';
+import {IEvent} from './IEvent';
 
 
 declare var jQuery: any;

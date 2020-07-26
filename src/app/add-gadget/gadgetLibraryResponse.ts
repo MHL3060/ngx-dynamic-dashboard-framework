@@ -1,3 +1,3 @@
-interface GadgetLibraryResponse {
+export interface GadgetLibraryResponse {
     library: any[];
 }
