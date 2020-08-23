@@ -1,0 +1,14 @@
+
+.layout-selected {
+    border-top: medium lawngreen solid;
+    padding-top:5px;
+}
+ul{
+    text-align: center;
+}
+h2{
+    color:white !important;
+}
+ul, menu, dir {
+    -webkit-padding-start: 5px;
+}

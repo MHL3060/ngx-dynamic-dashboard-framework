@@ -1,0 +1,28 @@
+.wrapper {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 400px;
+    z-index: 1000;
+}
+
+.toast {
+    width: inherit;
+}
+
+.toast-icon {
+
+    background-color: #384b5f;
+    text-align: center;
+
+}
+
+.ui[class*="top right attached"].label {
+    background-color: transparent;
+}
+
+.toast-message{
+    height: 40px;
+    display:table-cell;
+    vertical-align: middle;
+}

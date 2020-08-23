@@ -1,0 +1,29 @@
+[
+  {
+    "name": "metric 1",
+    "series": [
+
+      {
+        "name": "available",
+        "value": 25
+      },{
+        "name": "used",
+        "value": 75
+      }
+    ]
+  },
+  {
+    "name": "metric 2",
+    "series": [
+
+      {
+        "name": "available",
+        "value": 77
+      },{
+        "name": "used",
+        "value": 23
+      }
+
+    ]
+  }
+]

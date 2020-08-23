@@ -1,0 +1,26 @@
+
+.components{
+    border-bottom: solid !important;
+    border-bottom-color: rgba(128, 128, 128, 0.69) !important;
+    border-bottom-width: thin !important;
+}
+td.selected {
+    background-color: #4fa6d3 !important;
+    color: white;
+    font-weight: lighter;
+}
+
+td{
+    line-height: 1.7;
+}
+
+.ui.table tr td{
+    border:none;
+}
+
+.ui.floating.label{
+
+}
+tr {
+    cursor: pointer;
+}

@@ -1,0 +1,81 @@
+<div *ngIf="env.boardConfiguration.ai == true" class="ui equal width fields centered grid container">
+
+    <div class="row">
+        <div class="field four wide column">
+        </div>
+        <div class="field eight wide column">
+            <mat-form-field>
+                <mat-select placeholder="Select an AI engine" (selectionChange)="selectChange($event)" [value]="selectedAIEngineValue">
+                    <mat-option *ngFor="let ai_engine of ai_engines" [value]="ai_engine.value">
+                        {{ ai_engine.viewValue }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="field four wide column">
+        </div>
+    </div>
+
+    <div *ngIf="selectedAIEngineValue === '' || selectedAIEngineValue === 'witai'">
+        <div class="row">
+            <div class="field four wide column">
+            </div>
+            <div class="field eight wide column">
+
+                <h3>Wit.ai Access Token</h3>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="password" placeholder='Enter the access token string from Wit.ai'
+                           [(ngModel)]='token'>
+                </mat-form-field>
+                <a
+                        mat-raised-button
+                        routerLink="."
+                        (click)="save()" color="primary">
+                    Save
+                </a>
+            </div>
+            <div class="field four wide column">
+            </div>
+        </div>
+    </div>
+    <div *ngIf="selectedAIEngineValue === 'watson'">
+        <div class="row">
+            <div class="field four wide column">
+            </div>
+            <div class="field eight wide column">
+
+                <h3>IBM Watson User</h3>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder='Enter the IBM Watson User Id'
+                           [(ngModel)]='ibmwatsonuid'>
+                </mat-form-field>
+                <h3>IBM Watson Password</h3>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="password" placeholder='Enter the IBM Watson Password'
+                           [(ngModel)]='ibmwatsonpwd'>
+                </mat-form-field>
+
+                <h3>IBM Watson Classifier ID</h3>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" placeholder='Enter the IBM Watson Classifier Id'
+                           [(ngModel)]='ibmwatsoncid'>
+                </mat-form-field>
+                <a
+                        mat-raised-button
+                        routerLink="."
+                        (click)="save()" color="primary">
+                    Save
+                </a>
+            </div>
+            <div class="field four wide column">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div *ngIf="env.boardConfiguration.ai == false">
+    This feature is not ready yet!
+</div>
+
+

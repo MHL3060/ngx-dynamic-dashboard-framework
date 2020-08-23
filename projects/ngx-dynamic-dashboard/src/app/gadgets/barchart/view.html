@@ -1,0 +1,130 @@
+<div class="ui  center aligned segment gadget">
+
+    <a class="ui left corner label">
+        <i class="circle icon" [ngClass]="{'green':inRun, 'yellow':!inRun}"></i>
+    </a>
+
+    <app-gadget-header
+            (mouseover)="showGadgetControls(true)"
+            (mouseleave)="showGadgetControls(false)"
+            [globalOptions]="globalOptions"
+            [title]="title"
+            [inRun]="inRun"
+            [inConfig]="inConfig"
+            [actionInitiated]="actionInitiated"
+            [showOperationControls]="showOperationControls"
+            [gadgetHasOperationControls]="gadgetHasOperationControls"
+            [showConfigurationControl]="showConfigurationControl"
+            [showControls]="showControls"
+            (toggleConfigModeEvent)="toggleChartProperties()"
+            (removeEvent)="remove()"
+            (runEvent)="run()"
+            (stopEvent)="stop()">
+    </app-gadget-header>
+
+    <div class="ui grid">
+        <div class="row">
+            <div *ngIf="!inConfig && barChartType == 'normalizedVertical'" style="min-height: 300px">
+                <ngx-charts-bar-vertical-normalized
+                        [scheme]="colorScheme"
+                        [results]="data"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel"
+                        [barPadding]=15
+                        (select)="drillDown($event)">
+                </ngx-charts-bar-vertical-normalized>
+            </div>
+            <div *ngIf="!inConfig && barChartType == 'normalizedHorizontal'" style="min-height: 300px">
+                <ngx-charts-bar-horizontal-normalized
+                        [view]="view"
+                        [scheme]="colorScheme"
+                        [results]="data"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel"
+                        [barPadding]=15
+                        (select)="drillDown($event)">
+                </ngx-charts-bar-horizontal-normalized>
+            </div>
+            <div *ngIf="!inConfig && barChartType == 'stackedHorizontal'" style="min-height: 300px">
+                <ngx-charts-bar-horizontal-stacked
+                        [view]="view"
+                        [scheme]="colorScheme"
+                        [results]="data"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [showDataLabel]="showDataLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel"
+                        [barPadding]=15
+                        (select)="drillDown($event)">
+                </ngx-charts-bar-horizontal-stacked>
+            </div>
+            <div *ngIf="!inConfig && barChartType == 'stackedVertical'" style="min-height: 300px">
+                <ngx-charts-bar-vertical-stacked
+                        [view]="view"
+                        [scheme]="colorScheme"
+                        [results]="data"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [showDataLabel]="showDataLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel"
+                        [barPadding]=15
+                        (select)="drillDown($event)">
+                </ngx-charts-bar-vertical-stacked>
+            </div>
+        </div>
+    </div>
+
+    <!-- use the side bar content -->
+    <div *ngIf="globalOptions.displayGadgetOptionsInSideBar == true" class="ui sidebar left vertical menu"
+         #chartOptionsSideBar_tag>
+        <br>
+        <div class="ct-title">{{title}}</div>
+        <br>
+        <app-dynamic-form
+                [gadgetTags]="gadgetTags"
+                [propertyPages]="propertyPages"
+                [instanceId]="instanceId"
+                (updatePropertiesEvent)="updateProperties($event)">
+        </app-dynamic-form>
+    </div>
+
+
+    <app-dynamic-form *ngIf="inConfig && globalOptions.displayGadgetOptionsInSideBar == false"
+                      [gadgetTags]="gadgetTags"
+                      [propertyPages]="propertyPages"
+                      [instanceId]="instanceId"
+                      (updatePropertiesEvent)="updateProperties($event)">
+    </app-dynamic-form>
+
+    <app-error-handler
+            [errorObject]="errorObject"
+            [errorExists]="errorExists">
+    </app-error-handler>
+
+    <app-vis-drill-down-modal #drillDownPopUp></app-vis-drill-down-modal>
+
+</div>
+
+

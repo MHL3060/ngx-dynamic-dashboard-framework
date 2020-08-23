@@ -1,0 +1,63 @@
+<div class="ui left aligned segment gadget">
+
+
+    <app-gadget-header
+            (mouseover)="showGadgetControls(true)"
+            (mouseleave)="showGadgetControls(false)"
+            [globalOptions]="globalOptions"
+            [title]="title"
+            [inRun]="inRun"
+            [inConfig]="inConfig"
+            [actionInitiated]="actionInitiated"
+            [showOperationControls]="showOperationControls"
+            [gadgetHasOperationControls]="gadgetHasOperationControls"
+            [showConfigurationControl]="showConfigurationControl"
+            [showControls]="showControls"
+            (toggleConfigModeEvent)="toggleConfigMode()"
+            (removeEvent)="remove()"
+            (runEvent)="run()"
+            (stopEvent)="stop()"
+            (helpEvent)="helpModal.showHelp()">>
+    </app-gadget-header>
+
+    <div *ngIf="!inConfig">
+        <div class="ui basic segment">
+            <div class="ui header">
+                Testing Host & Port(s)
+            </div>
+            <p>{{host}} {{port}}</p>
+        </div>
+    </div>
+    <br>
+    <div class="ui  centered grid" *ngIf="!inConfig" style="background-color:#f7f7f7">
+
+        <div class="ui segment" *ngFor="let result of testResultData">
+
+            <connection-result-view-component [connectionResult]="result"></connection-result-view-component>
+
+        </div>
+        <br>
+    </div>
+
+
+    <app-dynamic-form *ngIf="inConfig"
+                      [gadgetTags]="gadgetTags"
+                      [propertyPages]="propertyPages"
+                      [instanceId]="instanceId"
+                      (updatePropertiesEvent)="updateProperties($event)">
+    </app-dynamic-form>
+
+    <app-help-modal #helpModal [topic]="topic"></app-help-modal>
+
+
+    <app-error-handler
+            [errorObject]="errorObject"
+            [errorExists]="errorExists">
+    </app-error-handler>
+
+    <div class="ui bottom attached" *ngIf="actionInitiated" style="width:25%">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    <br>
+
+</div>

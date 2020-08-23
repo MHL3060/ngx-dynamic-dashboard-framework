@@ -1,0 +1,95 @@
+<div class="ui centered stackable grid" style="margin-left: 5px; margin-right: 5px">
+    <div class="row">
+        <div class="three wide column"></div>
+        <div class="ten wide column left aligned">
+
+            <div class="ui breadcrumb">
+                <a class="section" (click)="goHome()">Board</a>
+
+                <span *ngFor="let nav of navRoutes,let i = index">
+                    <span class="divider">/</span>
+                    <a class="section" (click)="gotToRoute(nav, navRoutes.length -1 == i)"
+                           [ngClass]="{'active': navRoutes.length -1 == i }">{{nav}}</a>
+                </span>
+
+            </div>
+
+            <div class="ui segment">
+                <div class="ui top right attached label"><a href="http://localhost:8080/detail/downloadFile" target="_self" ><i class="big grey download icon"></i></a></div>
+
+                <div class="ui  basic segment">
+                     <span class="detail-left-header">
+                        Type: {{chartSeries}}
+                    </span>
+                    <span class="detail-right-header">
+                       Count: {{data.length}} Tasks
+                    </span>
+
+                </div>
+                <div class="ui fluid icon input">
+                    <i class="search icon"></i>
+                    <input [(ngModel)]="searchText" placeholder="search text goes here">
+                </div>
+                <table class="ui celled compact fixed table">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th style="text-align: center">Status</th>
+                        <th>Master</th>
+                        <th>Job Name</th>
+                        <th>Sub Type</th>
+                        <th>Job Id</th>
+                        <th>Task Id</th>
+                        <th>Node</th>
+                        <th>Disk</th>
+                        <th>Task Start</th>
+                        <th>Task End</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let task of data | filter : searchText; let i = index ">
+                        <td [ngClass]="{'negative': task.status != 'Completed', 'positive': task.status == 'Completed' }">
+                            {{i + 1}}
+                        </td>
+                        <td style="text-align: center"><i class="icon large "[ngClass]="{
+                        'red ban': task.status != 'Completed',
+                        'green check': task.status == 'Completed'
+                        }"></i></td>
+                        <td>{{task.master}}</td>
+                        <td>{{task.jobName}}</td>
+                        <td>{{task.subType}}</td>
+                        <td><a (click)="getObjectsByHateoasLink(task)">{{task.jobId}}</a></td>
+                        <td><a (click)="getObject(task)">{{task.taskId}}</a></td>
+                        <td>{{task.node}}</td>
+                        <td>{{task.disk}}</td>
+                        <td>{{task.taskStart}}</td>
+                        <td>{{task.taskEnd}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="three wide column">
+            <div class="ui breadcrumb">
+                &nbsp;
+            </div>
+            <div class="ui  segment" *ngIf="objectAsArray.length">
+                <div class="ui top right attached label"><i class="big download icon"></i></div>
+
+                <div class="ui  basic segment">
+                    <span class="detail-left-header">Detail</span>
+                </div>
+
+                <table class="ui celled compact fixed table">
+                    <tr *ngFor="let property of objectAsArray; ">
+                        <td class="field">{{property.key}}</td>
+                        <td>{{property.value}}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

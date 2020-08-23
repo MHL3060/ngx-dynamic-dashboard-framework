@@ -1,0 +1,117 @@
+<div class="ui right aligned grid">
+    <div class="right aligned column">
+
+        <span *ngIf="currentState == 'save as' && endPointForm.valid">
+         <a mat-mini-fab routerLink="." color='primary' (click)="createEndPoint()"><mat-icon>content_copy</mat-icon></a>
+            &nbsp;save as&nbsp;
+        </span>
+
+        <span *ngIf="currentState == 'update' && endPointForm.valid">
+            <a mat-mini-fab routerLink="." color='primary' (click)="updateEndPoint()"><mat-icon>save</mat-icon></a>
+            &nbsp;update&nbsp;
+        </span>
+
+
+        <span *ngIf="currentState == 'create' && endPointForm.valid">
+            <a mat-mini-fab routerLink="." color='primary' (click)="createEndPoint()"><mat-icon>save</mat-icon></a>
+            &nbsp;save&nbsp;
+        </span>
+
+        <span *ngIf="endPointForm.dirty && currentState != 'create'">
+            <a mat-mini-fab routerLink="." color='primary' (click)="resetEndPoint()"><mat-icon>undo</mat-icon></a>
+            &nbsp;undo&nbsp;
+        </span>
+
+        <span>
+            <a mat-mini-fab routerLink="." color='primary' (click)="newEndPoint()"><mat-icon>add</mat-icon></a>
+            &nbsp;create&nbsp;
+        </span>
+
+        <span *ngIf="currentEndPoint.name !='' && currentState != 'create' && preDefined == false">
+            <a mat-mini-fab routerLink="." (click)="deleteEndPoint()"> <mat-icon>clear</mat-icon></a>
+            &nbsp;remove&nbsp;
+        </span>
+
+    </div>
+</div>
+
+<br>
+
+<form [formGroup]="endPointForm" novalidate class="ui form">
+    <div class="field">
+        <div class="ui left icon input">
+            <input formControlName="name"  type="text" placeholder="Name">
+            <i class="tag icon"></i>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="ui left icon input">
+            <input formControlName="address"  type="text" placeholder="URL">
+            <i class="marker icon"></i>
+        </div>
+    </div>
+    <div class="field">
+        <div class="ui">
+            <textarea rows="2" class="form-control" formControlName="description" placeholder="Description"></textarea>
+        </div>
+    </div>
+    <mat-form-field  class="example-chip-list">
+        <mat-chip-list #chipList>
+            <mat-chip *ngFor="let tag of formTags.tags" [selectable]="selectable"
+                      [removable]="removable" (removed)="removeTag(tag)">
+                {{tag.name}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input [disabled]="preDefined" type="" placeholder={{tagPlaceHolderText}}
+                   [matChipInputFor]="chipList"
+                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                   [matChipInputAddOnBlur]="addOnBlur"
+                   (matChipInputTokenEnd)="addTag($event)">
+        </mat-chip-list>
+    </mat-form-field>
+
+    <div *ngIf="useCredentials">
+            <div class="field">
+                <label>
+                    <select class="ui transparent" formControlName="credentialType">
+                        <option *ngFor="let credentialType of credentialScheme" [value]="credentialType">
+                            {{credentialType}}
+                        </option>
+                    </select>
+                </label>
+            </div>
+            <div class="field">
+                <div class="ui left icon input">
+                    <input formControlName="user" type="text" placeholder="User">
+                    <i class="user icon"></i>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="ui left icon input">
+                    <input formControlName="credential" type="password" placeholder="Credential">
+                    <i class="key icon"></i>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="ui left icon input">
+                    <input formControlName="tokenAPI" type="string" placeholder="Token API">
+                    <i class="key icon"></i>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui left icon input">
+                    <input formControlName="tokenAPIProperty" type="string" placeholder="Token API Property">
+                    <i class="key icon"></i>
+                </div>
+            </div>
+
+        </div>
+</form>
+
+
+
+
+

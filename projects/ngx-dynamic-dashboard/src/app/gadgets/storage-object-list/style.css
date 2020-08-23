@@ -1,0 +1,24 @@
+.storage{
+    overflow-y:hidden;
+    overflow-x:hidden;
+    padding-right:5px;
+    padding-left:5px;
+    height:100%;
+    min-height: 275px;
+    text-align: left !important;
+    background-color:#f7f7f7
+}
+
+.chartLabel{
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    background-color: white;
+    font-size: 1em;
+    font-weight: normal;
+    color: grey;
+    text-align: center;
+}
+.ui.statistic>.label, .ui.statistics .statistic>.label{
+
+    font-weight: normal;
+    text-transform: none;
+}
