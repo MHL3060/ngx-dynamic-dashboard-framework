@@ -4,36 +4,14 @@
 
   To learn more about this file see: https://angular.io/config/solution-tsconfig.
 */
-/*
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./src/tsconfig.app.json"
-    },
-    {
-      "path": "./src/tsconfig.spec.json"
-    }
-  ]
-}*/
-{
-    "compileOnSave": false,
-    "compilerOptions": {
-        "outDir": "./dist/out-tsc",
-        "baseUrl": "src",
-        "sourceMap": true,
-        "declaration": false,
-        "noFallthroughCasesInSwitch": true,
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "target": "es5",
-        "typeRoots": [
-            "node_modules/@types"
-        ],
-        "lib": [
-            "es2016",
-            "dom"
-        ]
-    }
+    "files": [],
+    "references": [
+        {
+            "path": "./projects/ngx-dynamic-dashboard/tsconfig.lib.json"
+        },
+        {
+            "path": "./projects/ngx-dynamic-dashboard/tsconfig.spec.json"
+        }
+    ]
 }

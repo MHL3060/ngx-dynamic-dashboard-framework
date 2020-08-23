@@ -1,0 +1,6 @@
+{
+  "extends": "./src/tsconfig.lib.json",
+  "angularCompilerOptions": {
+    "enableIvy": false
+  }
+}

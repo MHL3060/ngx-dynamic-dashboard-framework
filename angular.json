@@ -1,102 +1,53 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {
-    "ng-df-lib": {
-      "root": "",
-      "sourceRoot": "src",
-      "projectType": "library",
-      "prefix": "",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "src/tsconfig.app.json",
-            "project": "./ng-package.json"
-          }
-        ,"configurations": {
-            "production": {
-              "tsConfig": "tsconfig.lib.prod.json"
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "ngx-dynamic-dashboard": {
+            "projectType": "library",
+            "root": "projects/ngx-dynamic-dashboard",
+            "sourceRoot": "projects/ngx-dynamic-dashboard/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "projects/ngx-dynamic-dashboard/tsconfig.lib.json",
+                        "project": "projects/ngx-dynamic-dashboard/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/ngx-dynamic-dashboard/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/ngx-dynamic-dashboard/src/test.ts",
+                        "tsConfig": "projects/ngx-dynamic-dashboard/tsconfig.spec.json",
+                        "karmaConfig": "projects/ngx-dynamic-dashboard/karma.conf.js"
+                    },
+                    "configurations": {
+                        "ci": {
+                            "watch": false,
+                            "progress": false,
+                            "browsers": "ChromeHeadlessCI"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": ["projects/ngx-dynamic-dashboard/tsconfig.lib.json", "projects/ngx-dynamic-dashboard/tsconfig.spec.json"],
+                        "exclude": ["**/node_modules/**"]
+                    }
+                }
             }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "ng-adf:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "karmaConfig": "./karma.conf.js",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/semantic-ui/dist/semantic.min.js",
-              "node_modules/d3-shape/build/d3-shape.min.js"
-            ],
-            "styles": [
-              "src/styles.css",
-              "node_modules/semantic-ui/dist/semantic.min.css",
-              "node_modules/ng2-dnd/bundles/style.css"
-            ],
-            "assets": [
-              "src/assets",
-              "src/favicon.ico"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": []
-          }
         }
-      }
     },
-    "ng-adf-e2e": {
-      "root": "",
-      "sourceRoot": "e2e",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "ng-adf:serve"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "e2e/tsconfig.e2e.json"
-            ],
-            "exclude": []
-          }
-        }
-      }
-    }
-  },
-  "defaultProject": "ng-adf",
-  "cli": {
-    "warnings": {}
-  },
-  "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "app",
-      "style": "css"
+    "cli": {
+        "analytics": "672a95e4-d4b2-4161-ac1f-25d2c513bef0"
     },
-    "@schematics/angular:directive": {
-      "prefix": "app"
-    }
-  }
+    "defaultProject": "ngx-dynamic-dashboard"
 }

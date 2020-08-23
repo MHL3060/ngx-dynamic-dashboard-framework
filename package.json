@@ -1,5 +1,5 @@
 {
-  "name": "ngx-df-lib",
+  "name": "ngx-dynamic-dashboard",
   "version": "0.0.8",
   "license": "MIT",
   "ngPackage": {
@@ -89,7 +89,5 @@
     "typescript": "~3.9.7",
     "@angular-devkit/build-ng-packagr": "~0.1000.4",
     "ng-packagr": "^10.0.0"
-  },
-  "files": ["dist"],
-  "types": "ngx-df-lib.d.ts"
+  }
 }
