@@ -1,81 +1,8 @@
 /*
-/!*
  * Public API Surface of my-lib
- *!/
+ */
 
-
-
-
-export * from './app/about/service';
-export * from './app/about/about-component';
-export * from './app/about/about.module';
-
-
-export * from './app/add-gadget/add-gadget-component';
-export * from './app/add-gadget/add-gadget.module';
-
-export * from './app/configuration/configuration-component';
-
-export * from './app/configuration/tab-artificial-intelligence/ai-configuration-tab.component';
-export * from './app/configuration/tab-boards/boards-configuration-tab.component';
-export * from './app/configuration/tab-options/service';
-
-export * from './app/configuration/tabs.model';
-
-export * from './app/datalist/data-list.component';
-export * from './app/datalist/data-list.module';
-
-
-export * from './app/detail/detail.resolver';
-export * from './app/detail/detail.component';
-export * from './app/detail/detail.module';
-
-
-
-
-export * from './app/dynamic-form/dynamic-form-module';
-export * from './app/dynamic-form/dynamic-form-property.component';
-export * from './app/dynamic-form/dynamic-form.component';
-
-export * from './app/error/error-handler.component';
-
-export * from './app/facet/facet-component';
-export * from './app/facet/facet-tag-processor';
-export * from './app/facet/filter-list-component';
-export * from './app/facet/filter-tag-component';
-
-
-
-
-export * from './app/gadgets/gadget.module';
-
-export * from './app/error/error.module';
-
-
-
-
-
-
-
-
-export * from './app/app.component';
-export * from './app/app.module';
-
-
-*/
-
-/*
-export * from './app/services/configuration.service';
-export * from './app/services/configuration.service';
-
-export * from './app/add-gadget/add-gadget.module';
-e
-
-
-
-*/
 export * from './app/ngx-adf.module';
-export * from './app/routing.module';
 
 export * from './app/configuration/tab-options/options-configuration-tab.component';
 export * from './app/configuration/tab-endpoint/endpoint-configuration-tab.component';
