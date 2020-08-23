@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {EndPointService} from "../configuration/tab-endpoint/endpoint.service";
-import {RuntimeService} from "../services/runtime.service";
 import {DetailService} from "./service";
 
 
@@ -16,15 +15,15 @@ import {DetailService} from "./service";
 })
 export class DetailComponent implements OnInit {
 
-    chartType: string;
-    chartSeries: string;
-    chartMetric: string;
-    endPointName: string;
+    chartType = '';
+    chartSeries = '';
+    chartMetric = '';
+    endPointName = '';
     data = [];
-    searchText: string;
+    searchText = '';
     navRoutes: Array<string> = [];
     navigationSubscription: any;
-    objectAsArray = [];
+    objectAsArray = <any>[];
 
 
     constructor(private _router: Router,
@@ -64,8 +63,8 @@ export class DetailComponent implements OnInit {
         this.clearDetailDisplay();
 
         let href = "";
-        detail.links.forEach(link => {
-            if (link.rel == 'self') {
+        detail.links.forEach( (link: any) => {
+            if (link.rel === 'self') {
                 href = link.href;
             }
         });
@@ -79,7 +78,7 @@ export class DetailComponent implements OnInit {
 
         this.navRoutes.push(navArray[navArray.length - 1]);
 
-        this._detailService.getDetail(href).subscribe(data => {
+        this._detailService.getDetail(href).subscribe((data: []) => {
             this.data = data.slice();
         });
     }

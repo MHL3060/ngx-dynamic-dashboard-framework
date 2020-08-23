@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-adf-lib": {
+    "ng-df-lib": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "library",
@@ -15,20 +15,9 @@
             "tsConfig": "src/tsconfig.app.json",
             "project": "./ng-package.json"
           }
-        ,          "configurations": {
+        ,"configurations": {
             "production": {
               "tsConfig": "tsconfig.lib.prod.json"
-            }
-          }
-},
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "ng-adf:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "ng-adf:build:production"
             }
           }
         },

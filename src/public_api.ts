@@ -74,7 +74,7 @@ e
 
 
 */
-export * from './app/app.module';
+export * from './app/ngx-adf.module';
 export * from './app/routing.module';
 
 export * from './app/configuration/tab-options/options-configuration-tab.component';

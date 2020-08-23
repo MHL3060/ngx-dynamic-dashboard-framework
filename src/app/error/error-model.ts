@@ -18,7 +18,7 @@ export class SolutionObject {
     summary: string;
     articleId: number;
     link: string;
-    constructor(summary, articleId, link) {
+    constructor(summary: string, articleId: number, link: string) {
         this.summary = summary;
         this.articleId = articleId;
         this.link = link;

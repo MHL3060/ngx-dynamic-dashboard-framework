@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ngx-adf',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    moduleId: module.id,
+  templateUrl: './ngx-adf.component.html'
 })
-export class AppComponent {
+export class NgxAdfComponent {
   title = 'app works!';
 }

@@ -60,6 +60,7 @@ export class DonutGadgetComponent extends GadgetBase implements OnDestroy {
     // gadget properties
     autoCompliance: boolean;
     complianceFrequency: number;
+    legendTitle: string;
 
     constructor(protected _runtimeService: RuntimeService,
                 protected _gadgetInstanceService: GadgetInstanceService,

@@ -12,9 +12,9 @@ import {environment} from '../../environments/environment';
 @Injectable()
 export class RuntimeService {
 
-    watsonMicroserviceURL: string;
-    connectivityTestURL: string;
-    serviceVersionURL: string;
+    watsonMicroserviceURL = '';
+    connectivityTestURL = '';
+    serviceVersionURL = '';
     testURL = "http://localhost:8080";
 
     static handleError(err: HttpErrorResponse | any) {
@@ -85,7 +85,7 @@ export class RuntimeService {
      * @param {string} aiStatement
      * @returns {Observable<any>}
      */
-    callWitAI(aiStatement: string) {
+    callWitAI(aiStatement: string): Observable<any>|undefined {
         console.log('running WitAi');
 
         if (!environment.production) {
@@ -97,7 +97,7 @@ export class RuntimeService {
 
             p = p.append('v', '20171128');
             p = p.append('q', aiStatement);
-            p = p.append('access_token', localStorage.getItem('Wit.aiToken'));
+            p = p.append('access_token', <string>localStorage.getItem('Wit.aiToken'));
 
             return this._http.jsonp('https://api.wit.ai/message?' + p.toString(),
                 'callback'
@@ -107,7 +107,7 @@ export class RuntimeService {
         }
     }
 
-    callback(data) {
+    callback(data: any) {
         // console.log(data);
 
     }
@@ -149,9 +149,9 @@ export class RuntimeService {
         }
 
         let p = new HttpParams();
-        p = p.append('userid', localStorage.getItem('ibmwatsonuid'));
-        p = p.append('password', localStorage.getItem('ibmwatsonpwd'));
-        p = p.append('classifier_id', localStorage.getItem('ibmwatsoncid'));
+        p = p.append('userid', <string>localStorage.getItem('ibmwatsonuid'));
+        p = p.append('password', <string>localStorage.getItem('ibmwatsonpwd'));
+        p = p.append('classifier_id', <string>localStorage.getItem('ibmwatsoncid'));
         p = p.append('data', aiStatement);
 
 

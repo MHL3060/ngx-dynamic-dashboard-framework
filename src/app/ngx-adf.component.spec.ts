@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import 'rxjs/Rx';
 
-import { AppComponent } from './app.component';
+import { NgxAdfComponent } from './ngx-adf.component';
 import {RoutingModule} from './routing.module';
 
 
@@ -9,7 +9,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        NgxAdfComponent
       ],
         imports: [
             RoutingModule
@@ -18,7 +18,7 @@ describe('AppComponent', () => {
   }));
 
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(NgxAdfComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));

@@ -42,15 +42,15 @@
 <polygon fill="#ffffb3" stroke="#000000" points="591.9399,-122 486.0601,-122 486.0601,-86 591.9399,-86 591.9399,-122"/>
 <text text-anchor="middle" x="539" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppComponent</text>
 </g>
-<!-- AppModule -->
+<!-- NgxAdfModule -->
 <g id="node2" class="node">
-<title>AppModule</title>
+<title>NgxAdfModule</title>
 <polygon fill="#8dd3c7" stroke="#000000" points="344.6571,-187 341.6571,-191 320.6571,-191 317.6571,-187 261.3429,-187 261.3429,-151 344.6571,-151 344.6571,-187"/>
-<text text-anchor="middle" x="303" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppModule</text>
+<text text-anchor="middle" x="303" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">NgxAdfModule</text>
 </g>
-<!-- AppComponent&#45;&gt;AppModule -->
+<!-- AppComponent&#45;&gt;NgxAdfModule -->
 <g id="edge1" class="edge">
-<title>AppComponent&#45;&gt;AppModule</title>
+<title>AppComponent&#45;&gt;NgxAdfModule</title>
 <path fill="none" stroke="#000000" d="M539,-122.2843C539,-143.3211 539,-175 539,-175 539,-175 354.9201,-175 354.9201,-175"/>
 <polygon fill="#000000" stroke="#000000" points="354.9202,-171.5001 344.9201,-175 354.9201,-178.5001 354.9202,-171.5001"/>
 </g>
@@ -60,9 +60,9 @@
 <polygon fill="#80b1d3" stroke="#000000" points="357.439,-252 248.561,-252 248.561,-216 357.439,-216 357.439,-252"/>
 <text text-anchor="middle" x="303" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppComponent </text>
 </g>
-<!-- AppModule&#45;&gt;AppComponent  -->
+<!-- NgxAdfModule&#45;&gt;AppComponent  -->
 <g id="edge6" class="edge">
-<title>AppModule&#45;&gt;AppComponent </title>
+<title>NgxAdfModule&#45;&gt;AppComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="1,5" d="M303,-187.1061C303,-187.1061 303,-205.991 303,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="299.5001,-205.9909 303,-215.991 306.5001,-205.991 299.5001,-205.9909"/>
 </g>
@@ -72,9 +72,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="461.7619,-122 458.7619,-126 437.7619,-126 434.7619,-122 368.2381,-122 368.2381,-86 461.7619,-86 461.7619,-122"/>
 <text text-anchor="middle" x="415" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">BoardModule</text>
 </g>
-<!-- BoardModule&#45;&gt;AppModule -->
+<!-- BoardModule&#45;&gt;NgxAdfModule -->
 <g id="edge2" class="edge">
-<title>BoardModule&#45;&gt;AppModule</title>
+<title>BoardModule&#45;&gt;NgxAdfModule</title>
 <path fill="none" stroke="#000000" d="M415,-122.0225C415,-139.3734 415,-163 415,-163 415,-163 354.7047,-163 354.7047,-163"/>
 <polygon fill="#000000" stroke="#000000" points="354.7047,-159.5001 344.7047,-163 354.7046,-166.5001 354.7047,-159.5001"/>
 </g>
@@ -84,9 +84,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="349.7577,-122 346.7577,-126 325.7577,-126 322.7577,-122 256.2423,-122 256.2423,-86 349.7577,-86 349.7577,-122"/>
 <text text-anchor="middle" x="303" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">DetailModule</text>
 </g>
-<!-- DetailModule&#45;&gt;AppModule -->
+<!-- DetailModule&#45;&gt;NgxAdfModule -->
 <g id="edge3" class="edge">
-<title>DetailModule&#45;&gt;AppModule</title>
+<title>DetailModule&#45;&gt;NgxAdfModule</title>
 <path fill="none" stroke="#000000" d="M303,-122.1061C303,-122.1061 303,-140.991 303,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="299.5001,-140.9909 303,-150.991 306.5001,-140.991 299.5001,-140.9909"/>
 </g>
@@ -96,9 +96,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="238.2092,-122 235.2092,-126 214.2092,-126 211.2092,-122 145.7908,-122 145.7908,-86 238.2092,-86 238.2092,-122"/>
 <text text-anchor="middle" x="192" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuModule</text>
 </g>
-<!-- MenuModule&#45;&gt;AppModule -->
+<!-- MenuModule&#45;&gt;NgxAdfModule -->
 <g id="edge4" class="edge">
-<title>MenuModule&#45;&gt;AppModule</title>
+<title>MenuModule&#45;&gt;NgxAdfModule</title>
 <path fill="none" stroke="#000000" d="M192,-122.0225C192,-139.3734 192,-163 192,-163 192,-163 251.0357,-163 251.0357,-163"/>
 <polygon fill="#000000" stroke="#000000" points="251.0357,-166.5001 261.0357,-163 251.0356,-159.5001 251.0357,-166.5001"/>
 </g>
@@ -108,9 +108,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="128.1681,-122 125.1681,-126 104.1681,-126 101.1681,-122 23.8319,-122 23.8319,-86 128.1681,-86 128.1681,-122"/>
 <text text-anchor="middle" x="76" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">RoutingModule</text>
 </g>
-<!-- RoutingModule&#45;&gt;AppModule -->
+<!-- RoutingModule&#45;&gt;NgxAdfModule -->
 <g id="edge5" class="edge">
-<title>RoutingModule&#45;&gt;AppModule</title>
+<title>RoutingModule&#45;&gt;NgxAdfModule</title>
 <path fill="none" stroke="#000000" d="M76,-122.2843C76,-143.3211 76,-175 76,-175 76,-175 251.1002,-175 251.1002,-175"/>
 <polygon fill="#000000" stroke="#000000" points="251.1002,-178.5001 261.1002,-175 251.1001,-171.5001 251.1002,-178.5001"/>
 </g>

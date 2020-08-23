@@ -29,6 +29,7 @@ export class TrendGadgetComponent extends GadgetBase {
     xAxisLabel = 'Trend Time Line';
     view: any[];
     data: any[] = [];
+    autoScale: any;
     colorScheme: any = {
         domain: ['#7B7E81', '#0AFF16', '#FAFF16']
     };

@@ -23,6 +23,7 @@
         "baseUrl": "src",
         "sourceMap": true,
         "declaration": false,
+        "noFallthroughCasesInSwitch": true,
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,

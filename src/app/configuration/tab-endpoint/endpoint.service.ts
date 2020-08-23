@@ -6,6 +6,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {EndPoint} from './endpoint.model';
 import {HttpClient} from '@angular/common/http';
+import {BaseEndpoint} from './baseEndpoint';
 
 
 @Injectable()
@@ -19,7 +20,7 @@ export class EndPointService {
         if (localStorage.getItem('endpoint') == null) {
 
             return new Observable(observer => {
-                const base = {endPoint: []};
+                const base = new BaseEndpoint();
                 const mockBarChart = new EndPoint(
                     'Chart Mock Bar Data Source',
                     '/assets/api/chart-mock-bar-model.json',
@@ -68,7 +69,7 @@ export class EndPointService {
         } else {
 
             return new Observable(observer => {
-                const data = JSON.parse(localStorage.getItem('endpoint'));
+                const data = JSON.parse(<string>localStorage.getItem('endpoint'));
                 observer.next(data);
                 return () => {
                 };

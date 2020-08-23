@@ -6,11 +6,13 @@ import {FilterTagComponent} from './filter-tag-component';
 import {CapitalizeFirstPipe} from './capitalize-first-character-pipe';
 import {FormsModule} from '@angular/forms';
 import {AddGadgetService} from '../add-gadget/service';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
     imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        MatCheckboxModule
     ],
     declarations: [
         FacetComponent,

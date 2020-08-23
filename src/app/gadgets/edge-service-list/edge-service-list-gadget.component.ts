@@ -11,6 +11,7 @@ import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service
 import {GadgetBase} from '../_common/gadget-base';
 import {EdgeService} from './service';
 import {OptionsService} from '../../configuration/tab-options/service';
+import {IEvent} from '../../menu/IEvent';
 
 declare var jQuery: any;
 
@@ -293,6 +294,8 @@ export class EdgeServiceListGadgetComponent extends GadgetBase implements OnDest
     toggleAcordion(): void {
 
         this.detailMenuOpen = this.detailMenuOpen === 'out' ? 'in' : 'out';
-
+    }
+    onSelect(event: IEvent): void {
+        console.log(event);
     }
 }
