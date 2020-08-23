@@ -14,7 +14,6 @@ import {FormGroup} from '@angular/forms';
 
 import {PropertyControlService} from './property-control.service';
 import {ConfigurationService} from '../services/configuration.service';
-import {EndPointService} from '../configuration/tab-endpoint/endpoint.service';
 import {EndPoint} from '../configuration/tab-endpoint/endpoint.model';
 
 

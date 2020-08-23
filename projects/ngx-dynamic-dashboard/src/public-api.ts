@@ -18,7 +18,7 @@ export * from './app/menu/menu.module';
 
 export * from './app/board/board.component';
 export * from './app/board/board.module';
-
+/*
 export * from './app/gadgets/_common/gadget-header-component';
 export * from './app/gadgets/_common/gadget-operation-control-component';
 export * from './app/gadgets/_common/help-modal-component';
@@ -64,7 +64,7 @@ export * from './app/gadgets/memory/memory-gadget.component';
 export * from './app/gadgets/news/service';
 export * from './app/gadgets/news/news-gadget.component';
 export * from './app/gadgets/gadget.module';
-
+*/
 export * from './app/grid/cell.component';
 export * from './app/grid/grid.component';
 export * from './app/grid/grid.service';

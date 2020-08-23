@@ -21,9 +21,7 @@ import {BoardModule} from './board/board.module';
     ],
     declarations: [
         NgxAdfComponent,
-    ]/*,
-
-    bootstrap: [AppComponent]*/
+    ]
 })
 export class NgxAdfModule {
 }

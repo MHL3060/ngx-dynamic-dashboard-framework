@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {GadgetModule} from '../gadgets/gadget.module';
 import {ConfigurationModule} from '../configuration/configuration.module';
 import {LayoutModule} from '../layout/layout.module';
 import {AddGadgetModule} from '../add-gadget/add-gadget.module';
@@ -26,7 +25,6 @@ import {MatButtonModule} from '@angular/material/button';
         AboutModule,
         ConfigurationModule,
         TypeAheadInputModule,
-        GadgetModule,
         MatButtonModule,
         MatIconModule
     ],
