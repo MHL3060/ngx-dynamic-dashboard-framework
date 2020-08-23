@@ -7,6 +7,7 @@ import {HttpClientJsonpModule, HttpClientModule} from '@angular/common/http';
 import {DetailModule} from './detail/detail.module';
 import {MenuModule} from './menu/menu.module';
 import {BoardModule} from './board/board.module';
+import {GridModule} from './grid/grid.module';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import {BoardModule} from './board/board.module';
         BoardModule,
         MenuModule,
         DetailModule,
-        HttpClientJsonpModule
+        HttpClientJsonpModule,
+        GridModule
     ],
     declarations: [
         NgxAdfComponent,

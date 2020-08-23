@@ -15,15 +15,15 @@
 
                 </div>
 
-                <app-grid-cell class="target-box"  style="display:inline-block; width:100%" cdkDrag *ngFor="let cellGadget of col.gadgets"
-                               [cdkDragData]="cellGadget.instanceId"
-                               [gadgetInstanceId]="cellGadget.instanceId"
-                               [gadgetConfig]="cellGadget.config"
-                               [gadgetType]="cellGadget.componentType"
-                               [gadgetTags]="cellGadget.tags"
+                <dashboard-grid-cell class="target-box" style="display:inline-block; width:100%" cdkDrag *ngFor="let cellGadget of col.gadgets"
+                                     [cdkDragData]="cellGadget.instanceId"
+                                     [gadgetInstanceId]="cellGadget.instanceId"
+                                     [gadgetConfig]="cellGadget.config"
+                                     [gadgetType]="cellGadget.componentType"
+                                     [gadgetTags]="cellGadget.tags"
                 >
                     <div class="target-box-placeholder" *cdkDragPlaceholder></div>
-                </app-grid-cell>
+                </dashboard-grid-cell>
             </div>
         </ng-container>
     </div>

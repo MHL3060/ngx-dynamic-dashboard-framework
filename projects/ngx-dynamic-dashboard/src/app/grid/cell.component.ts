@@ -7,7 +7,7 @@ import {GadgetFactory} from '../add-gadget/gadget-factory';
  */
 
 @Component({
-    selector: 'app-grid-cell',
+    selector: 'dashboard-grid-cell',
     template: '<ng-template #container></ng-template>'
 })
 export class CellComponent implements OnInit {

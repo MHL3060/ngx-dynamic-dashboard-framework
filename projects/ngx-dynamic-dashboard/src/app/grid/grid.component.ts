@@ -10,7 +10,7 @@ import {IEvent} from '../menu/IEvent';
 
 @Component({
     moduleId: module.id,
-    selector: 'app-grid-component',
+    selector: 'dashobard-grid',
     templateUrl: './grid.html',
     styleUrls: ['./styles-grid.css']
 })

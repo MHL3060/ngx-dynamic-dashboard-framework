@@ -6,7 +6,7 @@ import {BoardComponent} from './board.component';
 @NgModule({
     imports: [
         CommonModule,
-        GridModule.withComponents([]),
+        GridModule,
     ],
     providers: [],
     declarations: [
