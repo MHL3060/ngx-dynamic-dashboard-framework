@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {ConfigurationService} from '../services/configuration.service';
 import {MenuEventService} from './menu-service';
 import {environment} from '../../environments/environment';
@@ -14,7 +14,7 @@ declare var jQuery: any;
  */
 @Component({
     moduleId: module.id,
-    selector: 'app-menu-component',
+    selector: 'df-menu-component',
     templateUrl: './view.html',
     styleUrls: ['./styles.css'],
 
@@ -27,6 +27,9 @@ export class MenuComponent implements OnInit {
     placeHolderText = 'Ask the board to do something!';
     searchList: Array<string> = [];
     env: any;
+
+    @Input()
+    show = false;
 
     @ViewChild('notificationSideBar_tag', {static: false}) notificationSideBarRef: ElementRef;
     @ViewChild('layoutSideBar_tag', {static: false}) layoutSideBarRef: ElementRef;

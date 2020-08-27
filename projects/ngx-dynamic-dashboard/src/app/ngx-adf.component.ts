@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'ngx-adf',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './ngx-adf.component.html'
 })
 export class NgxAdfComponent {
-  title = 'app works!';
+    @Input()
+    title = "app works";
+
+    @Input()
+    showMenu = true;
 }
