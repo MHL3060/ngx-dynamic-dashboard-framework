@@ -1,0 +1,51 @@
+<div class="ui long modal" #boardconfigmodal_tag>
+    <div class="header">
+        <h2>{{modalheader}}</h2>
+    </div>
+
+
+    <div class="ui top attached tabular menu">
+
+        <a *ngFor="let tab of tabsModel; let i = index" class="item"
+           [ngClass]="{'active': tab.displayName == currentTab }"
+           attr.data-tab="{{tab.groupId}}" (click)="setCurrentTab(i)">{{tab.displayName}}</a>
+
+    </div>
+
+    <div *ngFor="let tab of tabsModel; let i = index" [ngClass]="{'active': tab.displayName == currentTab }"
+         class="ui bottom attached tab segment"
+         attr.data-tab="{{tab.groupId}}" [@contentSwitch]="tab.displayName == currentTab ? 'active':'inactive'">
+
+
+        <div *ngIf="tab.groupId == 'boards'">
+
+            <dashboard-config-tab (dashboardCreateEvent)="createBoard($event)"
+                                  (dashboardEditEvent)="editBoard($event)"
+                                  (dashboardDeleteEvent)="deleteBoard($event)"
+                                  [dashboardList]="dashboardList"></dashboard-config-tab>
+        </div>
+
+        <div *ngIf="tab.groupId == 'endpoint'">
+
+            <dashboard-endpoint-config-tab></dashboard-endpoint-config-tab>
+
+        </div>
+
+        <div *ngIf="tab.groupId == 'ai'">
+
+            <dashboard-ai-config-tab></dashboard-ai-config-tab>
+
+        </div>
+
+        <div *ngIf="tab.groupId == 'options'">
+
+            <dashboard-options-config-tab></dashboard-options-config-tab>
+
+        </div>
+    </div>
+
+
+    <div class="actions">
+        <button class="ui button" (click)="hideMessageModal()">Close </button>
+    </div>
+</div>

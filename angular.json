@@ -19,7 +19,10 @@
                         "production": {
                             "tsConfig": "projects/ngx-dynamic-dashboard/tsconfig.lib.prod.json"
                         }
-                    }
+                    },
+                    "scripts": [
+                        "node_modules/jquery/dist/jquery.min.js"
+                    ]
                 },
                 "test": {
                     "builder": "@angular-devkit/build-angular:karma",
