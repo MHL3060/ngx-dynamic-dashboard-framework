@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {ConfigurationService} from '../services/configuration.service';
 import {MenuEventService} from './menu-service';
 import {environment} from '../../environments/environment';
@@ -19,7 +19,7 @@ declare var jQuery: any;
     styleUrls: ['./styles.css'],
 
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, AfterViewInit {
 
     host = window.location.host;
     dashboardList: any[] = [];
@@ -73,6 +73,9 @@ export class MenuComponent implements OnInit {
 
     ngOnInit() {
         this.updateDashboardMenu('');
+    }
+
+    ngAfterViewInit() {
         this.stickyMenu = jQuery(this.stickyMenuRef.nativeElement);
         this.stickyMenu.sticky();
     }
