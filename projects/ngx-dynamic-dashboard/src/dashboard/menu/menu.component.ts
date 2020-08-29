@@ -76,8 +76,8 @@ export class MenuComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        this.stickyMenu = jQuery(this.stickyMenuRef.nativeElement);
-        this.stickyMenu.sticky();
+         // this.stickyMenu = jQuery(this.stickyMenuRef.nativeElement);
+       // this.stickyMenu.sticky();
     }
 
     emitBoardChangeLayoutEvent(event) {
@@ -162,11 +162,4 @@ export class MenuComponent implements OnInit, AfterViewInit {
         this.aboutSideBar.sidebar('setting', 'transition', 'overlay');
         this.aboutSideBar.sidebar('toggle');
     }
-
-
-    public showDocumentation() {
-
-        window.location.href = 'http://' + window.location.host + '/assets/documentation/index.html';
-    }
-
 }
