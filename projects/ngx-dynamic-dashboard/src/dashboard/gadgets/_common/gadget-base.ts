@@ -1,6 +1,4 @@
 import {ErrorObject} from '../../error/error-model';
-import {EndPoint} from '../../configuration/tab-endpoint/endpoint.model';
-import {EndPointService} from '../../configuration/tab-endpoint/endpoint.service';
 import {GadgetPropertyService} from './gadget-property.service';
 import {RuntimeService} from '../../services/runtime.service';
 import {GadgetInstanceService} from '../../grid/grid.service';
@@ -80,10 +78,8 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
     errorExists = false;
     globalOptions:any;
 
-    constructor(protected _runtimeService: RuntimeService,
-                protected _gadgetInstanceService: GadgetInstanceService,
+    constructor(protected _gadgetInstanceService: GadgetInstanceService,
                 protected _propertyService: GadgetPropertyService,
-                protected _endPointService: EndPointService,
                 protected changeDetectionRef: ChangeDetectorRef,
                 protected _optionsService: OptionsService) {
 
@@ -223,7 +219,7 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
     }
 
     protected setEndPoint(endpoint: string) {
-
+        /*
         this._endPointService.getEndPoints().subscribe(data => {
 
             if (data['endPoint']) {
@@ -234,6 +230,7 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
                 });
             }
         });
+         */
     }
 
     protected getEndPoint() {

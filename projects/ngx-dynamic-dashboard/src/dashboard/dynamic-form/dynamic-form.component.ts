@@ -14,7 +14,6 @@ import {FormGroup} from '@angular/forms';
 
 import {PropertyControlService} from './property-control.service';
 import {ConfigurationService} from '../services/configuration.service';
-import {EndPoint} from '../configuration/tab-endpoint/endpoint.model';
 
 
 @Component({
@@ -57,7 +56,6 @@ export class DynamicFormComponent implements OnInit, AfterViewInit {
     @Input() instanceId: number;
     @Output() updatePropertiesEvent: EventEmitter<any> = new EventEmitter(true);
     currentTab = 'run';
-    endPoints: EndPoint[];
     state = 'inactive';
     lastActiveTab = {};
 
