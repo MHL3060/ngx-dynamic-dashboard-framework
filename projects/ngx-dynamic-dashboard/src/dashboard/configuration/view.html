@@ -25,18 +25,6 @@
                                   [dashboardList]="dashboardList"></dashboard-config-tab>
         </div>
 
-        <div *ngIf="tab.groupId == 'endpoint'">
-
-            <dashboard-endpoint-config-tab></dashboard-endpoint-config-tab>
-
-        </div>
-
-        <div *ngIf="tab.groupId == 'ai'">
-
-            <dashboard-ai-config-tab></dashboard-ai-config-tab>
-
-        </div>
-
         <div *ngIf="tab.groupId == 'options'">
 
             <dashboard-options-config-tab></dashboard-options-config-tab>
