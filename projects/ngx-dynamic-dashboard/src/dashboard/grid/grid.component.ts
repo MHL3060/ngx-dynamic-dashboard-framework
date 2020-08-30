@@ -67,7 +67,7 @@ export class GridComponent {
      * when changing the layout.
      *
      */
-    removeOldListeners(){
+    removeOldListeners() {
 
         this._gadgetInstanceService.unSubscribeAll();
         this._menuEventService.unSubscribeAll();

@@ -76,8 +76,8 @@ export class MenuComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-         // this.stickyMenu = jQuery(this.stickyMenuRef.nativeElement);
-       // this.stickyMenu.sticky();
+       this.stickyMenu = jQuery(this.stickyMenuRef.nativeElement);
+       this.stickyMenu.sticky();
     }
 
     emitBoardChangeLayoutEvent(event) {

@@ -112,5 +112,4 @@ export class ConfigurationComponent implements AfterViewInit {
     setCurrentTab(tab_index) {
         this.currentTab = this.tabsModel[tab_index].displayName;
     }
-
 }

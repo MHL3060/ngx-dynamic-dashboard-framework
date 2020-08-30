@@ -4,15 +4,11 @@
 
 export class GadgetFactory {
 
-
-    /**
-     * todo - return new instances  instead of the same instance. This requires the creation of new configuration options.
-     * @param gadgetType
-     * @returns {any}
-     */
-
-    static getComponentType(gadgetType): any {
-
-        return null;
+    static componentMap = new Map();
+    static getComponentType(gadgetType: string): any {
+        return GadgetFactory.componentMap.get(gadgetType);
+    }
+    static setComponentType(gadgetType: string, componentRef: any): void {
+       GadgetFactory.componentMap.set(gadgetType, componentRef);
     }
 }
