@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {EndPointService} from "../configuration/tab-endpoint/endpoint.service";
 import {DetailService} from "./service";
 
 
@@ -28,7 +27,6 @@ export class DetailComponent implements OnInit {
 
     constructor(private _router: Router,
                 private _route: ActivatedRoute,
-                private _endPointService: EndPointService,
                 private _detailService: DetailService
     ) {
         this.navigationSubscription = this._router.events.subscribe((e: any) => {

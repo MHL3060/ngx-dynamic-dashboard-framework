@@ -6,14 +6,5 @@ export const tabsModel: ({ groupId: string; displayName: string } | { groupId: s
     {
         groupId: 'options',
         displayName: 'Options'
-    },
-    {
-        groupId: 'endpoint',
-        displayName: 'Data Source Registration'
-    },
-    {
-        groupId: 'ai',
-        displayName: 'AI Configuration'
     }
-
 ];
