@@ -6,6 +6,7 @@ import {AfterViewInit, ChangeDetectorRef, Directive, OnDestroy, OnInit, ViewChil
 import {DynamicFormComponent} from '../../dynamic-form/dynamic-form.component';
 import {OptionsService} from '../../configuration/tab-options/service';
 import {IGadget} from './igadget';
+import {EndPoint} from './endpoint.model';
 
 /**
  * Created by jayhamilton on 6/22/17.

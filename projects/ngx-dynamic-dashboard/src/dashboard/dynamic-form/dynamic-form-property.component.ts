@@ -4,7 +4,6 @@
 import {AfterViewInit, Component, Input} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {PropertyBase} from './property-base';
-import {EndPointService} from '../configuration/tab-endpoint/endpoint.service';
 
 import {
     style, trigger, animate, transition
@@ -41,18 +40,19 @@ export class DynamicFormPropertyComponent implements AfterViewInit {
         return this.form.controls[this.property.key].valid;
     }
 
-    constructor(private endPointService: EndPointService) {
+    constructor() {
 
         this.updateEndPointList();
     }
 
     updateEndPointList() {
-
+        /*
         this.endPointService.getEndPoints().subscribe(data => {
 
             this.endPoints = data['endPoint'].slice();
 
         });
+         */
     }
 
     ngAfterViewInit() {

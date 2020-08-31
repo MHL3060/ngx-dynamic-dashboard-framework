@@ -21,6 +21,7 @@ export * from './dashboard/grid/grid.service';
 export * from './dashboard/grid/grid.module';
 
 export * from './dashboard/add-gadget/service';
+export * from './dashboard/add-gadget/gadget-factory';
 export * from './dashboard/add-gadget/add-gadget-component';
 export * from './dashboard/add-gadget/add-gadget.module';
 
@@ -50,3 +51,14 @@ export * from './dashboard/layout/layout.module';
 export * from './dashboard/about/service';
 export * from './dashboard/about/about-component';
 export * from './dashboard/about/about.module';
+
+export * from './dashboard/dynamic-form/dynamic-form-property.component';
+export * from './dashboard/dynamic-form/dynamic-form.component';
+export * from './dashboard/dynamic-form/dynamic-form-module';
+
+export * from './dashboard/gadgets/_common/gadget-base';
+export * from './dashboard/gadgets/_common/gadget-config-model';
+export * from './dashboard/gadgets/_common/gadget-property.service';
+export * from './dashboard/error/error-handler.component';
+export * from './dashboard/error/error.module';
+export * from './dashboard/services/runtime.service';
