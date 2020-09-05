@@ -7,6 +7,7 @@ export * from './dashboard/ngx-adf.component';
 export * from './dashboard/configuration/tab-options/options-configuration-tab.component';
 export * from './dashboard/configuration/tab-boards/boards-configuration-tab.component';
 export * from './dashboard/configuration/configuration-component';
+export * from './dashboard/configuration/tab-options/service';
 export * from './dashboard/configuration/configuration.module';
 
 export * from './dashboard/menu/menu-service';
@@ -24,6 +25,13 @@ export * from './dashboard/add-gadget/service';
 export * from './dashboard/add-gadget/gadget-factory';
 export * from './dashboard/add-gadget/add-gadget-component';
 export * from './dashboard/add-gadget/add-gadget.module';
+
+export * from './dashboard/gadgets/_common/gadget-header-component';
+export * from './dashboard/gadgets/_common/gadget-operation-control-component';
+export * from './dashboard/gadgets/_common/help-modal-component';
+export * from './dashboard/gadgets/_common/vis-drill-down-component';
+export * from './dashboard/gadgets/_common/gadget-property.service';
+export * from './dashboard/gadgets/_common/gadget-shared.module';
 
 export * from './dashboard/facet/capitalize-first-character-pipe';
 export * from './dashboard/facet/facet-component';

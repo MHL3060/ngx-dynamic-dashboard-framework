@@ -2,16 +2,17 @@ import {ErrorObject} from '../../error/error-model';
 import {GadgetPropertyService} from './gadget-property.service';
 import {RuntimeService} from '../../services/runtime.service';
 import {GadgetInstanceService} from '../../grid/grid.service';
-import {AfterViewInit, ChangeDetectorRef, Directive, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {DynamicFormComponent} from '../../dynamic-form/dynamic-form.component';
 import {OptionsService} from '../../configuration/tab-options/service';
 import {IGadget} from './igadget';
 import {EndPoint} from './endpoint.model';
+import {Observable} from 'rxjs';
 
 /**
  * Created by jayhamilton on 6/22/17.
  */
-@Directive()
+
 export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterViewInit {
     @ViewChild(DynamicFormComponent, {static: true}) propertyPageForm: DynamicFormComponent;
     title: string;
@@ -220,8 +221,8 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
     }
 
     protected setEndPoint(endpoint: string) {
-        /*
-        this._endPointService.getEndPoints().subscribe(data => {
+
+        /*this._endPointService.getEndPoints().subscribe(data => {
 
             if (data['endPoint']) {
                 data['endPoint'].forEach(item => {
@@ -230,8 +231,7 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
                     }
                 });
             }
-        });
-         */
+        });*/
     }
 
     protected getEndPoint() {
@@ -261,11 +261,7 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
 
     }
 
-    public updateGadgetWithGlobalOptions(options:any){
-
-
+    public updateGadgetWithGlobalOptions(options: any){
         this.globalOptions = Object.assign({},options);
-
-
     }
 }
