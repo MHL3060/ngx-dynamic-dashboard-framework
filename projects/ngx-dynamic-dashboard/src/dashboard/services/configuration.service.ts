@@ -41,7 +41,7 @@ export class ConfigurationService {
         if (localStorage.getItem('board') === null) {
 
 
-            if (this.env.production == true) {
+            if (this.env.production === true) {
 
                 localStorage.setItem('board', JSON.stringify(this.sampleBoardCollectionProd));
             } else {
