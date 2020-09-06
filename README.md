@@ -6,6 +6,11 @@ The main difference between here and there are
 * change the directive prefix app- to dashboard-
 * upgrade to angular 10.
 
+This library still working in process.
+items I would like to improve on
+* provides an option to use localstorage or backend to store the dashboard configuration.
+* emit dashboard events. so the app can listen to the events.
+
 # NGX Dynamic Dashboard Framework
 
 ## Sample Board 1
