@@ -13,25 +13,11 @@ export class AboutService {
         this.env = environment;
     }
 
-
     getAPIVersion() {
-
-        let url: string;
-
-        if (this.env.production == true) {
-
-            url = '/version';
-
-        } else {
-
-            url = '/assets/api/version-model.json';
-
-        }
-
+        const url = '/assets/api/version-model.json';
         return this._http.get(url)
             .pipe(
                 catchError(RuntimeService.handleError)
             );
     }
-
 }

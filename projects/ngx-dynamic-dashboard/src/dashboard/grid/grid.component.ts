@@ -1,4 +1,4 @@
-import {Component, Output, EventEmitter} from '@angular/core';
+import {Component, Output, EventEmitter, Input} from '@angular/core';
 import {GadgetInstanceService} from './grid.service';
 import {ConfigurationService} from '../services/configuration.service';
 import {GadgetConfigModel} from '../gadgets/_common/gadget-config-model';
@@ -15,6 +15,11 @@ import {IEvent} from '../menu/IEvent';
     styleUrls: ['./styles-grid.css']
 })
 export class GridComponent {
+
+    @Input()
+    librariespath: string;
+
+
     @Output() boardUpdateEvent: EventEmitter<any> = new EventEmitter();
 
     model: any = {};

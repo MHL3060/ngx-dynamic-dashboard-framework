@@ -16,15 +16,7 @@ export class AddGadgetService {
     }
 
     getGadgetLibrary() {
-        let gadgetLibraryJson = '';
-
-        if (this.env.production === true) {
-            gadgetLibraryJson = 'gadget-library-model-prod.json';
-
-        } else {
-            gadgetLibraryJson = 'gadget-library-model.json';
-        }
+        const gadgetLibraryJson = 'gadget-library-model.json';
         return this._http.get<GadgetLibraryResponse>('/assets/api/' + gadgetLibraryJson);
     }
-
 }
