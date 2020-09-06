@@ -1,5 +1,10 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/catalogicsoftware/ngx-dynamic-dashboard-framework)
+This library converts the https://github.com/catalogicsoftware/Angular-2-Dashboard-Framework to a library.
 
+The main difference between here and there are
+* library instead of app.
+* removed all the gadgets.
+* change the directive prefix app- to dashboard-
+* upgrade to angular 10.
 
 # NGX Dynamic Dashboard Framework
 
@@ -12,6 +17,133 @@
 ## Layout
 ![Image Layout](https://github.com/catalogicsoftware/Angular-2-Dashboard-Framework/blob/master/src/assets/documentation/gifs/layout.gif)
 
+
+How to use this library. 
+
+I have created a simple app called dashboard-entry https://github.com/MHL3060/dashboard-entry This app
+describes the usage of this library.
+
+* first you need to import the ngx-dynamic-dashboard module into your app's module.ts.
+eg
+```ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import {
+  AddGadgetModule,
+  ConfigurationModule,
+  DynamicFormModule,
+  ErrorHandlerModule,
+  GridModule,
+  MenuModule,
+  NgxAdfModule, OptionsService,
+  RuntimeService
+} from 'ngx-dynamic-dashboard';
+import {NewsService} from './gadgets/news/service';
+import {GadgetModule} from './gadgets/gadget.module';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgxAdfModule,
+    MenuModule,
+    GridModule,
+    DynamicFormModule,
+    ErrorHandlerModule,
+    ConfigurationModule,
+    AddGadgetModule,
+    GadgetModule
+
+  ],
+  providers: [
+    RuntimeService,
+    NewsService,
+    OptionsService,
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
+* in app's component.ts, you need to registered the gadget lookup inside the construct block.
+```ts
+GadgetFactory.setComponentType('NewsGadgetComponent', NewsGadgetComponent);
+```
+* add Gadget to your library.
+
+The following JSON document describes gadget library. currently this need to live in your app's assets/api folder
+and the file name need to be `gadget-library-model.json`
+
+```json
+{
+  "library": [
+    {
+      "componentType": "NewsGadgetComponent",
+      "name": "News",
+      "description": "What's new",
+      "icon": "assets/images/news.png",
+      "instanceId": -1,
+      "tags": [
+        {
+          "facet": "Informational",
+          "name": "news"
+        },
+        {
+          "facet": "List",
+          "name": "news"
+        }
+      ],
+      "config": {
+        "propertyPages": [
+          {
+            "displayName": "Run",
+            "groupId": "run",
+            "position": 10,
+            "properties": [
+              {
+                "controlType": "dynamicdropdown",
+                "key": "endpoint",
+                "label": "News URL",
+                "value": "news",
+                "required": true,
+                "order": 3
+              },
+              {
+                "controlType": "textbox",
+                "key": "title",
+                "label": "Title",
+                "value": "News",
+                "required": true,
+                "order": 1
+              },
+              {
+                "controlType": "hidden",
+                "key": "instanceId",
+                "label": "",
+                "value": 2,
+                "required": true,
+                "order": -1
+              }
+            ]
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "Add"
+        }
+      ]
+    }
+  ]
+}
+```
 ## Example JSON document
 The following JSON document describes a single board along with its layout, gadgets and their properites.
 
