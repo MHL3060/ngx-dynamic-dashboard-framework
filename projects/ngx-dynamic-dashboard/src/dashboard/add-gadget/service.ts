@@ -16,6 +16,7 @@ export class AddGadgetService {
     }
 
     getGadgetLibrary() {
+        // TODO: make this configurable. the application need to define this.
         const gadgetLibraryJson = 'gadget-library-model.json';
         return this._http.get<GadgetLibraryResponse>('/assets/api/' + gadgetLibraryJson);
     }
