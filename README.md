@@ -28,7 +28,17 @@ How to use this library.
 I have created a simple app called dashboard-entry https://github.com/MHL3060/dashboard-entry This app
 describes the usage of this library.
 
-* first you need to import the ngx-dynamic-dashboard module into your app's module.ts.
+* create a GadgetRegistry.ts to registered Gadget lookup.
+```ts
+export function GadgetRegistry(): () => void {
+  return () => {
+    GadgetFactory.setComponentType('NewsGadgetComponent', NewsGadgetComponent);
+  };
+}
+```
+
+* import the ngx-dynamic-dashboard module into your app's module.ts. registered GadgetRegistry.
+ 
 eg
 ```ts
 import { BrowserModule } from '@angular/platform-browser';
@@ -48,6 +58,7 @@ import {
 } from 'ngx-dynamic-dashboard';
 import {NewsService} from './gadgets/news/service';
 import {GadgetModule} from './gadgets/gadget.module';
+import {GadgetRegistry} from './GadgetRegistery';
 
 @NgModule({
   declarations: [
@@ -70,16 +81,17 @@ import {GadgetModule} from './gadgets/gadget.module';
     RuntimeService,
     NewsService,
     OptionsService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: GadgetRegistry,
+      deps: [],
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-```
-
-* in app's component.ts, you need to registered the gadget lookup inside the construct block.
-```ts
-GadgetFactory.setComponentType('NewsGadgetComponent', NewsGadgetComponent);
 ```
 * add Gadget to your library.
 
