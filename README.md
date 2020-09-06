@@ -28,6 +28,8 @@ How to use this library.
 I have created a simple app called dashboard-entry https://github.com/MHL3060/dashboard-entry This app
 describes the usage of this library.
 
+* add `fomatic-ui` and `jquery` dependency. (Will try to remove both of them in the future).
+
 * create a GadgetRegistry.ts to registered Gadget lookup.
 ```ts
 export function GadgetRegistry(): () => void {
