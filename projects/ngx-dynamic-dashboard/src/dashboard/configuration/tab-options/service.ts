@@ -1,5 +1,5 @@
-import {Injectable} from "@angular/core";
-import {Subject,Observable} from "rxjs";
+import {Injectable} from '@angular/core';
+import {Observable, Subject} from 'rxjs';
 
 
 @Injectable()
@@ -28,11 +28,12 @@ export class OptionsService {
         }
     }
 
-    private persistDefautBoardOptions(){
+    private persistDefautBoardOptions() {
 
         localStorage.setItem(this.optionsCollectionName, JSON.stringify(this.defaultOptions))
 
     }
+
     public setBoardOptions(options: any) {
 
         /**
@@ -56,7 +57,7 @@ export class OptionsService {
 
     /**
      * The gadget-base can use this method to subscribe to events that are created when the global options change.
-    */
+     */
     listenForGlobalOptionsChanges(): Observable<string> {
         return this.globalOptionsChangeEventSubject.asObservable();
     }

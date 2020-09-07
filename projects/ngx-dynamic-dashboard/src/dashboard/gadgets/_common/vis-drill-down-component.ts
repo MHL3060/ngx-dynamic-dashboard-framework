@@ -1,13 +1,9 @@
 /**
  * Created by jayhamilton on 1/24/17.
  */
-import {
-    ViewChild, ElementRef, AfterViewInit, Component
-} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 
-import {
-    style, state, trigger, animate, transition
-} from '@angular/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 import {Facet} from '../../facet/facet-model';
 

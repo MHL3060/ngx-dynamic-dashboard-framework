@@ -1,8 +1,7 @@
-import { Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
-import {
-    style, trigger, animate, transition
-} from '@angular/animations';
+import {animate, style, transition, trigger} from '@angular/animations';
+
 /**
  * Created by jayhamilton on 6/27/17.
  */

@@ -1,4 +1,4 @@
-export const  defaultBoard = {
+export const defaultBoard = {
     title: 'Dashboard',
     structure: '6-6',
     id: 5,

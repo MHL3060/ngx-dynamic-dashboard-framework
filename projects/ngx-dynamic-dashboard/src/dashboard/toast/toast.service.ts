@@ -31,7 +31,7 @@ export class ToastService {
         });
     }
 
-    purgeDismissedMessages  () {
+    purgeDismissedMessages() {
         this.messages.forEach(function (message, index, object) {
 
             if (message.dismissed) {

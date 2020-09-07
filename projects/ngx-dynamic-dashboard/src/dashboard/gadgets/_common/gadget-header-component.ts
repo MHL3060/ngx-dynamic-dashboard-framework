@@ -1,7 +1,8 @@
 /**
  * Created by jayhamilton on 2/28/17.
  */
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+
 /**
  * Created by jayhamilton on 2/26/17.
  */

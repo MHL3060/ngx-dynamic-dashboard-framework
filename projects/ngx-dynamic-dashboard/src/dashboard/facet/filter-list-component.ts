@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {AddGadgetService} from '../add-gadget/service';
-import {Facet, Tag} from './facet-model';
+import {Facet} from './facet-model';
 
 /**
  * Created by jayhamilton on 6/27/17.

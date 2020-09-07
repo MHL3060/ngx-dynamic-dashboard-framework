@@ -23,11 +23,12 @@ a label {
     font-size: 1.2rem;
 
 }
-.label{
+
+.label {
     background: transparent;
 }
 
-.active{
-    color:grey !important;
+.active {
+    color: grey !important;
     font-weight: normal !important;
 }

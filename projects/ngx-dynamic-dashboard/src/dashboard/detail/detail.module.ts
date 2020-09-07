@@ -2,8 +2,8 @@ import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {DetailComponent} from './detail.component';
-import {DetailService} from "./service";
-import {FilterPipe} from "./filter.pipe";
+import {DetailService} from './service';
+import {FilterPipe} from './filter.pipe';
 
 
 @NgModule({

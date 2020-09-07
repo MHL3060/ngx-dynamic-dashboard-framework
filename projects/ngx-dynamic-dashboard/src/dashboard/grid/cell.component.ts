@@ -1,4 +1,4 @@
-import {Component, Input, ViewContainerRef, OnInit, ComponentFactoryResolver, ViewChild} from '@angular/core';
+import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {GadgetInstanceService} from './grid.service';
 import {GadgetFactory} from '../add-gadget/gadget-factory';
 
@@ -20,7 +20,7 @@ export class CellComponent implements OnInit {
 
 
     constructor(
-                private cfr: ComponentFactoryResolver, private gadgetInstanceService: GadgetInstanceService) {
+        private cfr: ComponentFactoryResolver, private gadgetInstanceService: GadgetInstanceService) {
     }
 
     ngOnInit() {
@@ -38,7 +38,7 @@ export class CellComponent implements OnInit {
             /*
              we need to pass the input parameters (instance id and config) back into the newly created component.
              */
-            gadgetRef.instance.configureGadget(this.gadgetInstanceId, this.gadgetConfig, this .gadgetTags);
+            gadgetRef.instance.configureGadget(this.gadgetInstanceId, this.gadgetConfig, this.gadgetTags);
 
             /*
              add concrete component to service for tracking

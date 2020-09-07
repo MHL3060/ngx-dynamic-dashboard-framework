@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Subject, Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {IEvent} from './IEvent';
 
 /**
@@ -18,7 +18,7 @@ export class MenuEventService {
 
     private menuSubject: Subject<IEvent> = new Subject<IEvent>();
     private gridSubject: Subject<IEvent> = new Subject<IEvent>();
-    private subscribers: Array<Subject<string>> =[];
+    private subscribers: Array<Subject<string>> = [];
 
     constructor() {
     }
@@ -40,12 +40,13 @@ export class MenuEventService {
         return this.gridSubject.asObservable();
     }
 
-    addSubscriber(subscriber:any){
+    addSubscriber(subscriber: any) {
         this.subscribers.push(subscriber);
     }
-    unSubscribeAll(){
 
-        this.subscribers.forEach(subscription=>{
+    unSubscribeAll() {
+
+        this.subscribers.forEach(subscription => {
             subscription.unsubscribe();
         });
 

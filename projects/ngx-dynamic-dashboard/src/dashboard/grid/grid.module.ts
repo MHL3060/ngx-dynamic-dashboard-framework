@@ -1,4 +1,4 @@
-import {NgModule, ANALYZE_FOR_ENTRY_COMPONENTS} from '@angular/core';
+import {ANALYZE_FOR_ENTRY_COMPONENTS, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';

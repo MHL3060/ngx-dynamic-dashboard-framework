@@ -38,7 +38,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
     notificationSideBar: any;
     layoutSideBar: any;
-    aboutSideBar:any;
+    aboutSideBar: any;
     stickyMenu: any;
 
     typeAheadIsInMenu = true;
@@ -55,7 +55,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
     }
 
     setupEventListeners() {
-       let gridEventSubscription =  this._menuEventService.listenForGridEvents().subscribe((event: IEvent) => {
+        let gridEventSubscription = this._menuEventService.listenForGridEvents().subscribe((event: IEvent) => {
 
             const edata = event['data'];
 
@@ -67,7 +67,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
         });
 
-       this._menuEventService.addSubscriber(gridEventSubscription);
+        this._menuEventService.addSubscriber(gridEventSubscription);
 
     }
 
@@ -76,8 +76,8 @@ export class MenuComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-       this.stickyMenu = jQuery(this.stickyMenuRef.nativeElement);
-       this.stickyMenu.sticky();
+        this.stickyMenu = jQuery(this.stickyMenuRef.nativeElement);
+        this.stickyMenu.sticky();
     }
 
     emitBoardChangeLayoutEvent(event) {
@@ -157,6 +157,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
         this.notificationSideBar.sidebar('setting', 'transition', 'overlay');
         this.notificationSideBar.sidebar('toggle');
     }
+
     toggleAboutSideBar() {
         this.aboutSideBar = jQuery(this.aboutSideBarRef.nativeElement);
         this.aboutSideBar.sidebar('setting', 'transition', 'overlay');

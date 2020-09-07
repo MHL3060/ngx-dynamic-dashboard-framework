@@ -5,9 +5,7 @@ import {AfterViewInit, Component, Input} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {PropertyBase} from './property-base';
 
-import {
-    style, trigger, animate, transition
-} from '@angular/animations';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
     moduleId: module.id,
@@ -76,7 +74,7 @@ export class DynamicFormPropertyComponent implements AfterViewInit {
             });
 
             if (found) {
-               eligibleEndpoints.push(point);
+                eligibleEndpoints.push(point);
             }
         });
 

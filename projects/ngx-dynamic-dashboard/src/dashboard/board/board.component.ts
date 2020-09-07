@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+
 /**a
  * Board component
  *
@@ -12,7 +13,7 @@ import {Component, Input} from '@angular/core';
 export class BoardComponent {
 
     @Input()
-    title = "app works";
+    title = 'app works';
 
     @Input()
     showMenu = true;

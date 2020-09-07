@@ -1,11 +1,7 @@
 import {Facet} from './facet-model';
-import {
-    Component, EventEmitter, Input, OnInit, Output
-} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
-import {
-    style, state, trigger, animate, transition
-} from '@angular/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 /**
  * Created by jayhamilton on 7/11/17.
@@ -87,7 +83,7 @@ export class FacetComponent implements OnInit {
     ngOnInit() {
         if (this.openFacet) {
             this.facetOpen = 'in';
-        }else {
+        } else {
             this.facetOpen = 'out';
         }
     }

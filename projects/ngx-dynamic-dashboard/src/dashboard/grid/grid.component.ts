@@ -1,4 +1,4 @@
-import {Component, Output, EventEmitter, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {GadgetInstanceService} from './grid.service';
 import {ConfigurationService} from '../services/configuration.service';
 import {GadgetConfigModel} from '../gadgets/_common/gadget-config-model';
@@ -172,7 +172,7 @@ export class GridComponent {
     updateGadgetPositionInBoard($event, columnNumber, rowNumber, type) {
 
         console.log($event['item']['data']);
-        console.log(columnNumber + " " + rowNumber);
+        console.log(columnNumber + ' ' + rowNumber);
 
         let moveComplete = false;
 
@@ -188,7 +188,7 @@ export class GridComponent {
 
                     column.gadgets.forEach(_gadget => {
 
-                        if (_gadget.instanceId ===  $event['item']['data'] && !moveComplete) {
+                        if (_gadget.instanceId === $event['item']['data'] && !moveComplete) {
 
                             const gadget = column.gadgets.splice(gadgetpos, 1);
 
@@ -254,7 +254,7 @@ export class GridComponent {
 
     public updateBoardLayout(structure) {
 
-        console.log("IN UPDATE BOARD LAYOUT");
+        console.log('IN UPDATE BOARD LAYOUT');
 
         // user selected the currently selected layout
         if (structure.id === this.getModel().id) {
@@ -291,8 +291,8 @@ export class GridComponent {
         this.setModel(_model);
 
         // clear temporary object
-        for (const member in  _model) {
-            delete  _model[member];
+        for (const member in _model) {
+            delete _model[member];
         }
 
         // persist the board change

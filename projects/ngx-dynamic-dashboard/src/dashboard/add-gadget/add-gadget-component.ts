@@ -1,13 +1,9 @@
 /**
  * Created by jayhamilton on 1/24/17.
  */
-import {
-    ViewChild, ElementRef, AfterViewInit, Component, Output, EventEmitter
-} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 
-import {
-    style, trigger, animate, transition
-} from '@angular/animations';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 import {AddGadgetService} from './service';
 import {Facet} from '../facet/facet-model';
@@ -54,7 +50,7 @@ export class AddGadgetComponent implements AfterViewInit {
     placeHolderText = 'Begin typing gadget name';
     layoutColumnOneWidth = 'six';
     layoutColumnTwoWidth = 'ten';
-    listHeader= 'Gadgets';
+    listHeader = 'Gadgets';
     facetTags: Array<Facet>;
 
     color = 'white';
@@ -113,8 +109,8 @@ export class AddGadgetComponent implements AfterViewInit {
             const me = this;
             data.library.forEach(function (item) {
 
-                    me.gadgetObjectList.push(item);
-                    me.gadgetObjectTitleList.push(item.name);
+                me.gadgetObjectList.push(item);
+                me.gadgetObjectTitleList.push(item.name);
             });
             const facetTagProcess = new FacetTagProcessor(this.gadgetObjectList);
             this.facetTags = facetTagProcess.getFacetTags();

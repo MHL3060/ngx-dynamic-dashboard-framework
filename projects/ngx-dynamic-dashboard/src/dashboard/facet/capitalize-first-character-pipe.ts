@@ -1,4 +1,5 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
+
 /*
  * Capitalize the first letter of the string
  * Takes a string as a value.

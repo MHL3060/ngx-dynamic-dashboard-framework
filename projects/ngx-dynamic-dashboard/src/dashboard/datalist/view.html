@@ -2,10 +2,10 @@
     <div class="ui grid">
         <div class="{{layoutColumnOneWidth}} wide column">
             <dashboard-typeahead-input
-                    [searchList]="objectTitleList"
-                    [placeHolderText]="placeHolderText"
-                    [typeAheadIsInMenu]="typeAheadIsInMenu"
-                    (selectionEvent)="filterListBySearchString($event)">
+                [searchList]="objectTitleList"
+                [placeHolderText]="placeHolderText"
+                [typeAheadIsInMenu]="typeAheadIsInMenu"
+                (selectionEvent)="filterListBySearchString($event)">
             </dashboard-typeahead-input>
             <dashboard-filter-list #filterComponent
                                    [facet_tags]="facetTags"

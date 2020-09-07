@@ -19,7 +19,7 @@ export class ConfigurationService {
 
     defaultBoard: any;
     sampleBoardCollection: any;
-    sampleBoardCollectionProd:any;
+    sampleBoardCollectionProd: any;
 
     /**
      * todo - fix this hard coded store
@@ -101,7 +101,7 @@ export class ConfigurationService {
         this.model = board;
 
         if (Object.keys(board).length === 0 && board.constructor === Object) {
-            return  EMPTY;
+            return EMPTY;
         }
 
         if (this.demo) {

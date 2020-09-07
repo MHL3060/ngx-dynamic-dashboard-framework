@@ -1,12 +1,10 @@
 /**
  * Created by jayhamilton on 1/24/17.
  */
-import {
-    AfterViewInit, Component, Output, EventEmitter, Input
-} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 
 import {environment} from '../../environments/environment';
-import {AboutService} from "./service";
+import {AboutService} from './service';
 
 
 /**

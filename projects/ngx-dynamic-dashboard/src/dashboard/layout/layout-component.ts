@@ -1,9 +1,7 @@
 /**
  * Created by jayhamilton on 1/24/17.
  */
-import {
-    AfterViewInit, Component, Output, EventEmitter, Input
-} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, Output} from '@angular/core';
 
 import {boardLayouts} from './model';
 

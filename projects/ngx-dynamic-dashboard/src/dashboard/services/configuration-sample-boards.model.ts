@@ -13,7 +13,7 @@ export const sampleBoardCollection = {
                             {
                                 'componentType': 'NewsGadgetComponent',
                                 'name': 'News',
-                                'description': "What's new",
+                                'description': 'What\'s new',
                                 'icon': 'images/news.png',
                                 'instanceId': 1500253814523,
                                 'tags': [

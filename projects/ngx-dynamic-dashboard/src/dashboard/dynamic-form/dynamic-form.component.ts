@@ -1,14 +1,9 @@
 /**
  * Created by jayhamilton on 2/5/17.
  */
-import {
-    Component, Input, OnInit, Output, EventEmitter,
-    ChangeDetectorRef, AfterViewInit
-} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
-import {
-    style, state, trigger, animate, transition
-} from '@angular/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 import {FormGroup} from '@angular/forms';
 
@@ -94,7 +89,7 @@ export class DynamicFormComponent implements OnInit, AfterViewInit {
         if (this.payLoad) {
             this.showMessage = true;
 
-            setTimeout(function() {
+            setTimeout(function () {
                 this.showMessage = false;
             }.bind(this), 2000);
         }
@@ -105,7 +100,7 @@ export class DynamicFormComponent implements OnInit, AfterViewInit {
 
     }
 
-    get isPropertyPageValid (){
+    get isPropertyPageValid() {
 
         return this.form.valid;
     }

@@ -14,8 +14,7 @@ import {FormsModule} from '@angular/forms';
     declarations: [
         TypeAheadInputComponent
     ],
-    providers: [
-    ],
+    providers: [],
     exports: [
         TypeAheadInputComponent
     ]

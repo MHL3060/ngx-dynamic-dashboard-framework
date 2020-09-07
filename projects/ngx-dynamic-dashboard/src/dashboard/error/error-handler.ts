@@ -23,7 +23,7 @@ export class ErrorHandler {
      */
     static getSolutionList(errMsg: string) {
 
-        console.log("ERROR CONDITION:  " + errMsg )
+        console.log('ERROR CONDITION:  ' + errMsg)
 
         const solutionList: SolutionObject[] = [];
 

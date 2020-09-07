@@ -76,7 +76,7 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
 
     errorObject: ErrorObject;
     errorExists = false;
-    globalOptions:any;
+    globalOptions: any;
 
     constructor(protected _gadgetInstanceService: GadgetInstanceService,
                 protected _propertyService: GadgetPropertyService,
@@ -98,8 +98,8 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
     }
 
     public ngOnInit() {
-       this.toggleConfigMode();
-       this.changeDetectionRef.detectChanges();
+        this.toggleConfigMode();
+        this.changeDetectionRef.detectChanges();
     }
 
     public ngAfterViewInit() {
@@ -259,7 +259,7 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
 
     }
 
-    public updateGadgetWithGlobalOptions(options: any){
-        this.globalOptions = Object.assign({},options);
+    public updateGadgetWithGlobalOptions(options: any) {
+        this.globalOptions = Object.assign({}, options);
     }
 }

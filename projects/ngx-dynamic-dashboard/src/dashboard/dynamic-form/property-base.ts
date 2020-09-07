@@ -8,19 +8,19 @@ export class PropertyBase<T> {
     required: boolean;
     order: number;
     controlType: string;
-    options:any;
+    options: any;
     type: string;
 
     constructor(props: {
-        value?: T,
-        key?: string,
-        label?: string,
-        required?: boolean,
-        order?: number,
-        controlType?: string,
-        options?:any
-    } = {},
-   ) {
+                    value?: T,
+                    key?: string,
+                    label?: string,
+                    required?: boolean,
+                    order?: number,
+                    controlType?: string,
+                    options?: any
+                } = {},
+    ) {
 
         this.value = props.value;
         this.key = props.key || '';

@@ -5,12 +5,12 @@
 
 export const environment = {
     production: false,
-    productName: "Dynamic Dashboard Framework",
-    productVersion: "0.0.5",
+    productName: 'Dynamic Dashboard Framework',
+    productVersion: '0.0.5',
     menu: {
-        documentation:true,
+        documentation: true,
         aiSearch: false,
-        notification:true
+        notification: true
     },
     boardConfiguration: {
         board: true,

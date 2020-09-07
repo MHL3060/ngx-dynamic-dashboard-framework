@@ -1,9 +1,7 @@
 /**
  * Created by jayhamilton on 1/24/17.
  */
-import {
-    Component, Output, EventEmitter, Input
-} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 import {ConfigurationService} from '../../services/configuration.service';
 import {environment} from '../../../environments/environment'

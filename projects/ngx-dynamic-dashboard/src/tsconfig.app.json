@@ -1,15 +1,15 @@
 {
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../out-tsc/dashboard",
-    "module": "es2015",
-    "baseUrl": "",
-    "types": [
-        "node"
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../out-tsc/dashboard",
+        "module": "es2015",
+        "baseUrl": "",
+        "types": [
+            "node"
+        ]
+    },
+    "exclude": [
+        "test.ts",
+        "**/*.spec.ts"
     ]
-  },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts"
-  ]
 }

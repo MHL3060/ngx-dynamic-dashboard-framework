@@ -1,8 +1,8 @@
-import {Injectable} from "@angular/core";
-import {HttpClient, HttpParams} from "@angular/common/http";
-import {RuntimeService} from "../services/runtime.service";
-import {environment} from "../../environments/environment";
-import {catchError} from "rxjs/operators";
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {RuntimeService} from '../services/runtime.service';
+import {environment} from '../../environments/environment';
+import {catchError} from 'rxjs/operators';
 
 @Injectable()
 export class DetailService {
@@ -10,8 +10,9 @@ export class DetailService {
     constructor(private _http: HttpClient) {
         this.configure();
     }
-    testURL = "http://localhost:8080";
-    detailURL= "/detail";
+
+    testURL = 'http://localhost:8080';
+    detailURL = '/detail';
 
     configure() {
 
@@ -20,6 +21,7 @@ export class DetailService {
         }
 
     }
+
     getDetailByChartSeriesSelected(chartType: string, chartSeries: string, chartMetric: string, endPointName: string) {
 
         /**
@@ -27,8 +29,8 @@ export class DetailService {
          * a pameterized URL /endpointURL?detailParameter={value or id}
          */
         let p = new HttpParams();
-        p = p.append("detailParam", chartSeries);
-        p = p.append("detailMetric", chartMetric);
+        p = p.append('detailParam', chartSeries);
+        p = p.append('detailMetric', chartMetric);
 
         return this._http.get<Array<any>>(this.detailURL, {params: p})
             .pipe(
@@ -36,6 +38,7 @@ export class DetailService {
             );
 
     }
+
     getDetail(url: string) {
 
         return this._http.get<Array<any>>(url)

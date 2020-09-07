@@ -1,13 +1,8 @@
-import {
-    Component, Input
-} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
-import {
-    style, trigger, animate, transition
-} from '@angular/animations';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 import {ErrorObject} from './error-model';
-
 
 
 @Component({
@@ -36,6 +31,7 @@ export class ErrorHandlerComponent {
     constructor() {
 
     }
+
     public closeMessage() {
 
         this.errorExists = false;

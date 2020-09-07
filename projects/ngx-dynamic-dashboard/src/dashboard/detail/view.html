@@ -9,13 +9,15 @@
                 <span *ngFor="let nav of navRoutes,let i = index">
                     <span class="divider">/</span>
                     <a class="section" (click)="gotToRoute(nav, navRoutes.length -1 == i)"
-                           [ngClass]="{'active': navRoutes.length -1 == i }">{{nav}}</a>
+                       [ngClass]="{'active': navRoutes.length -1 == i }">{{nav}}</a>
                 </span>
 
             </div>
 
             <div class="ui segment">
-                <div class="ui top right attached label"><a href="http://localhost:8080/detail/downloadFile" target="_self" ><i class="big grey download icon"></i></a></div>
+                <div class="ui top right attached label"><a href="http://localhost:8080/detail/downloadFile"
+                                                            target="_self"><i class="big grey download icon"></i></a>
+                </div>
 
                 <div class="ui  basic segment">
                      <span class="detail-left-header">
@@ -51,7 +53,7 @@
                         <td [ngClass]="{'negative': task.status != 'Completed', 'positive': task.status == 'Completed' }">
                             {{i + 1}}
                         </td>
-                        <td style="text-align: center"><i class="icon large "[ngClass]="{
+                        <td style="text-align: center"><i class="icon large " [ngClass]="{
                         'red ban': task.status != 'Completed',
                         'green check': task.status == 'Completed'
                         }"></i></td>

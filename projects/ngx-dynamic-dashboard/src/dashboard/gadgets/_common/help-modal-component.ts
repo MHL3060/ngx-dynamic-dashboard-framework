@@ -1,9 +1,7 @@
 /**
  * Created by jayhamilton on 1/24/17.
  */
-import {
-    ViewChild, ElementRef, AfterViewInit, Component, Input
-} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
 
 declare var jQuery: any;
 

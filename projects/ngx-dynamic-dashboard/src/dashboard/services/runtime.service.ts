@@ -3,15 +3,12 @@
  */
 import {Injectable} from '@angular/core';
 import {throwError} from 'rxjs';
-import {catchError} from "rxjs/operators";
 import {ErrorHandler} from '../error/error-handler';
-import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
-import {environment} from '../../environments/environment';
+import {HttpErrorResponse} from '@angular/common/http';
 
 
 @Injectable()
 export class RuntimeService {
-
 
 
     static handleError(err: HttpErrorResponse | any) {

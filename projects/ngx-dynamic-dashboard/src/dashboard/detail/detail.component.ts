@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {DetailService} from "./service";
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {DetailService} from './service';
 
 
 /**a
@@ -51,8 +51,8 @@ export class DetailComponent implements OnInit {
 
         Object.keys(record).forEach(key => {
 
-            if (key.indexOf("link") < 0) {
-                this.objectAsArray.push({"key": key, "value": record[key]});
+            if (key.indexOf('link') < 0) {
+                this.objectAsArray.push({'key': key, 'value': record[key]});
             }
         })
     }
@@ -60,8 +60,8 @@ export class DetailComponent implements OnInit {
     getObjectsByHateoasLink(detail: any) {
         this.clearDetailDisplay();
 
-        let href = "";
-        detail.links.forEach( (link: any) => {
+        let href = '';
+        detail.links.forEach((link: any) => {
             if (link.rel === 'self') {
                 href = link.href;
             }
@@ -103,7 +103,7 @@ export class DetailComponent implements OnInit {
     }
 
     goHome() {
-        this._router.navigate(["/main-board"]);
+        this._router.navigate(['/main-board']);
     }
 
     gotToRoute(nav: string, disabled: boolean) {

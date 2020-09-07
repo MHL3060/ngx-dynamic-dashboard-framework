@@ -4,15 +4,15 @@
 }
 
 .ui.attached.info.message, .ui.info.message {
-    box-shadow: 0 0 0 0 px #c8cbce inset, 0 0 0 0 transparent;
+    box-shadow: 0 0 0 0px #c8cbce inset, 0 0 0 0 transparent;
 }
 
-.short-row{
-    min-height:150px;
+.short-row {
+    min-height: 150px;
 }
 
-.tall-row{
-    min-height:370px;
+.tall-row {
+    min-height: 370px;
 }
 
 .target-box-placeholder {
@@ -21,6 +21,7 @@
     min-height: 400px;
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+
 .target-box {
     padding: 5px 5px;
     color: rgba(0, 0, 0, 0.87);

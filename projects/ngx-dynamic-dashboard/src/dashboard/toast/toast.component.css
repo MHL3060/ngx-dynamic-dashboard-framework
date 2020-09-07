@@ -21,8 +21,8 @@
     background-color: transparent;
 }
 
-.toast-message{
+.toast-message {
     height: 40px;
-    display:table-cell;
+    display: table-cell;
     vertical-align: middle;
 }

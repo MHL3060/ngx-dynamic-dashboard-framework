@@ -23,7 +23,7 @@ export interface IGadget {
 
     configureGadget(instanceId: number, config: any, tags: Array<any>);
 
-    updateGadgetWithGlobalOptions(options:any);
+    updateGadgetWithGlobalOptions(options: any);
 
 
 }

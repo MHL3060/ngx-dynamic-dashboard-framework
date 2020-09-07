@@ -19,7 +19,7 @@
 
 
     <div class="right inverted menu">
-        <a *ngIf="env.menu.notification"  class="item"
+        <a *ngIf="env.menu.notification" class="item"
            (click)="toggleNotificationSideBar()">
             <i class="large inverted alarm icon"></i>
             <div class="floating ui red label">
@@ -58,7 +58,7 @@
 
 <!-- the modal will emit an event and call the grid component to add the requested cell to the board -->
 <dashboard-add-gadget-modal #addGadgetModal
-                      (addGadgetEvent)="emitBoardAddGadgetEvent($event)">
+                            (addGadgetEvent)="emitBoardAddGadgetEvent($event)">
 </dashboard-add-gadget-modal>
 
 <dashboard-configuration-modal #boardConfigModal

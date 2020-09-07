@@ -1,12 +1,8 @@
 /**
  * Created by jayhamilton on 1/24/17.
  */
-import {
-    ViewChild, ElementRef, AfterViewInit, Component, Output, EventEmitter, Input
-} from '@angular/core';
-import {
-     style, state, trigger, animate, transition
-} from '@angular/animations';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 import {tabsModel} from './tabs.model';
 import {environment} from '../../environments/environment'
@@ -59,7 +55,7 @@ export class ConfigurationComponent implements AfterViewInit {
     modalicon: string;
     modalheader: string;
     modalconfig: string;
-    env:any;
+    env: any;
 
     @ViewChild('boardconfigmodal_tag', {static: true}) boardconfigmodalaRef: ElementRef;
     configModal: any;
@@ -88,11 +84,11 @@ export class ConfigurationComponent implements AfterViewInit {
     }
 
     createBoard(name: string) {
-        if (name !==  '') {
+        if (name !== '') {
             this.dashboardCreateEvent.emit(name);
             this.newDashboardItem = '';
         }
-        console.log("Creating new board event from configuration component: " + name);
+        console.log('Creating new board event from configuration component: ' + name);
     }
 
     editBoard(name: string) {

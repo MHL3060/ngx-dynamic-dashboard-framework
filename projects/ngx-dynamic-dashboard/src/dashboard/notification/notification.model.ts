@@ -10,9 +10,11 @@ export class Notification {
         this.name = name;
         this.description = description;
     }
+
     setState(state: string) {
         this.state = state;
     }
+
     getState() {
         return this.state;
     }
@@ -20,6 +22,7 @@ export class Notification {
     setIcon(icon: string) {
         this.icon = icon;
     }
+
     getIcon() {
         return this.icon;
     }
@@ -27,6 +30,7 @@ export class Notification {
     setWhen(when: string) {
         this.when = when;
     }
+
     getWhen() {
         return this.when;
     }

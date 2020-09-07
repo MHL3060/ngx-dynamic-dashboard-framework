@@ -1,5 +1,4 @@
 
-
 .ui.secondary.pointing.menu .active.item {
     color: #f9f9f9 !important;
     font-weight: 500 !important;
@@ -29,22 +28,24 @@ input {
     outline: none !important;
 }
 
-.ui.floating.label{
-    top:.5em;
-    margin:0;
-}
-.ui.menu .item>.floating.label{
-    padding:.3em .6em
+.ui.floating.label {
+    top: .5em;
+    margin: 0;
 }
 
-.ui.menu{
-    border-radius:0px;
+.ui.menu .item > .floating.label {
+    padding: .3em .6em
 }
-.ui.inverted.menu{
+
+.ui.menu {
+    border-radius: 0px;
+}
+
+.ui.inverted.menu {
     background-color: #1C2B36;
 }
 
-.ui.menu .item>i.icon {
+.ui.menu .item > i.icon {
     margin: 0;
 }
 
