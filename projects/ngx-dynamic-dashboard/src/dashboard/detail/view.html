@@ -4,12 +4,12 @@
         <div class="ten wide column left aligned">
 
             <div class="ui breadcrumb">
-                <a class="section" (click)="goHome()">Board</a>
+                <a (click)="goHome()" class="section">Board</a>
 
                 <span *ngFor="let nav of navRoutes,let i = index">
                     <span class="divider">/</span>
-                    <a class="section" (click)="gotToRoute(nav, navRoutes.length -1 == i)"
-                       [ngClass]="{'active': navRoutes.length -1 == i }">{{nav}}</a>
+                    <a (click)="gotToRoute(nav, navRoutes.length -1 == i)" [ngClass]="{'active': navRoutes.length -1 == i }"
+                       class="section">{{nav}}</a>
                 </span>
 
             </div>
@@ -53,10 +53,10 @@
                         <td [ngClass]="{'negative': task.status != 'Completed', 'positive': task.status == 'Completed' }">
                             {{i + 1}}
                         </td>
-                        <td style="text-align: center"><i class="icon large " [ngClass]="{
+                        <td style="text-align: center"><i [ngClass]="{
                         'red ban': task.status != 'Completed',
                         'green check': task.status == 'Completed'
-                        }"></i></td>
+                        }" class="icon large "></i></td>
                         <td>{{task.master}}</td>
                         <td>{{task.jobName}}</td>
                         <td>{{task.subType}}</td>
@@ -76,7 +76,7 @@
             <div class="ui breadcrumb">
                 &nbsp;
             </div>
-            <div class="ui  segment" *ngIf="objectAsArray.length">
+            <div *ngIf="objectAsArray.length" class="ui  segment">
                 <div class="ui top right attached label"><i class="big download icon"></i></div>
 
                 <div class="ui  basic segment">

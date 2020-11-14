@@ -1,26 +1,26 @@
-<div ng-show="show" class="ui inverted menu sticky" #stickymenu_tag style="height: 66px !important">
+<div #stickymenu_tag class="ui inverted menu sticky" ng-show="show" style="height: 66px !important">
 
 
-    <dashboard-typeahead-input *ngIf="env.menu.aiSearch" style="width:25%; padding-bottom:0" class="item"
+    <dashboard-typeahead-input (ArtificialIntelligenceEventEmitter)="emitBoardAIAddGadgetEvent($event)" *ngIf="env.menu.aiSearch" [placeHolderText]="placeHolderText"
                                [searchList]="searchList"
-                               [placeHolderText]="placeHolderText"
                                [typeAheadIsInMenu]="typeAheadIsInMenu"
-                               (ArtificialIntelligenceEventEmitter)="emitBoardAIAddGadgetEvent($event)">
+                               class="item"
+                               style="width:25%; padding-bottom:0">
     </dashboard-typeahead-input>
 
 
     <div class="ui secondary inverted pointing menu board">
-        <a *ngFor="let board of dashboardList; let i = index" class="item"
+        <a (click)="emitBoardSelectEvent(board)" *ngFor="let board of dashboardList; let i = index"
            [ngClass]="{'active':board == selectedBoard}"
-           (click)="emitBoardSelectEvent(board)">
+           class="item">
             {{board}}
         </a>
     </div>
 
 
     <div class="right inverted menu">
-        <a *ngIf="env.menu.notification" class="item"
-           (click)="toggleNotificationSideBar()">
+        <a (click)="toggleNotificationSideBar()" *ngIf="env.menu.notification"
+           class="item">
             <i class="large inverted alarm icon"></i>
             <div class="floating ui red label">
                 <span style="font-size: 1.2em; font-weight: normal">4</span>
@@ -28,26 +28,26 @@
         </a>
 
 
-        <a class="item"
-           (click)="addGadgetModal.showComponentLibraryModal('Add Gadget')">
+        <a (click)="addGadgetModal.showComponentLibraryModal('Add Gadget')"
+           class="item">
             <i class="large inverted plus icon"></i>
         </a>
 
 
-        <a class="item"
-           (click)="toggleLayoutSideBar()">
+        <a (click)="toggleLayoutSideBar()"
+           class="item">
             <i class="large inverted grid layout icon"></i>
         </a>
 
 
-        <a class="item"
-           (click)="boardConfigModal.showConfigurationModal('Configuration')">
+        <a (click)="boardConfigModal.showConfigurationModal('Configuration')"
+           class="item">
             <i class="large inverted setting icon"></i>
         </a>
 
 
-        <a class="item"
-           (click)="toggleAboutSideBar()">
+        <a (click)="toggleAboutSideBar()"
+           class="item">
             <i class="large inverted info icon"></i>
         </a>
 
@@ -63,8 +63,8 @@
 
 <dashboard-configuration-modal #boardConfigModal
                                (dashboardCreateEvent)="emitBoardCreateEvent($event)"
-                               (dashboardEditEvent)="emitBoardEditEvent($event)"
                                (dashboardDeleteEvent)="emitBoardDeleteEvent($event)"
+                               (dashboardEditEvent)="emitBoardEditEvent($event)"
                                [dashboardList]="dashboardList">
 
 
@@ -72,19 +72,19 @@
 
 
 <!-- side bar content -->
-<div class="ui sidebar inverted right vertical menu" #notificationSideBar_tag>
+<div #notificationSideBar_tag class="ui sidebar inverted right vertical menu">
     <dashboard-notification-modal></dashboard-notification-modal>
 </div>
 
 <!-- side bar content -->
-<div class="ui sidebar inverted right vertical menu" #aboutSideBar_tag>
+<div #aboutSideBar_tag class="ui sidebar inverted right vertical menu">
     <dashboard-about-modal></dashboard-about-modal>
 </div>
 
 
-<div class="ui sidebar inverted right vertical menu" #layoutSideBar_tag>
-    <dashboard-layout-manager-modal [layoutId]="layoutId"
-                                    (boardLayoutChangeEvent)="emitBoardChangeLayoutEvent($event)">
+<div #layoutSideBar_tag class="ui sidebar inverted right vertical menu">
+    <dashboard-layout-manager-modal (boardLayoutChangeEvent)="emitBoardChangeLayoutEvent($event)"
+                                    [layoutId]="layoutId">
     </dashboard-layout-manager-modal>
 </div>
 

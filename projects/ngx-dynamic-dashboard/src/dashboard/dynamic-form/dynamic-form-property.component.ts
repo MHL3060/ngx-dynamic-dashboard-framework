@@ -33,14 +33,14 @@ export class DynamicFormPropertyComponent implements AfterViewInit {
     @Input() gadgetTags: any[];//todo - use to control what endpoints are displayed
     endPoints: string[] = [];
 
-    get isValid() {
-
-        return this.form.controls[this.property.key].valid;
-    }
-
     constructor() {
 
         this.updateEndPointList();
+    }
+
+    get isValid() {
+
+        return this.form.controls[this.property.key].valid;
     }
 
     updateEndPointList() {

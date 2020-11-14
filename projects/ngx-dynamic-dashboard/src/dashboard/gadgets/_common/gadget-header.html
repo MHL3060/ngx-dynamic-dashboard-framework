@@ -1,26 +1,26 @@
 <div class="ui top attached label">
 
-    <button class="compact ui button right floated"
-            *ngIf="showControls || globalOptions.enableHover" (click)="remove()">
+    <button (click)="remove()"
+            *ngIf="showControls || globalOptions.enableHover" class="compact ui button right floated">
         <i class="trash icon" style="margin-right:0 !important"></i>
     </button>
-    <button class="compact ui button right floated"
-            *ngIf="showControls || globalOptions.enableHover && showConfigurationControl" (click)="toggleConfigMode()">
+    <button (click)="toggleConfigMode()"
+            *ngIf="showControls || globalOptions.enableHover && showConfigurationControl" class="compact ui button right floated">
         <i class="setting  icon" style="margin-right:0 !important"></i>
     </button>
-    <button class="compact ui button right floated"
-            *ngIf="showControls || globalOptions.enableHover" (click)="help()">
+    <button (click)="help()"
+            *ngIf="showControls || globalOptions.enableHover" class="compact ui button right floated">
         <i class="info icon" style="margin-right:0 !important"></i>
     </button>
 
-    <dashboard-gadget-operation-control *ngIf="showControls || globalOptions.enableHover"
-                                        [inRun]="inRun"
-                                        [inConfig]="inConfig"
+    <dashboard-gadget-operation-control (runEvent)="run()"
+                                        (stopEvent)="stop()"
+                                        *ngIf="showControls || globalOptions.enableHover"
                                         [actionInitiated]="actionInitiated"
-                                        [showOperationControls]="showOperationControls"
                                         [gadgetHasOperationControls]="gadgetHasOperationControls"
-                                        (runEvent)="run()"
-                                        (stopEvent)="stop()">
+                                        [inConfig]="inConfig"
+                                        [inRun]="inRun"
+                                        [showOperationControls]="showOperationControls">
 
     </dashboard-gadget-operation-control>
 

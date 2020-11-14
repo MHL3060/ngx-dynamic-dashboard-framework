@@ -36,20 +36,6 @@ export class ConfigurationService {
         this.seedLocalStorageWithSampleBoardCollection();
     }
 
-    private seedLocalStorageWithSampleBoardCollection() {
-
-        if (localStorage.getItem('board') === null) {
-
-
-            if (this.env.production === true) {
-
-                localStorage.setItem('board', JSON.stringify(this.sampleBoardCollectionProd));
-            } else {
-                localStorage.setItem('board', JSON.stringify(this.sampleBoardCollection));
-            }
-        }
-    }
-
     public getBoardByTitle(title: string) {
 
         if (this.demo) {
@@ -146,28 +132,6 @@ export class ConfigurationService {
         }
     }
 
-    private delete(board_collection: any) {
-
-        localStorage.removeItem('board');
-        localStorage.setItem('board', JSON.stringify(board_collection));
-
-    }
-
-    private deleteBoardFromLocalStore(boardTitle: string) {
-        const board_collection = JSON.parse(localStorage.getItem('board'));
-
-        let index;
-        if (board_collection && (index = board_collection['board'].findIndex(item => {
-            return item.title === boardTitle;
-        })) >= 0) {
-
-            board_collection['board'].splice(index, 1);
-
-            this.delete(board_collection);
-
-        }
-    }
-
     public deleteBoard(boardTitle: string) {
 
         if (this.demo) {
@@ -197,7 +161,6 @@ export class ConfigurationService {
         });
     }
 
-
     /*
      when a gadget instance's property page is updated and saved, the change gets communicated to all
      gadgets. The gadget instance id that caused the change will update their current instance. todo - this might be able to be
@@ -208,7 +171,6 @@ export class ConfigurationService {
 
         this.savePropertyPageConfigurationToStore(gadgetConfig, instanceId);
     }
-
 
     setCurrentModel(_currentModel: any) {
         this.currentModel = _currentModel;
@@ -262,6 +224,42 @@ export class ConfigurationService {
                     }
                 }
             });
+        }
+    }
+
+    private seedLocalStorageWithSampleBoardCollection() {
+
+        if (localStorage.getItem('board') === null) {
+
+
+            if (this.env.production === true) {
+
+                localStorage.setItem('board', JSON.stringify(this.sampleBoardCollectionProd));
+            } else {
+                localStorage.setItem('board', JSON.stringify(this.sampleBoardCollection));
+            }
+        }
+    }
+
+    private delete(board_collection: any) {
+
+        localStorage.removeItem('board');
+        localStorage.setItem('board', JSON.stringify(board_collection));
+
+    }
+
+    private deleteBoardFromLocalStore(boardTitle: string) {
+        const board_collection = JSON.parse(localStorage.getItem('board'));
+
+        let index;
+        if (board_collection && (index = board_collection['board'].findIndex(item => {
+            return item.title === boardTitle;
+        })) >= 0) {
+
+            board_collection['board'].splice(index, 1);
+
+            this.delete(board_collection);
+
         }
     }
 }

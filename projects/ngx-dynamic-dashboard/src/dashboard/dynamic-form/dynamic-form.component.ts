@@ -63,6 +63,10 @@ export class DynamicFormComponent implements OnInit, AfterViewInit {
                 private changeDetectionRef: ChangeDetectorRef) {
     }
 
+    get isPropertyPageValid() {
+
+        return this.form.valid;
+    }
 
     /* better solution that solves error: Expression has changed after it was checked exception resolution*/
     ngAfterViewInit(): void {
@@ -98,11 +102,6 @@ export class DynamicFormComponent implements OnInit, AfterViewInit {
     setCurrentTab(tab) {
         this.currentTab = tab.groupId;
 
-    }
-
-    get isPropertyPageValid() {
-
-        return this.form.valid;
     }
 }
 

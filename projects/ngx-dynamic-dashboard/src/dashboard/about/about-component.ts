@@ -2,7 +2,6 @@
  * Created by jayhamilton on 1/24/17.
  */
 import {AfterViewInit, Component} from '@angular/core';
-
 import {environment} from '../../environments/environment';
 import {AboutService} from './service';
 
@@ -39,17 +38,13 @@ export class AboutComponent implements AfterViewInit {
 
 
     ngAfterViewInit() {
-
         this.getVersion();
-
     }
 
     getVersion() {
 
         this._aboutService.getAPIVersion().subscribe(data => {
-
             this.apiVersion = data['version'];
-
         });
 
     }

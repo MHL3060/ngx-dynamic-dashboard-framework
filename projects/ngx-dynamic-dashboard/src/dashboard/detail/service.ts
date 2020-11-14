@@ -7,12 +7,12 @@ import {catchError} from 'rxjs/operators';
 @Injectable()
 export class DetailService {
 
+    testURL = 'http://localhost:8080';
+    detailURL = '/detail';
+
     constructor(private _http: HttpClient) {
         this.configure();
     }
-
-    testURL = 'http://localhost:8080';
-    detailURL = '/detail';
 
     configure() {
 

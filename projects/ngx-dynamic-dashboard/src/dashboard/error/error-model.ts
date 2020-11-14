@@ -13,7 +13,7 @@ export class ErrorObject {
         this.solutions = solutions;
         this.resource = resource;
     }
-};
+}
 
 export class SolutionObject {
     summary: string;

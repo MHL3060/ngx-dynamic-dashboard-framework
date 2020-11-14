@@ -11,6 +11,9 @@ import {HttpErrorResponse} from '@angular/common/http';
 export class RuntimeService {
 
 
+    constructor() {
+    }
+
     static handleError(err: HttpErrorResponse | any) {
 
         const errMsg: any = {
@@ -33,9 +36,6 @@ export class RuntimeService {
 
         return throwError(ErrorHandler.getErrorObject(errMsg));
 
-    }
-
-    constructor() {
     }
 
 }

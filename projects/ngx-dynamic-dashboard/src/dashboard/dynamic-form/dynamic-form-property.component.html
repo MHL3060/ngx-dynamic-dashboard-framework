@@ -20,13 +20,13 @@
             </select>
 
             <!--todo - fix checkbox type. The value is not properly set by the data so using hard coded type -->
-            <input *ngSwitchCase="'checkbox'"
+            <input (change)="property.value = $event.target.checked"
+                   *ngSwitchCase="'checkbox'"
+                   [(ngModel)]="property.value"
+                   [attr.checked]="property.value ? true : null"
                    [formControlName]="property.key"
                    [id]="property.key"
-                   [type]="'checkbox'"
-                   (change)="property.value = $event.target.checked"
-                   [(ngModel)]="property.value"
-                   [attr.checked]="property.value ? true : null">
+                   [type]="'checkbox'">
 
             <input *ngSwitchCase="'number'"
                    [formControlName]="property.key"
@@ -39,10 +39,10 @@
                    [id]="property.key"
                    [type]="property.type">
 
-            <select *ngSwitchCase="'dynamicdropdown'"
+            <select (change)="property.value = $event.target.toString()"
+                    *ngSwitchCase="'dynamicdropdown'"
                     [formControlName]="property.key"
-                    [id]="property.key"
-                    (change)="property.value = $event.target.toString()">
+                    [id]="property.key">
 
                 <option></option>
                 <option *ngFor="let opt of endPoints"
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div [@showHideAnimation] class="ui error message" *ngIf="!isValid">{{property.label}} is required</div>
+    <div *ngIf="!isValid" [@showHideAnimation] class="ui error message">{{property.label}} is required</div>
 
 
 </div>

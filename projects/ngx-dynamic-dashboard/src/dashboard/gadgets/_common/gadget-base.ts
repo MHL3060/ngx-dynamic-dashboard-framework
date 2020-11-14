@@ -218,6 +218,14 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
 
     }
 
+    public ngOnDestroy() {
+
+    }
+
+    public updateGadgetWithGlobalOptions(options: any) {
+        this.globalOptions = Object.assign({}, options);
+    }
+
     protected setEndPoint(endpoint: string) {
 
         /*this._endPointService.getEndPoints().subscribe(data => {
@@ -253,13 +261,5 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
 
         }
         return 'Unknown';
-    }
-
-    public ngOnDestroy() {
-
-    }
-
-    public updateGadgetWithGlobalOptions(options: any) {
-        this.globalOptions = Object.assign({}, options);
     }
 }

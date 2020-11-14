@@ -8,10 +8,10 @@
 <br>
 <br>
 <ul>
-    <li style='list-style: none'
-        *ngFor="let layout of boardLayouts; let i = index">
-        <img [ngClass]="{'layout-selected': layoutId == layout.id }" src="/assets/images/{{layout.title}}.png"
-             (click)="selectBoardLayout(layout.id)">
+    <li *ngFor="let layout of boardLayouts; let i = index"
+        style='list-style: none'>
+        <img (click)="selectBoardLayout(layout.id)" [ngClass]="{'layout-selected': layoutId == layout.id }"
+             src="/assets/images/{{layout.title}}.png">
 
     </li>
 </ul>

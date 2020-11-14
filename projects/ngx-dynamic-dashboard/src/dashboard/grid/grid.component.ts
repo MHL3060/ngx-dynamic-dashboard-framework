@@ -299,6 +299,24 @@ export class GridComponent {
         this.saveBoard('Grid Layout Update', false);
     }
 
+    public enableConfigMode() {
+
+        this._gadgetInstanceService.enableConfigureMode();
+    }
+
+    public setModel(model: any) {
+
+        this.model = Object.assign({}, model);
+    }
+
+    public getModel() {
+        return this.model;
+    }
+
+    public onDrop(data) {
+        console.log(data);
+    }
+
     private updateGridState() {
 
         let gadgetCount = 0;
@@ -366,11 +384,6 @@ export class GridComponent {
                 w = source.gadgets.shift();
             }
         }
-    }
-
-    public enableConfigMode() {
-
-        this._gadgetInstanceService.enableConfigureMode();
     }
 
     private initializeBoard() {
@@ -500,19 +513,6 @@ export class GridComponent {
             // board is full so insert in the last row
             this.gridInsertionPosition.x = this.getModel().rows.length - 1;
         }
-    }
-
-    public setModel(model: any) {
-
-        this.model = Object.assign({}, model);
-    }
-
-    public getModel() {
-        return this.model;
-    }
-
-    public onDrop(data) {
-        console.log(data);
     }
 
 }

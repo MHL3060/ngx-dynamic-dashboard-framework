@@ -1,24 +1,24 @@
 <div class="ui form" style="text-align: left !important">
     <form (ngSubmit)="onSubmit()" [formGroup]="form">
 
-        <div class="proppages ui top attached tabular menu" #tabComponentTag>
-            <a *ngFor="let tab of propertyPages; let i = index" class="item" #tabComponentTag
+        <div #tabComponentTag class="proppages ui top attached tabular menu">
+            <a #tabComponentTag (click)="setCurrentTab(tab)" *ngFor="let tab of propertyPages; let i = index"
                [ngClass]="{'active': tab.groupId == currentTab }"
-               attr.data-tab="{{tab.groupId}}" (click)="setCurrentTab(tab)">{{tab.displayName}} </a>
+               attr.data-tab="{{tab.groupId}}" class="item">{{tab.displayName}} </a>
         </div>
 
-        <div [@contentSwitch]="page.groupId == currentTab ? 'active':'inactive'"
-             *ngFor="let page of propertyPages; let i = index" [ngClass]="{'active': page.groupId == currentTab }"
-             class="proppages ui bottom attached tab segment"
-             attr.data-tab="{{page.groupId}}">
+        <div *ngFor="let page of propertyPages; let i = index"
+             [@contentSwitch]="page.groupId == currentTab ? 'active':'inactive'" [ngClass]="{'active': page.groupId == currentTab }"
+             attr.data-tab="{{page.groupId}}"
+             class="proppages ui bottom attached tab segment">
 
 
             <div *ngFor="let property of page.properties"
                  class="form-row">
                 <dashboard-df-property
-                    [property]="property"
                     [form]="form"
                     [gadgetTags]="gadgetTags"
+                    [property]="property"
                 >
 
                 </dashboard-df-property>
@@ -27,7 +27,7 @@
 
         </div>
         <div class="form-row field">
-            <button class="ui green submit button" type="submit" [disabled]="!form.valid || !form.dirty"> Save</button>
+            <button [disabled]="!form.valid || !form.dirty" class="ui green submit button" type="submit"> Save</button>
         </div>
     </form>
 

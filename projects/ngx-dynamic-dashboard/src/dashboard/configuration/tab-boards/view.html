@@ -4,11 +4,11 @@
     <th>name</th>
     <th></th>
     </thead>
-    <tr class="ui basic segment" *ngFor="let board of dashboardList; let i = index">
+    <tr *ngFor="let board of dashboardList; let i = index" class="ui basic segment">
         <td class="index-column">{{i + 1}}</td>
         <td>{{board}}</td>
         <td style="text-align:right">
-            <a mat-mini-fab routerLink="." (click)="deleteBoard(board)">
+            <a (click)="deleteBoard(board)" mat-mini-fab routerLink=".">
                 <mat-icon>clear</mat-icon>
             </a>
         </td>
@@ -22,7 +22,7 @@
             <input [(ngModel)]="newDashboardItem" matInput placeholder="Enter Dashboard Name">
         </mat-form-field>
 
-        <a mat-mini-fab routerLink="." color='primary' (click)="createBoard(newDashboardItem)">
+        <a (click)="createBoard(newDashboardItem)" color='primary' mat-mini-fab routerLink=".">
             <mat-icon>add</mat-icon>
         </a>
     </div>

@@ -1,18 +1,18 @@
-<div class="ui long modal" #messagemodal_tag>
+<div #messagemodal_tag class="ui long modal">
     <div class="header">
         <h2>{{modalheader}}</h2>
     </div>
 
     <dashboard-data-list
 
-        [objectList]="gadgetObjectList"
-        [objectTitleList]="gadgetObjectTitleList"
-        [placeHolderText]="placeHolderText"
-        [typeAheadIsInMenu]="typeAheadIsInMenu"
+        [facetTags]="facetTags"
         [layoutColumnOneWidth]="layoutColumnOneWidth"
         [layoutColumnTwoWidth]="layoutColumnTwoWidth"
         [listHeader]="listHeader"
-        [facetTags]="facetTags">
+        [objectList]="gadgetObjectList"
+        [objectTitleList]="gadgetObjectTitleList"
+        [placeHolderText]="placeHolderText"
+        [typeAheadIsInMenu]="typeAheadIsInMenu">
 
         <ng-template let-item="$implicit">
 
@@ -23,10 +23,10 @@
                             <!-- todo : if there are more than one action display a button with
                             vertical ellipse and implement onHover to show all action buttons
                             -->
-                            <a *ngIf="item.actions.length == 1"
-                               mat-raised-button
-                               routerLink="."
-                               (click)="actionHandler(item, item.actions[0].name)" color="primary">
+                            <a (click)="actionHandler(item, item.actions[0].name)"
+                               *ngIf="item.actions.length == 1"
+                               color="primary"
+                               mat-raised-button routerLink=".">
                                 {{item.actions[0].name}}
                             </a>
                         </div>
