@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {NgxAdfComponent} from './ngx-adf.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientJsonpModule, HttpClientModule} from '@angular/common/http';
 import {DetailModule} from './detail/detail.module';
@@ -20,9 +19,6 @@ import {GridModule} from './grid/grid.module';
         DetailModule,
         HttpClientJsonpModule,
         GridModule
-    ],
-    declarations: [
-        NgxAdfComponent
     ]
 })
 export class NgxAdfModule {

@@ -3,7 +3,6 @@
  */
 
 export * from './dashboard/ngx-adf.module';
-export * from './dashboard/ngx-adf.component';
 export * from './dashboard/configuration/tab-options/options-configuration-tab.component';
 export * from './dashboard/configuration/tab-boards/boards-configuration-tab.component';
 export * from './dashboard/configuration/configuration-component';

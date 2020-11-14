@@ -13,6 +13,9 @@ import {MenuModule} from '../menu/menu.module';
     providers: [],
     declarations: [
         BoardComponent
+    ],
+    exports: [
+        BoardComponent
     ]
 })
 export class BoardModule {
