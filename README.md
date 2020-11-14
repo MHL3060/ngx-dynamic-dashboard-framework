@@ -11,7 +11,58 @@ items I would like to improve on
 * provides an option to use localstorage or backend to store the dashboard configuration.
 * emit dashboard events. so the app can listen to the events.
 
+
+
 # NGX Dynamic Dashboard Framework
+
+## Usage
+you can refer to https://github.com/MHL3060/dashboard-entry the sample project for usage.
+
+to use. 
+1) add "ngx-dynamic-dashboard": "^0.0.32" as a dependency in package.json
+2) add the following modules to your module.ts (eg. app.module.ts)
+    ```ts
+      imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgxAdfModule,
+        MenuModule,
+        GridModule,
+        DynamicFormModule,
+        ErrorHandlerModule,
+        ConfigurationModule,
+        AddGadgetModule,
+        GadgetModule
+      ],
+      providers: [
+        RuntimeService,
+        NewsService,
+        OptionsService,
+        {
+          provide: APP_INITIALIZER,
+          useFactory: GadgetRegistry,
+          deps: [],
+          multi: true
+        }
+      ]
+    ```
+3) Create a GadgetRegistery.ts to register your GadgetComponent. The following code just register NewGadgetComponent.
+    ```ts
+    export function GadgetRegistry(): () => void {
+      return () => {
+        GadgetFactory.setComponentType('NewsGadgetComponent', NewsGadgetComponent);
+      };
+    }
+    ```
+4) in your component template. add the dashboard directive.
+    ```html
+    <div class="content" role="main">
+      <dashboard-menu></dashboard-menu>
+      <dashboard-grid></dashboard-grid>
+    </div>
+    ```
+
+
 
 ## Sample Board 1
 ![Image of Main Screen](https://github.com/catalogicsoftware/Angular-2-Dashboard-Framework/blob/master/src/assets/documentation/images/sb1.png)

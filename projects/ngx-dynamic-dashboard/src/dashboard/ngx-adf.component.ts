@@ -1,8 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    template: ''
+    templateUrl: './ngx-adf.component.html'
 })
 export class NgxAdfComponent {
+    @Input()
+    showMenu = true;
 }
