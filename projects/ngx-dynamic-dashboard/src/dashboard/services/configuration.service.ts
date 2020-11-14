@@ -3,23 +3,22 @@
  */
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {EMPTY, Observable} from 'rxjs';
+import {EMPTY, Observable, Subscribable} from 'rxjs';
 import {defaultBoard} from './configuration-sample-default-board';
-import {sampleBoardCollectionProd} from './configuration-sample-boards-prod.model';
 import {sampleBoardCollection} from './configuration-sample-boards.model';
 import {environment} from '../../environments/environment';
+import {Board} from '../grid/Board';
 
 
 @Injectable()
 export class ConfigurationService {
-    model: any; // todo review this object closely
+    model: Board; // todo review this object closely
     currentModel: any; // this object helps with updates to property page values
     demo = true;
     env: any;
 
     defaultBoard: any;
     sampleBoardCollection: any;
-    sampleBoardCollectionProd: any;
 
     /**
      * todo - fix this hard coded store
@@ -29,38 +28,13 @@ export class ConfigurationService {
 
     constructor(private _http: HttpClient) {
 
-        Object.assign(this, {defaultBoard});
-        Object.assign(this, {sampleBoardCollection});
-        Object.assign(this, {sampleBoardCollectionProd});
+        this.defaultBoard = Object.assign({}, defaultBoard);
+        this.sampleBoardCollection = Object.assign({}, sampleBoardCollection);
         this.env = environment;
         this.seedLocalStorageWithSampleBoardCollection();
     }
 
-    public getBoardByTitle(title: string) {
-
-        if (this.demo) {
-
-            return new Observable(observer => {
-                const board_collection = JSON.parse(localStorage.getItem('board'));
-
-                let data = '';
-                board_collection['board'].forEach(boardModel => {
-
-                    if (boardModel.title === title) {
-                        data = boardModel;
-                    }
-                });
-                observer.next(data);
-                return () => {
-                };
-            });
-        } else {
-
-            return this._http.get(this.remoteConfigurationRepository + '/' + name);
-        }
-    }
-
-    public getBoards() {
+    public getBoards(): Observable<any> {
 
         if (this.demo) {
             return new Observable(observer => {
@@ -82,7 +56,7 @@ export class ConfigurationService {
         }
     }
 
-    public saveBoard(board: any) {
+    public saveBoard(board: Board) {
 
         this.model = board;
 
@@ -232,10 +206,7 @@ export class ConfigurationService {
         if (localStorage.getItem('board') === null) {
 
 
-            if (this.env.production === true) {
-
-                localStorage.setItem('board', JSON.stringify(this.sampleBoardCollectionProd));
-            } else {
+            if (!this.env.production) {
                 localStorage.setItem('board', JSON.stringify(this.sampleBoardCollection));
             }
         }

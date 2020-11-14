@@ -17,9 +17,6 @@ import {Column, Board} from './Board';
 })
 export class GridComponent {
 
-    @Input()
-    librariespath: string;
-
     @Output() boardUpdateEvent: EventEmitter<any> = new EventEmitter();
 
     model: Board = <any>{};
@@ -30,6 +27,8 @@ export class GridComponent {
     dropZone3: any = null;
 
     gadgetLibrary: any[] = [];
+
+    private boards: Board[];
 
     /** todo
      * Temporary objects for experimenting with AI
@@ -56,7 +55,6 @@ export class GridComponent {
 
 
         this.removeOldListeners();
-
         this.setupEventListeners();
         this.initializeBoard();
         this.getGadgetLibrary();
@@ -389,38 +387,25 @@ export class GridComponent {
 
     private initializeBoard() {
 
-        this._configurationService.getBoards().subscribe(board => {
-
-            if (board && board instanceof Array && board.length) {
-
-                const sortedBoard = board.sort(function (a, b) {
+        this._configurationService.getBoards().subscribe(boards => {
+            if (boards && boards instanceof Array && boards.length) {
+                this.boards = boards.sort((a, b) => {
                     return a.boardInstanceId - b.boardInstanceId;
                 });
 
-                this.loadBoard(sortedBoard[0].title);
+                this.loadBoard(this.boards[0].title);
             } else {
-
                 this.loadDefaultBoard();
             }
         });
     }
 
     private loadBoard(boardTitle: string) {
-
         this.clearGridModelAndGadgetInstanceStructures();
-
-        this._configurationService.getBoardByTitle(boardTitle).subscribe((board: Board) => {
-
-                this.setModel(board);
-                this.updateServicesAndGridWithModel();
-                this.boardUpdateEvent.emit(boardTitle);
-            },
-            error => {
-                console.error(error);
-                this.loadDefaultBoard();
-
-            });
-
+        const selectedBoard = this.boards.find(board => board.title === boardTitle);
+        this.setModel(selectedBoard);
+        this.updateServicesAndGridWithModel();
+        this.boardUpdateEvent.emit(boardTitle);
     }
 
     private loadDefaultBoard() {
