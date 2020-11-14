@@ -20,7 +20,6 @@ export class GridComponent {
     @Input()
     librariespath: string;
 
-
     @Output() boardUpdateEvent: EventEmitter<any> = new EventEmitter();
 
     model: Board = <any>{};
@@ -231,9 +230,6 @@ export class GridComponent {
     }
 
     public addGadget(gadget: any) {
-
-        //console.log("Adding Gadget!!!!!!!@#@##@#@#@#@#@#@@");
-
         const _gadget = Object.assign({}, gadget);
 
         _gadget.instanceId = new Date().getTime();

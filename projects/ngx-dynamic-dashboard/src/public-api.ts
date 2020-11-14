@@ -2,7 +2,6 @@
  * Public API Surface of my-lib
  */
 
-export * from './dashboard/ngx-adf.module';
 export * from './dashboard/configuration/tab-options/options-configuration-tab.component';
 export * from './dashboard/configuration/tab-boards/boards-configuration-tab.component';
 export * from './dashboard/configuration/configuration-component';

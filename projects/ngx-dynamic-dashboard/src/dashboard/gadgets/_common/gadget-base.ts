@@ -78,10 +78,10 @@ export abstract class GadgetBase implements IGadget, OnDestroy, OnInit, AfterVie
     errorExists = false;
     globalOptions: any;
 
-    constructor(protected _gadgetInstanceService: GadgetInstanceService,
-                protected _propertyService: GadgetPropertyService,
-                protected changeDetectionRef: ChangeDetectorRef,
-                protected _optionsService: OptionsService) {
+    protected constructor(protected _gadgetInstanceService: GadgetInstanceService,
+                          protected _propertyService: GadgetPropertyService,
+                          protected changeDetectionRef: ChangeDetectorRef,
+                          protected _optionsService: OptionsService) {
 
         this._optionsService.listenForGlobalOptionsChanges().subscribe(options => {
 
