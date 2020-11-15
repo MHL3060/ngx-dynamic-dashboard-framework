@@ -6,6 +6,7 @@ import {AddGadgetService} from '../add-gadget/service';
 import {ToastService} from '../toast/toast.service';
 import {MenuEventService} from '../menu/menu-service';
 import {IEvent} from '../menu/IEvent';
+import {Column, Board} from './Board';
 
 
 @Component({
@@ -16,13 +17,9 @@ import {IEvent} from '../menu/IEvent';
 })
 export class GridComponent {
 
-    @Input()
-    librariespath: string;
-
-
     @Output() boardUpdateEvent: EventEmitter<any> = new EventEmitter();
 
-    model: any = {};
+    model: Board = <any>{};
     noGadgets = true;
     dashedStyle: {};
     dropZone1: any = null;
@@ -30,6 +27,8 @@ export class GridComponent {
     dropZone3: any = null;
 
     gadgetLibrary: any[] = [];
+
+    private boards: Board[];
 
     /** todo
      * Temporary objects for experimenting with AI
@@ -56,7 +55,6 @@ export class GridComponent {
 
 
         this.removeOldListeners();
-
         this.setupEventListeners();
         this.initializeBoard();
         this.getGadgetLibrary();
@@ -81,12 +79,13 @@ export class GridComponent {
 
     setupEventListeners() {
 
-        let gadgetRemoveEventSubscriber = this._gadgetInstanceService.listenForInstanceRemovedEventsFromGadgets().subscribe((message: string) => {
-            this.saveBoard('Gadget Removed From Board: ' + message, false);
+        const gadgetRemoveEventSubscriber = this._gadgetInstanceService
+            .listenForInstanceRemovedEventsFromGadgets().subscribe((message: string) => {
+                this.saveBoard('Gadget Removed From Board: ' + message, false);
         });
 
 
-        let menuEventSubscriber = this._menuEventService.listenForMenuEvents().subscribe((event: IEvent) => {
+        const menuEventSubscriber = this._menuEventService.listenForMenuEvents().subscribe((event: IEvent) => {
             const edata = event['data'];
 
             switch (event['name']) {
@@ -229,9 +228,6 @@ export class GridComponent {
     }
 
     public addGadget(gadget: any) {
-
-        //console.log("Adding Gadget!!!!!!!@#@##@#@#@#@#@#@@");
-
         const _gadget = Object.assign({}, gadget);
 
         _gadget.instanceId = new Date().getTime();
@@ -284,7 +280,10 @@ export class GridComponent {
          the fillGridStructure will return the count of remaining columns to be processed and then process those.
          */
         while (originalColumnIndexToStartProcessingFrom < originalColumns.length) {
-            originalColumnIndexToStartProcessingFrom = this.fillGridStructure(_model, originalColumns, originalColumnIndexToStartProcessingFrom);
+            originalColumnIndexToStartProcessingFrom = this.fillGridStructure(
+                _model,
+                originalColumns,
+                originalColumnIndexToStartProcessingFrom);
         }
 
         // This will copy the just processed model and present it to the board
@@ -304,7 +303,7 @@ export class GridComponent {
         this._gadgetInstanceService.enableConfigureMode();
     }
 
-    public setModel(model: any) {
+    public setModel(model: Board) {
 
         this.model = Object.assign({}, model);
     }
@@ -355,7 +354,7 @@ export class GridComponent {
 
     }
 
-    private fillGridStructure(destinationModelStructure, originalColumns: any[], counter: number) {
+    private fillGridStructure(destinationModelStructure, originalColumns: Column[], counter: number) {
 
         const me = this;
 
@@ -388,51 +387,36 @@ export class GridComponent {
 
     private initializeBoard() {
 
-        this._configurationService.getBoards().subscribe(board => {
-
-            if (board && board instanceof Array && board.length) {
-
-                const sortedBoard = board.sort(function (a, b) {
+        this._configurationService.getBoards().subscribe(boards => {
+            if (boards && boards instanceof Array && boards.length) {
+                this.boards = boards.sort((a, b) => {
                     return a.boardInstanceId - b.boardInstanceId;
                 });
 
-                this.loadBoard(sortedBoard[0].title);
+                this.loadBoard(this.boards[0].title);
             } else {
-
                 this.loadDefaultBoard();
             }
         });
     }
 
     private loadBoard(boardTitle: string) {
-
         this.clearGridModelAndGadgetInstanceStructures();
-
-        this._configurationService.getBoardByTitle(boardTitle).subscribe(board => {
-
-                this.setModel(board);
-                this.updateServicesAndGridWithModel();
-                this.boardUpdateEvent.emit(boardTitle);
-            },
-            error => {
-                console.error(error);
-                this.loadDefaultBoard();
-
-            });
-
+        const selectedBoard = this.boards.find(board => board.title === boardTitle);
+        this.setModel(selectedBoard);
+        this.updateServicesAndGridWithModel();
+        this.boardUpdateEvent.emit(boardTitle);
     }
 
     private loadDefaultBoard() {
 
         this.clearGridModelAndGadgetInstanceStructures();
 
-        this._configurationService.getDefaultBoard().subscribe(board => {
+        this._configurationService.getDefaultBoard().subscribe((board: Board) => {
 
             this.setModel(board);
             this.updateServicesAndGridWithModel();
             this.saveBoard('Initialization of a default board', true);
-
-
         });
     }
 
@@ -440,7 +424,7 @@ export class GridComponent {
 
         this.clearGridModelAndGadgetInstanceStructures();
 
-        this._configurationService.getDefaultBoard().subscribe(res => {
+        this._configurationService.getDefaultBoard().subscribe((res: Board) => {
 
             this.setModel(res);
             this.getModel().title = name;

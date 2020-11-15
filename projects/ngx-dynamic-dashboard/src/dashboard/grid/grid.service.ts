@@ -3,6 +3,7 @@
  */
 import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
+import {Board} from './Board';
 
 /**
  * todo - the name of this service does not represent the file name. This should be refactored. Consider moving this service to the gadget module instead.
@@ -12,7 +13,7 @@ import {Observable, Subject} from 'rxjs';
 export class GadgetInstanceService {
 
     private concreteGadgetInstances: any[] = [];
-    private model: any;
+    private model: Board;
     private subject: Subject<string> = new Subject<string>();
     private subscribers: Array<Subject<string>> = [];
 
@@ -20,15 +21,10 @@ export class GadgetInstanceService {
     }
 
     addInstance(gadget: any) {
-        let gadgetFound = false;
-
-        for (let x = 0; x < this.concreteGadgetInstances.length; x++) {
-            if (gadget.instance.instanceId == this.concreteGadgetInstances[x]['instance']['instanceId']) {
-                gadgetFound = true;
-            }
-        }
-
-        if (gadgetFound == false) {
+        const gadgetFound = this.concreteGadgetInstances.findIndex((instance) => {
+            return gadget.instanceId === instance['instance']['instanceId'];
+        }) >= 0;
+        if (gadgetFound === false) {
             this.concreteGadgetInstances.push(gadget);
 
         }
@@ -86,7 +82,6 @@ export class GadgetInstanceService {
      this allows this service to update the board when a delete operation occurs
      */
     setCurrentModel(model: any) {
-
         this.model = model;
     }
 

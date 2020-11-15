@@ -1,7 +1,7 @@
 {
   "name": "ngx-dynamic-dashboard",
   "description": "an dashboard lib for angular 10",
-  "version": "0.0.34",
+  "version": "0.0.36",
   "license": "MIT",
   "author": "Ben Li <benli3060@gmail.com>",
   "keywords": [

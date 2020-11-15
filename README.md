@@ -10,13 +10,19 @@ This library still working in process.
 items I would like to improve on
 * provides an option to use localstorage or backend to store the dashboard configuration.
 * emit dashboard events. so the app can listen to the events.
-
-
+* permissions. This is going to be a big part of the dashboard feature. with permissions, it can display
+  the gadget based on permissions.
+* code base cleanup.
+    * Currently the code base has a lot of type `any`. it would be nice to add some types.
+    * tighten up what modules should be exported and what should not exported. This is important
+      in the future when libraries continue to evolve.
+    * the build system need some love.
+* remove the semantic-ui external dependency. I think this is a high priority.
 
 # NGX Dynamic Dashboard Framework
 
 ## Usage
-you can refer to https://github.com/MHL3060/dashboard-entry the sample project for usage.
+you can refer to https://github.com/MHL3060/dashboard-entry the sample project for the latest usage.
 
 to use. 
 1) add "ngx-dynamic-dashboard": "^0.0.32" as a dependency in package.json

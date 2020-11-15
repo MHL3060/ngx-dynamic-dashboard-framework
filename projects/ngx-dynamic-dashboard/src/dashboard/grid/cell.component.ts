@@ -1,6 +1,16 @@
-import {Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import {
+    Component,
+    ComponentFactory,
+    ComponentFactoryResolver,
+    ComponentRef,
+    Input,
+    OnInit, Type,
+    ViewChild,
+    ViewContainerRef
+} from '@angular/core';
 import {GadgetInstanceService} from './grid.service';
 import {GadgetFactory} from '../add-gadget/gadget-factory';
+import {GadgetBase} from '../gadgets/_common/gadget-base';
 
 /*
  this class handles the dynamic creation of components
@@ -27,13 +37,10 @@ export class CellComponent implements OnInit {
         /*
          create component instance dynamically
          */
-        const component: any = GadgetFactory.getComponentType(this.gadgetType);
-        let compFactory: any = {};
-        let gadgetRef: any = {};
-
+        const component: Type<any> = GadgetFactory.getComponentType(this.gadgetType);
         if (component) {
-            compFactory = this.cfr.resolveComponentFactory(component);
-            gadgetRef = this.viewContainerRef.createComponent(compFactory);
+            const compFactory = this.cfr.resolveComponentFactory(component);
+            const gadgetRef: ComponentRef<GadgetBase> = this.viewContainerRef.createComponent(compFactory);
 
             /*
              we need to pass the input parameters (instance id and config) back into the newly created component.

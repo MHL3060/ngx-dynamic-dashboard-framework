@@ -23,7 +23,7 @@ import {boardLayouts} from './model';
     styleUrls: ['./styles.css']
 
 })
-export class BoardLayoutManagerComponent implements AfterViewInit {
+export class BoardLayoutManagerComponent {
 
     @Input() layoutId;
     @Output() boardLayoutChangeEvent: EventEmitter<any> = new EventEmitter();
@@ -50,14 +50,8 @@ export class BoardLayoutManagerComponent implements AfterViewInit {
         }
     }
 
-    ngAfterViewInit() {
-
-    }
-
     initializeLayouts() {
-
         Object.assign(this, {boardLayouts});
-
     }
 
 }
