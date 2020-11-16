@@ -13,7 +13,7 @@
                     "builder": "@angular-devkit/build-ng-packagr:build",
                     "options": {
                         "tsConfig": "projects/ngx-dynamic-dashboard/tsconfig.lib.json",
-                        "project": "projects/ngx-dynamic-dashboard/ng-package.json"
+                        "project": "ng-package.json"
                     },
                     "configurations": {
                         "production": {

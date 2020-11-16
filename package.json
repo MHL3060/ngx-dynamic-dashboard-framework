@@ -1,22 +1,42 @@
 {
   "name": "ngx-dynamic-dashboard",
-  "version": "0.0.8",
+  "description": "an dashboard lib for angular 10",
+  "version": "0.0.38",
   "license": "MIT",
-  "ngPackage": {
-    "lib": {
-      "entryFile": "src/public_api.ts"
+  "author": "Ben Li <benli3060@gmail.com>",
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular4",
+    "angular5",
+    "angular-2",
+    "angular-4",
+    "angular-5",
+    "angular-6",
+    "angular-7",
+    "angular-8",
+    "angular-9",
+    "angular-10",
+    "aot",
+    "aot-compatible",
+    "aot-compilation",
+    "ngx",
+    "ng2",
+    "ng",
+    "service",
+    "angular-service",
+    "dashboard-service"
+  ],
+  "contributors": [
+    {
+      "name": "Ben Li",
+      "email": "<benli3060@gmail.com>"
     }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MHL3060/ngx-dashboard-framework"
   },
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "package": ""
-  },
-  "private": false,
   "peerDependencies": {
     "@angular/animations": "10.0.5",
     "@angular/cdk": "^10.1.0",
@@ -74,6 +94,7 @@
     "tslint": "~6.1.0",
     "typescript": "~3.9.7",
     "@angular-devkit/build-ng-packagr": "~0.1000.4",
-    "ng-packagr": "^10.0.0"
+    "ng-packagr": "^10.0.0",
+    "tslib": "^2.0.0"
   }
 }
