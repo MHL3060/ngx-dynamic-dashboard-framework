@@ -56,7 +56,7 @@ export class ConfigurationService {
         }
     }
 
-    public saveBoard(board: Board) {
+    public saveBoard(board: Board): Observable<any> {
 
         this.model = board;
 

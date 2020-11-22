@@ -19,10 +19,30 @@ export interface Column {
 }
 export interface Gadget {
     instanceId: number;
-    tags: any[],
-    componentType: String,
-    config: Config
+    componentType: string,
+    config: Config,
+    name: string,
+    tags: Tag[]
+}
+
+export interface Tag {
+    facet: string,
+    name: string
 }
 export interface Config {
-    propertyPages: any[]
+    propertyPages: PropertyPage[]
+}
+export interface PropertyPage {
+    displayName: string,
+    groupId: string,
+    position: number,
+    properties: Property[]
+}
+export interface Property {
+    value: string|number,
+    key: string,
+    label: string,
+    required: boolean,
+    order: number,
+    controlType: string
 }
