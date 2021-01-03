@@ -15,7 +15,8 @@ export interface Row {
     columns: Column[]
 }
 export interface Column {
-    gadgets: Gadget[]
+    gadgets: Gadget[],
+    styleClass: string
 }
 export interface Gadget {
     instanceId: number;

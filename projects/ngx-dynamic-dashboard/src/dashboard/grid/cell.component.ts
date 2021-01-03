@@ -32,10 +32,19 @@ export class CellComponent implements OnInit {
     constructor(
         private cfr: ComponentFactoryResolver, private gadgetInstanceService: GadgetInstanceService) {
     }
-
     ngOnInit() {
         /*
          create component instance dynamically
+         fixme: Use lazy load Module https://www.youtube.com/watch?v=q2Exs-82tkw
+         try to use dynamic dynamic loaded
+         // this.loader = NgModuleFacgtoryLoader
+         this.loader.load('path/to/plugin/plugin.module#PluginModule')
+            .then((factory) => {
+                const module = factory.create(this.injector);
+                const cfr = module.componentFactoryResolver;
+                const cmpFactory = cfr.resolveComponentFactory(Component);
+                this.viewContainerRef.createComponent(cmpFactory);
+            });
          */
         const component: Type<any> = GadgetFactory.getComponentType(this.gadgetType);
         if (component) {
