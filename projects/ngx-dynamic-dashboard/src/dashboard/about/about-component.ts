@@ -27,16 +27,12 @@ export class AboutComponent implements AfterViewInit {
 
     modalHeader = 'About';
     apiVersion: string;
-
-    messageModal: any;
     env: any;
 
     constructor(private _aboutService: AboutService) {
 
         this.env = environment;
     }
-
-
     ngAfterViewInit() {
         this.getVersion();
     }

@@ -1,4 +1,4 @@
-<div #boardconfigmodal_tag class="ui long modal">
+<div class="ui long">
     <div class="header">
         <h2>{{modalheader}}</h2>
     </div>
@@ -32,8 +32,7 @@
         </div>
     </div>
 
-
-    <div class="actions">
-        <button (click)="hideMessageModal()" class="ui button">Close</button>
-    </div>
+    <mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="true">Close</button>
+    </mat-dialog-actions>
 </div>

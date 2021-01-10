@@ -7,6 +7,8 @@ import {IEvent} from './IEvent';
 import {AddGadgetComponent} from '../add-gadget/add-gadget-component';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {Subject} from 'rxjs';
+import {ConfigurationComponent} from '../configuration/configuration-component';
+import {AboutComponent} from '../about/about-component';
 
 
 declare var jQuery: any;
@@ -48,7 +50,6 @@ export class MenuComponent implements OnInit, AfterViewInit {
     stickyMenu: any;
 
     typeAheadIsInMenu = true;
-
     layoutId = 0;
 
     constructor(private _configurationService: ConfigurationService,
@@ -83,8 +84,8 @@ export class MenuComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        this.stickyMenu = jQuery(this.stickyMenuRef.nativeElement);
-        this.stickyMenu.sticky();
+       // this.stickyMenu = jQuery(this.stickyMenuRef.nativeElement);
+       //  this.stickyMenu.sticky();
     }
 
     emitBoardChangeLayoutEvent(event) {
@@ -153,22 +154,23 @@ export class MenuComponent implements OnInit, AfterViewInit {
     }
 
     toggleLayoutSideBar() {
-        this.layoutSideBar = jQuery(this.layoutSideBarRef.nativeElement);
-        this.layoutSideBar.sidebar('setting', 'transition', 'overlay');
-        this.layoutSideBar.sidebar('toggle');
-        this.layoutId = this._configurationService.currentModel.id;
+        // this.layoutSideBar = jQuery(this.layoutSideBarRef.nativeElement);
+        // this.layoutSideBar.sidebar('setting', 'transition', 'overlay');
+        // this.layoutSideBar.sidebar('toggle');
+        // this.layoutId = this._configurationService.currentModel.id;
     }
 
     toggleNotificationSideBar() {
-        this.notificationSideBar = jQuery(this.notificationSideBarRef.nativeElement);
-        this.notificationSideBar.sidebar('setting', 'transition', 'overlay');
-        this.notificationSideBar.sidebar('toggle');
+        // this.notificationSideBar = jQuery(this.notificationSideBarRef.nativeElement);
+        // this.notificationSideBar.sidebar('setting', 'transition', 'overlay');
+        // this.notificationSideBar.sidebar('toggle');
     }
 
     toggleAboutSideBar() {
-        this.aboutSideBar = jQuery(this.aboutSideBarRef.nativeElement);
-        this.aboutSideBar.sidebar('setting', 'transition', 'overlay');
-        this.aboutSideBar.sidebar('toggle');
+        this._dialog.open(AboutComponent, {});
+        // this.aboutSideBar = jQuery(this.aboutSideBarRef.nativeElement);
+        // this.aboutSideBar.sidebar('setting', 'transition', 'overlay');
+        // this.aboutSideBar.sidebar('toggle');
     }
 
     showComponentLibraryModel(): void {
@@ -176,5 +178,9 @@ export class MenuComponent implements OnInit, AfterViewInit {
             {
                 data: this.addGadgetSubject,
                 height: '400px', width: '600px'});
+    }
+
+    showBoardConfigModal(): void {
+        this._dialog.open(ConfigurationComponent, {});
     }
 }

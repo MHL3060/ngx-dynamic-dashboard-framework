@@ -13,6 +13,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import {MatInputModule} from '@angular/material/input';
         FormsModule,
         ReactiveFormsModule,
         MatSlideToggleModule,
-        MatChipsModule
+        MatChipsModule,
+        MatDialogModule
     ],
     declarations: [
         BoardsConfigurationTabComponent,

@@ -28,22 +28,19 @@
         </a>
 
         <a (click)="showComponentLibraryModel()" class="item"><i class="large inverted plus icon"></i></a>
-        <!--<a (click)="addGadgetModal.showComponentLibraryModal('Add Gadget')"
-           class="item">
-            <i class="large inverted plus icon"></i>
-        </a>-->
-
-
         <a (click)="toggleLayoutSideBar()"
            class="item">
             <i class="large inverted grid layout icon"></i>
         </a>
 
-
-        <a (click)="boardConfigModal.showConfigurationModal('Configuration')"
-           class="item">
+        <a (click)="showBoardConfigModal()" class="item">
             <i class="large inverted setting icon"></i>
         </a>
+
+        <!--<a (click)="boardConfigModal.showConfigurationModal('Configuration')"
+           class="item">
+            <i class="large inverted setting icon"></i>
+        </a>-->
 
 
         <a (click)="toggleAboutSideBar()"
@@ -61,14 +58,14 @@
                             (addGadgetEvent)="emitBoardAddGadgetEvent($event)">
 </dashboard-add-gadget-modal>-->
 
-<dashboard-configuration-modal #boardConfigModal
+<!--<dashboard-configuration-modal #boardConfigModal
                                (dashboardCreateEvent)="emitBoardCreateEvent($event)"
                                (dashboardDeleteEvent)="emitBoardDeleteEvent($event)"
                                (dashboardEditEvent)="emitBoardEditEvent($event)"
                                [dashboardList]="dashboardList">
 
 
-</dashboard-configuration-modal>
+</dashboard-configuration-modal>-->
 
 
 <!-- side bar content -->

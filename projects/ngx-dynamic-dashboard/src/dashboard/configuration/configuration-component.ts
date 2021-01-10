@@ -6,6 +6,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 
 import {tabsModel} from './tabs.model';
 import {environment} from '../../environments/environment'
+import {MatDialogRef} from '@angular/material/dialog';
 
 
 declare var jQuery: any;
@@ -26,7 +27,6 @@ declare var jQuery: any;
     templateUrl: './view.html',
     styleUrls: ['./styles.css'],
     animations: [
-
         trigger('contentSwitch', [
             state('inactive', style({
                 opacity: 0
@@ -41,7 +41,7 @@ declare var jQuery: any;
 
 
 })
-export class ConfigurationComponent implements AfterViewInit {
+export class ConfigurationComponent {
 
     @Output() dashboardCreateEvent: EventEmitter<any> = new EventEmitter();
     @Output() dashboardEditEvent: EventEmitter<any> = new EventEmitter();
@@ -57,7 +57,7 @@ export class ConfigurationComponent implements AfterViewInit {
     modalconfig: string;
     env: any;
 
-    @ViewChild('boardconfigmodal_tag', {static: true}) boardconfigmodalaRef: ElementRef;
+    // @ViewChild('boardconfigmodal_tag', {static: true}) boardconfigmodalaRef: ElementRef;
     configModal: any;
     currentTab: string;
     tabsModel: any[];
@@ -67,7 +67,6 @@ export class ConfigurationComponent implements AfterViewInit {
         Object.assign(this, {tabsModel});
         this.setCurrentTab(0);
         this.env = environment;
-
     }
 
 
@@ -100,10 +99,7 @@ export class ConfigurationComponent implements AfterViewInit {
     }
 
 
-    ngAfterViewInit() {
-        this.configModal = jQuery(this.boardconfigmodalaRef.nativeElement);
-        this.configModal.modal('hide');
-    }
+
 
     setCurrentTab(tab_index) {
         this.currentTab = this.tabsModel[tab_index].displayName;

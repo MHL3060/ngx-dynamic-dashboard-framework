@@ -2,10 +2,12 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AboutComponent} from './about-component';
 import {AboutService} from './service';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        MatDialogModule
     ],
     declarations: [AboutComponent],
     exports: [AboutComponent],
