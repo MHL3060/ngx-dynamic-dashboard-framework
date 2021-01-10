@@ -27,11 +27,11 @@
             </div>
         </a>
 
-
-        <a (click)="addGadgetModal.showComponentLibraryModal('Add Gadget')"
+        <a (click)="showComponentLibraryModel()" class="item"><i class="large inverted plus icon"></i></a>
+        <!--<a (click)="addGadgetModal.showComponentLibraryModal('Add Gadget')"
            class="item">
             <i class="large inverted plus icon"></i>
-        </a>
+        </a>-->
 
 
         <a (click)="toggleLayoutSideBar()"
@@ -57,9 +57,9 @@
 <br>
 
 <!-- the modal will emit an event and call the grid component to add the requested cell to the board -->
-<dashboard-add-gadget-modal #addGadgetModal
+<!--<dashboard-add-gadget-modal #addGadgetModal
                             (addGadgetEvent)="emitBoardAddGadgetEvent($event)">
-</dashboard-add-gadget-modal>
+</dashboard-add-gadget-modal>-->
 
 <dashboard-configuration-modal #boardConfigModal
                                (dashboardCreateEvent)="emitBoardCreateEvent($event)"

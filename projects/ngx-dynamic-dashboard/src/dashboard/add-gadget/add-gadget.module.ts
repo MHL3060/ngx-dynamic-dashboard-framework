@@ -4,12 +4,18 @@ import {AddGadgetComponent} from './add-gadget-component';
 import {AddGadgetService} from './service';
 import {HttpClientModule} from '@angular/common/http';
 import {DataListModule} from '../datalist/data-list.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
     imports: [
         CommonModule,
         DataListModule,
-        HttpClientModule
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        MatButtonModule
     ],
     declarations: [
         AddGadgetComponent

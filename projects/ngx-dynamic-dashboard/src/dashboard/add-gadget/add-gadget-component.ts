@@ -1,13 +1,15 @@
 /**
  * Created by jayhamilton on 1/24/17.
  */
-import {AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Inject, OnInit, Output, ViewChild} from '@angular/core';
 
 import {animate, style, transition, trigger} from '@angular/animations';
 
 import {AddGadgetService} from './service';
 import {Facet} from '../facet/facet-model';
 import {FacetTagProcessor} from '../facet/facet-tag-processor';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {NextObserver, Observable, Subject, Subscribable} from 'rxjs';
 
 declare var jQuery: any;
 
@@ -41,9 +43,8 @@ declare var jQuery: any;
     ]
 
 })
-export class AddGadgetComponent implements AfterViewInit {
+export class AddGadgetComponent implements OnInit {
 
-    @Output() addGadgetEvent: EventEmitter<any> = new EventEmitter();
 
     gadgetObjectList: any[] = [];
     gadgetObjectTitleList: string[] = [];
@@ -61,19 +62,21 @@ export class AddGadgetComponent implements AfterViewInit {
     modalheader: string;
     modalmessage: string;
 
-    @ViewChild('messagemodal_tag', {static: true}) messagemodalRef: ElementRef;
+
 
     messageModal: any;
 
-    constructor(private _addGadgetService: AddGadgetService) {
+    constructor(private _addGadgetService: AddGadgetService,
+        @Inject(MAT_DIALOG_DATA) private addGadgetEvent: NextObserver<any>) {
+        this.modalheader = 'Add Gadget';
+    }
 
+    ngOnInit() {
         this.getObjectList();
     }
 
     actionHandler(actionItem, actionName) {
-        this.addGadgetEvent.emit(actionItem);
-        this.hideMessageModal();
-
+        this.addGadgetEvent.next(actionItem);
     }
 
 
@@ -81,25 +84,8 @@ export class AddGadgetComponent implements AfterViewInit {
         this.modalicon = icon;
         this.modalheader = header;
         this.modalmessage = message;
-        this.messageModal.modal('show');
+       // this.messageModal.modal('show');
 
-    }
-
-    showComponentLibraryModal(header: string) {
-
-        this.modalheader = header;
-        this.messageModal.modal('show');
-    }
-
-    hideMessageModal() {
-        this.modalicon = '';
-        this.modalheader = '';
-        this.modalmessage = '';
-        this.messageModal.modal('hide');
-    }
-
-    ngAfterViewInit() {
-        this.messageModal = jQuery(this.messagemodalRef.nativeElement);
     }
 
     getObjectList() {

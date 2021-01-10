@@ -4,6 +4,10 @@ import {MenuEventService} from './menu-service';
 import {environment} from '../../environments/environment';
 import {IEvent} from './IEvent';
 
+import {AddGadgetComponent} from '../add-gadget/add-gadget-component';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {Subject} from 'rxjs';
+
 
 declare var jQuery: any;
 
@@ -31,6 +35,8 @@ export class MenuComponent implements OnInit, AfterViewInit {
     @Input()
     show = false;
 
+    addGadgetSubject = new Subject();
+
     @ViewChild('notificationSideBar_tag', {static: false}) notificationSideBarRef: ElementRef;
     @ViewChild('layoutSideBar_tag', {static: false}) layoutSideBarRef: ElementRef;
     @ViewChild('aboutSideBar_tag', {static: false}) aboutSideBarRef: ElementRef;
@@ -46,7 +52,8 @@ export class MenuComponent implements OnInit, AfterViewInit {
     layoutId = 0;
 
     constructor(private _configurationService: ConfigurationService,
-                private _menuEventService: MenuEventService) {
+                private _menuEventService: MenuEventService,
+                private _dialog: MatDialog) {
 
         this._menuEventService.unSubscribeAll();
 
@@ -68,7 +75,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
         });
 
         this._menuEventService.addSubscriber(gridEventSubscription);
-
+        this.addGadgetSubject.subscribe(e => this.emitBoardAddGadgetEvent(e));
     }
 
     ngOnInit() {
@@ -162,5 +169,12 @@ export class MenuComponent implements OnInit, AfterViewInit {
         this.aboutSideBar = jQuery(this.aboutSideBarRef.nativeElement);
         this.aboutSideBar.sidebar('setting', 'transition', 'overlay');
         this.aboutSideBar.sidebar('toggle');
+    }
+
+    showComponentLibraryModel(): void {
+        this._dialog.open(AddGadgetComponent,
+            {
+                data: this.addGadgetSubject,
+                height: '400px', width: '600px'});
     }
 }

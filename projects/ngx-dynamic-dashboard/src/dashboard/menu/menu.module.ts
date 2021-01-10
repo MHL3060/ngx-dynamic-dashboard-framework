@@ -14,6 +14,9 @@ import {AboutModule} from '../about/about.module';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {GadgetPropertyService} from '../gadgets/_common/gadget-property.service';
+import {MatDialogModule} from '@angular/material/dialog';
+import {AddGadgetComponent} from '../add-gadget/add-gadget-component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
     imports: [
@@ -25,7 +28,9 @@ import {GadgetPropertyService} from '../gadgets/_common/gadget-property.service'
         ConfigurationModule,
         TypeAheadInputModule,
         MatButtonModule,
-        MatIconModule
+        MatIconModule,
+        MatDialogModule,
+        BrowserAnimationsModule
     ],
     providers: [
         RuntimeService,
@@ -39,6 +44,9 @@ import {GadgetPropertyService} from '../gadgets/_common/gadget-property.service'
     ],
     exports: [
         MenuComponent
+    ],
+    entryComponents: [
+        AddGadgetComponent
     ]
 })
 export class MenuModule {

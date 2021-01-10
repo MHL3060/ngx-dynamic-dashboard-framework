@@ -5,11 +5,13 @@ import {GadgetOperationComponent} from './gadget-operation-control-component';
 import {HelpModalComponent} from './help-modal-component';
 import {VisDrillDownComponent} from './vis-drill-down-component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
     imports: [
         CommonModule,
         MatProgressBarModule,
+        MatDialogModule,
     ],
     declarations: [
         GadgetHeaderComponent,
