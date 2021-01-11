@@ -39,10 +39,10 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
     addGadgetSubject = new Subject();
 
-    @ViewChild('notificationSideBar_tag', {static: false}) notificationSideBarRef: ElementRef;
+   /* @ViewChild('notificationSideBar_tag', {static: false}) notificationSideBarRef: ElementRef;
     @ViewChild('layoutSideBar_tag', {static: false}) layoutSideBarRef: ElementRef;
     @ViewChild('aboutSideBar_tag', {static: false}) aboutSideBarRef: ElementRef;
-    @ViewChild('stickymenu_tag', {static: false}) stickyMenuRef: ElementRef;
+    @ViewChild('stickymenu_tag', {static: false}) stickyMenuRef: ElementRef;*/
 
     notificationSideBar: any;
     layoutSideBar: any;

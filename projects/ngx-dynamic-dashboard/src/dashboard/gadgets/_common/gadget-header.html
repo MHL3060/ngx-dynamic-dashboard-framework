@@ -1,16 +1,17 @@
 <div class="ui top attached label">
-
+    <div class="ui top left floated label ct-title">{{title}}</div>
+    <span class="spacer"></span>
     <button (click)="remove()"
             *ngIf="showControls || globalOptions.enableHover" class="compact ui button right floated">
-        <i class="trash icon" style="margin-right:0 !important"></i>
+        <i class="mi mi-remove"></i>
     </button>
     <button (click)="toggleConfigMode()"
             *ngIf="showControls || globalOptions.enableHover && showConfigurationControl" class="compact ui button right floated">
-        <i class="setting  icon" style="margin-right:0 !important"></i>
+        <i class="mi mi-settings"></i>
     </button>
     <button (click)="help()"
             *ngIf="showControls || globalOptions.enableHover" class="compact ui button right floated">
-        <i class="info icon" style="margin-right:0 !important"></i>
+        <i class="mi mi-help"></i>
     </button>
 
     <dashboard-gadget-operation-control (runEvent)="run()"
@@ -24,6 +25,6 @@
 
     </dashboard-gadget-operation-control>
 
-    <div class="ui top left floated label ct-title">{{title}}</div>
+
 </div>
 <div class="spacer"></div>

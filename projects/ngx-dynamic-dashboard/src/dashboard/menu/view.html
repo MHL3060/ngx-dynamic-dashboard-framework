@@ -1,6 +1,4 @@
-<div #stickymenu_tag class="ui inverted menu sticky" ng-show="show" style="height: 66px !important">
-
-
+<mat-toolbar>
     <dashboard-typeahead-input (ArtificialIntelligenceEventEmitter)="emitBoardAIAddGadgetEvent($event)" *ngIf="env.menu.aiSearch" [placeHolderText]="placeHolderText"
                                [searchList]="searchList"
                                [typeAheadIsInMenu]="typeAheadIsInMenu"
@@ -16,25 +14,26 @@
             {{board}}
         </a>
     </div>
-
-
+    <span class="spacer"></span>
     <div class="right inverted menu">
         <a (click)="toggleNotificationSideBar()" *ngIf="env.menu.notification"
            class="item">
             <i class="large inverted alarm icon"></i>
-            <div class="floating ui red label">
+            <div class="mi mi-notifications">
                 <span style="font-size: 1.2em; font-weight: normal">4</span>
             </div>
         </a>
 
-        <a (click)="showComponentLibraryModel()" class="item"><i class="large inverted plus icon"></i></a>
+        <a (click)="showComponentLibraryModel()" class="item">
+            <i class="mi mi-apps"></i>
+        </a>
         <a (click)="toggleLayoutSideBar()"
            class="item">
-            <i class="large inverted grid layout icon"></i>
+            <i class="mi mi-view-module"></i>
         </a>
 
         <a (click)="showBoardConfigModal()" class="item">
-            <i class="large inverted setting icon"></i>
+            <i class="mi mi-settings"></i>
         </a>
 
         <!--<a (click)="boardConfigModal.showConfigurationModal('Configuration')"
@@ -42,16 +41,13 @@
             <i class="large inverted setting icon"></i>
         </a>-->
 
-
         <a (click)="toggleAboutSideBar()"
            class="item">
-            <i class="large inverted info icon"></i>
+            <i class="mi mi-info"></i>
         </a>
 
     </div>
-
-</div>
-<br>
+</mat-toolbar>
 
 <!-- the modal will emit an event and call the grid component to add the requested cell to the board -->
 <!--<dashboard-add-gadget-modal #addGadgetModal
@@ -69,19 +65,19 @@
 
 
 <!-- side bar content -->
-<div #notificationSideBar_tag class="ui sidebar inverted right vertical menu">
-    <dashboard-notification-modal></dashboard-notification-modal>
-</div>
+<!--<div class="ui sidebar inverted right vertical menu">-->
+<!--    <dashboard-notification-modal></dashboard-notification-modal>-->
+<!--</div>-->
 
-<!-- side bar content -->
-<div #aboutSideBar_tag class="ui sidebar inverted right vertical menu">
+<!-- fixme: side bar content -->
+<!--<div class="ui sidebar inverted right vertical menu">
     <dashboard-about-modal></dashboard-about-modal>
-</div>
+</div>-->
 
-
-<div #layoutSideBar_tag class="ui sidebar inverted right vertical menu">
-    <dashboard-layout-manager-modal (boardLayoutChangeEvent)="emitBoardChangeLayoutEvent($event)"
-                                    [layoutId]="layoutId">
-    </dashboard-layout-manager-modal>
-</div>
+<!-- fixme: need to adapt this one -->
+<!--<div class="ui sidebar inverted right vertical menu">-->
+<!--    <dashboard-layout-manager-modal (boardLayoutChangeEvent)="emitBoardChangeLayoutEvent($event)"-->
+<!--                                    [layoutId]="layoutId">-->
+<!--    </dashboard-layout-manager-modal>-->
+<!--</div>-->
 

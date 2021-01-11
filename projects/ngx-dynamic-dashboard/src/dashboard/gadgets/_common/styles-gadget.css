@@ -99,3 +99,8 @@ h4 {
     border: none;
     box-shadow: none;
 }
+
+/** ----- */
+.spacer {
+    flex: 1 1 auto;
+}

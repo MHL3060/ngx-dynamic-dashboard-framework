@@ -17,6 +17,7 @@ import {GadgetPropertyService} from '../gadgets/_common/gadget-property.service'
 import {MatDialogModule} from '@angular/material/dialog';
 import {AddGadgetComponent} from '../add-gadget/add-gadget-component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
     imports: [
@@ -30,7 +31,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         MatButtonModule,
         MatIconModule,
         MatDialogModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatToolbarModule
     ],
     providers: [
         RuntimeService,
