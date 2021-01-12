@@ -9,6 +9,7 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {Subject} from 'rxjs';
 import {ConfigurationComponent} from '../configuration/configuration-component';
 import {AboutComponent} from '../about/about-component';
+import {BoardLayoutManagerComponent} from '../layout/layout-component';
 
 
 declare var jQuery: any;
@@ -182,5 +183,9 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
     showBoardConfigModal(): void {
         this._dialog.open(ConfigurationComponent, {});
+    }
+
+    showLayoutConfigModal(): void {
+        this._dialog.open(BoardLayoutManagerComponent, {});
     }
 }
