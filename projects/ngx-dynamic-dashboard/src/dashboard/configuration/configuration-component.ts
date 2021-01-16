@@ -57,7 +57,6 @@ export class ConfigurationComponent {
     modalconfig: string;
     env: any;
 
-    // @ViewChild('boardconfigmodal_tag', {static: true}) boardconfigmodalaRef: ElementRef;
     configModal: any;
     currentTab: string;
     tabsModel: any[];

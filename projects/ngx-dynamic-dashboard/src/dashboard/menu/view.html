@@ -15,7 +15,7 @@
         </a>
     </div>
     <span class="spacer"></span>
-    <div class="right inverted menu">
+    <span>
         <a (click)="toggleNotificationSideBar()" *ngIf="env.menu.notification"
            class="item">
             <i class="large inverted alarm icon"></i>
@@ -24,7 +24,7 @@
             </div>
         </a>
 
-        <a (click)="showComponentLibraryModel()" class="item">
+        <a (click)="showComponentLibraryModal()" class="item">
             <i class="mi mi-apps"></i>
         </a>
         <a (click)="showLayoutConfigModal()"
@@ -45,8 +45,7 @@
            class="item">
             <i class="mi mi-info"></i>
         </a>
-
-    </div>
+    </span>
 </mat-toolbar>
 
 <!-- the modal will emit an event and call the grid component to add the requested cell to the board -->
@@ -68,11 +67,6 @@
 <!--<div class="ui sidebar inverted right vertical menu">-->
 <!--    <dashboard-notification-modal></dashboard-notification-modal>-->
 <!--</div>-->
-
-<!-- fixme: side bar content -->
-<!--<div class="ui sidebar inverted right vertical menu">
-    <dashboard-about-modal></dashboard-about-modal>
-</div>-->
 
 <!-- fixme: need to adapt this one -->
 <!--<div class="ui sidebar inverted right vertical menu">-->

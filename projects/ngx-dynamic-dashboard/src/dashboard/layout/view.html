@@ -8,7 +8,7 @@
 <ul>
     <li *ngFor="let layout of boardLayouts; let i = index"
         style='list-style: none'>
-        <img (click)="selectBoardLayout(layout.id)" [ngClass]="{'layout-selected': layoutId == layout.id }"
+        <img (click)="selectBoardLayout(layout.id)" [ngClass]="{'layout-selected': layoutControl.layoutId == layout.id }"
              src="/assets/images/{{layout.title}}.png">
     </li>
 </ul>

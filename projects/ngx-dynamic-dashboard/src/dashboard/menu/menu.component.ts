@@ -10,6 +10,7 @@ import {Subject} from 'rxjs';
 import {ConfigurationComponent} from '../configuration/configuration-component';
 import {AboutComponent} from '../about/about-component';
 import {BoardLayoutManagerComponent} from '../layout/layout-component';
+import {LayoutControl} from '../layout/LayoutControl';
 
 
 declare var jQuery: any;
@@ -39,11 +40,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
     show = false;
 
     addGadgetSubject = new Subject();
-
-   /* @ViewChild('notificationSideBar_tag', {static: false}) notificationSideBarRef: ElementRef;
-    @ViewChild('layoutSideBar_tag', {static: false}) layoutSideBarRef: ElementRef;
-    @ViewChild('aboutSideBar_tag', {static: false}) aboutSideBarRef: ElementRef;
-    @ViewChild('stickymenu_tag', {static: false}) stickyMenuRef: ElementRef;*/
+    layoutChangeSubject = new Subject();
 
     notificationSideBar: any;
     layoutSideBar: any;
@@ -78,6 +75,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
         this._menuEventService.addSubscriber(gridEventSubscription);
         this.addGadgetSubject.subscribe(e => this.emitBoardAddGadgetEvent(e));
+        this.layoutChangeSubject.subscribe(e => this.emitBoardChangeLayoutEvent(e));
     }
 
     ngOnInit() {
@@ -158,7 +156,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
         // this.layoutSideBar = jQuery(this.layoutSideBarRef.nativeElement);
         // this.layoutSideBar.sidebar('setting', 'transition', 'overlay');
         // this.layoutSideBar.sidebar('toggle');
-        // this.layoutId = this._configurationService.currentModel.id;
+        this.layoutId = this._configurationService.currentModel.id;
     }
 
     toggleNotificationSideBar() {
@@ -169,12 +167,9 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
     toggleAboutSideBar() {
         this._dialog.open(AboutComponent, {});
-        // this.aboutSideBar = jQuery(this.aboutSideBarRef.nativeElement);
-        // this.aboutSideBar.sidebar('setting', 'transition', 'overlay');
-        // this.aboutSideBar.sidebar('toggle');
     }
 
-    showComponentLibraryModel(): void {
+    showComponentLibraryModal(): void {
         this._dialog.open(AddGadgetComponent,
             {
                 data: this.addGadgetSubject,
@@ -186,6 +181,12 @@ export class MenuComponent implements OnInit, AfterViewInit {
     }
 
     showLayoutConfigModal(): void {
-        this._dialog.open(BoardLayoutManagerComponent, {});
+        this.layoutId = this._configurationService.currentModel.id;
+        this._dialog.open(BoardLayoutManagerComponent, {
+            data: <LayoutControl>{
+                layoutId: this.layoutId,
+                layoutChangeObserver: this.layoutChangeSubject
+            }
+        });
     }
 }
