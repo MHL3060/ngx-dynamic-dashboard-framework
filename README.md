@@ -8,8 +8,8 @@ The main difference between here and there are
 
 This library still working in process.
 items I would like to improve on
-* provides an option to use localstorage or backend to store the dashboard configuration.
-* emit dashboard events. so the app can listen to the events.
+* provides an option to enable/disable localstorage or backend store the dashboard configuration.
+* emit dashboard/configuration events. so the app can listen to the events.
 * able to add/remove row
 * permissions. This is going to be a big part of the dashboard feature. with permissions, it can display
   the gadget based on permissions.
