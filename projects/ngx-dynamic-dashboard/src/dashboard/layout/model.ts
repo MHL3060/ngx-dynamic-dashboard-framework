@@ -10,10 +10,10 @@ export const boardLayouts = [
         checked: false,
         structure: '8',
         rows: [{
+            styleClass: 'row justify-content-center',
             columns: [
                 {
-                    styleClass: 'eight wide',
-
+                    styleClass: 'col-8',
                 }]
         }]
     },
@@ -24,9 +24,10 @@ export const boardLayouts = [
         checked: false,
         structure: '14',
         rows: [{
+            styleClass: 'row justify-content-center',
             columns: [
                 {
-                    styleClass: 'fourteen wide',
+                    styleClass: 'col',
 
                 }]
         }]
@@ -38,13 +39,14 @@ export const boardLayouts = [
         checked: false,
         structure: '10-6',
         rows: [{
+            styleClass: 'row',
             columns: [
                 {
-                    styleClass: 'ten wide',
+                    styleClass: 'col-9',
 
                 },
                 {
-                    styleClass: 'six wide',
+                    styleClass: 'col-3',
 
                 }]
         }]
@@ -56,17 +58,18 @@ export const boardLayouts = [
         checked: false,
         structure: '4-8-4',
         rows: [{
+            styleClass: 'row',
             columns: [
                 {
-                    styleClass: 'four wide',
+                    styleClass: 'col-3',
 
                 },
                 {
-                    styleClass: 'eight wide',
+                    styleClass: 'col-6',
 
                 },
                 {
-                    styleClass: 'four wide',
+                    styleClass: 'col-3',
 
                 }]
         }]
@@ -78,14 +81,13 @@ export const boardLayouts = [
         checked: false,
         structure: '4-12',
         rows: [{
+            styleClass: 'row',
             columns: [
                 {
-                    styleClass: 'four wide',
-
+                    styleClass: 'col-3',
                 },
                 {
-                    styleClass: 'twelve wide',
-
+                    styleClass: 'col-9',
                 }]
         }]
     },
@@ -96,13 +98,14 @@ export const boardLayouts = [
         checked: true,
         structure: '6-6',
         rows: [{
+            styleClass: 'row',
             columns: [
                 {
-                    styleClass: 'six wide',
+                    styleClass: 'col-6',
 
                 },
                 {
-                    styleClass: 'six wide',
+                    styleClass: 'col-6',
 
                 }]
         }]
@@ -114,107 +117,20 @@ export const boardLayouts = [
         checked: false,
         structure: '5-5-5',
         rows: [{
+            styleClass: 'row',
             columns: [
                 {
-                    styleClass: 'four wide',
+                    styleClass: 'col-4',
 
                 },
                 {
-                    styleClass: 'four wide',
+                    styleClass: 'col-4',
 
                 },
                 {
-                    styleClass: 'four wide',
-
+                    styleClass: 'col-4',
                 }
             ]
         }]
-    },
-    {
-        id: 7,
-        boardInstanceId: 7,
-        title: 'wide-top',
-        checked: false,
-        structure: '16/8-8',
-        rows: [
-            {
-                columns: [
-                    {
-                        styleClass: 'twelve wide'
-                    }
-                ]
-            },
-            {
-                columns: [
-                    {
-                        styleClass: 'six wide'
-                    },
-                    {
-                        styleClass: 'six wide'
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        id: 8,
-        boardInstanceId: 8,
-        title: 'ngadmin',
-        checked: false,
-        structure: '4-4-4-4/8-4-4',
-        rows: [
-            {
-                columns: [
-                    {
-                        styleClass: 'four wide'
-                    },
-                    {
-                        styleClass: 'four wide'
-                    },
-                    {
-                        styleClass: 'four wide'
-                    },
-                    {
-                        styleClass: 'four wide'
-                    }
-                ]
-            },
-            {
-                columns: [
-                    {
-                        styleClass: 'eight wide'
-                    },
-                    {
-                        styleClass: 'four wide'
-                    },
-                    {
-                        styleClass: 'four wide'
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        id: 9,
-        boardInstanceId: 9,
-        title: 'google-layout',
-        checked: false,
-        structure: '3-6-3',
-        rows: [
-            {
-                columns: [
-                    {
-                        styleClass: 'three wide'
-                    },
-                    {
-                        styleClass: 'six wide'
-                    },
-                    {
-                        styleClass: 'three wide'
-                    }
-                ]
-            }
-        ]
     }
-
 ];

@@ -6,7 +6,7 @@ import {AddGadgetService} from '../add-gadget/service';
 import {ToastService} from '../toast/toast.service';
 import {MenuEventService} from '../menu/menu-service';
 import {IEvent} from '../menu/IEvent';
-import {Column, Board} from './Board';
+import {Column, Board, Layout} from './Board';
 
 
 @Component({
@@ -248,7 +248,7 @@ export class GridComponent {
 
     }
 
-    public updateBoardLayout(structure) {
+    public updateBoardLayout(structure: Layout) {
 
         console.log('IN UPDATE BOARD LAYOUT');
 
@@ -258,10 +258,10 @@ export class GridComponent {
         }
 
         // copy the current board's model
-        const _model = Object.assign({}, this.getModel());
+        const _model: Board = Object.assign({}, this.getModel());
 
         // get just the columns that contain gadgets from all rows
-        const originalColumns: any[] = this.readColumnsFromOriginalModel(_model);
+        const originalColumns: Column[] = this.readColumnsFromOriginalModel(_model);
 
         // reset the copied model's rows, which include columns
         _model.rows.length = 0;
@@ -269,6 +269,7 @@ export class GridComponent {
         // copy the contents of the requested structure into the temporary model
         // we now have a board model we can populate with the original board's gadgets
         Object.assign(_model.rows, structure.rows);
+        // @ts-ignore
         _model.structure = structure.structure;
         _model.id = structure.id;
 
@@ -308,7 +309,7 @@ export class GridComponent {
         this.model = Object.assign({}, model);
     }
 
-    public getModel() {
+    public getModel(): Board {
         return this.model;
     }
 
@@ -342,7 +343,7 @@ export class GridComponent {
         };
     }
 
-    private readColumnsFromOriginalModel(_model) {
+    private readColumnsFromOriginalModel(_model): Column[] {
 
         const columns = [];
         _model.rows.forEach(function (row) {

@@ -28,10 +28,10 @@ export class ConfigurationService {
 
     constructor(private _http: HttpClient) {
 
-        this.defaultBoard = Object.assign({}, defaultBoard);
+        this.defaultBoard = {rows: []};
         this.sampleBoardCollection = Object.assign({}, sampleBoardCollection);
         this.env = environment;
-        this.seedLocalStorageWithSampleBoardCollection();
+        // this.seedLocalStorageWithSampleBoardCollection();
     }
 
     public getBoards(): Observable<any> {

@@ -1,11 +1,10 @@
 <div class="ui centered stackable grid" style="margin-left: 5px; margin-right: 5px"
 >
-    <div *ngFor="let row of model.rows; let r = index" [ngClass]="{'short-row': row.columns.length > 3, 'tall-row': row.columns.length <= 3 }"
-         class="row">
+    <div *ngFor="let row of model.rows; let r = index" class="row" [ngClass]="row.styleClass">
 
         <ng-container cdkDropListGroup>
             <div (cdkDropListDropped)="updateGadgetPositionInBoard($event, c , r, 'column')" *ngFor="let col of row.columns; let c = index" cdkDropList
-                 class="{{col.styleClass}} column">
+                 class="{{col.styleClass}} column" style="{{col.style}}">
 
                 <div *ngIf="!col.gadgets || col.gadgets.length== 0" [ngClass]="{'short-row': row.columns.length > 3, 'tall-row': row.columns.length <= 3 }"
                      class="ui center aligned massive info message"

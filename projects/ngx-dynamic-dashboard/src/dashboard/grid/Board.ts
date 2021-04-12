@@ -9,14 +9,17 @@ export interface Board {
 export interface Structure {
     id: number,
     rows: Row[],
-    structure: Structure
+    styleClass: string,
+    structure: Structure | string
 }
 export interface Row {
+    styleClass: string,
     columns: Column[]
 }
 export interface Column {
     gadgets: Gadget[],
-    styleClass: string
+    styleClass: string,
+    style?: string
 }
 export interface Gadget {
     instanceId: number;
@@ -26,4 +29,13 @@ export interface Gadget {
 }
 export interface Config {
     propertyPages: any[]
+}
+
+export interface Layout {
+    id: number,
+    boardInstanceId: number,
+    title: string,
+    checked: boolean,
+    structure: string,
+    rows: Row[]
 }

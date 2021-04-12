@@ -13,7 +13,7 @@ export const boardLayouts = [
             columns: [
                 {
                     styleClass: 'eight wide',
-
+                    style: 'left: 0px; width: calc((25% - 0.75px) * 4 + 3px)'
                 }]
         }]
     },
@@ -27,7 +27,7 @@ export const boardLayouts = [
             columns: [
                 {
                     styleClass: 'fourteen wide',
-
+                    style: 'left: calc((25% - 0.75px + 1px) * 1); width: calc((25% - 0.75px) * 2 + 1px)'
                 }]
         }]
     },
@@ -41,10 +41,12 @@ export const boardLayouts = [
             columns: [
                 {
                     styleClass: 'ten wide',
+                    style: 'left: 0px; width: calc((25% - 0.75px) * 2 + 1px)'
 
                 },
                 {
                     styleClass: 'six wide',
+                    style: 'left: calc((25% - 0.75px + 1px) * 2); width: calc((25% - 0.75px) * 2 + 1px)'
 
                 }]
         }]
